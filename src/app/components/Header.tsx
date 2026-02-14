@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,23 +43,18 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div
-              className={`bg-teal-500 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                isScrolled ? 'w-9 h-9' : 'w-10 h-10'
-              }`}
-            >
-              <span className="text-white font-bold">+</span>
-            </div>
-
-            <span
-              className={`font-bold transition-all duration-300 ${
-                isScrolled ? 'text-md' : 'text-lg'
-              }`}
-            >
-              Lexend
-            </span>
-          </Link>
+       <Link href="/" className="flex items-center">
+  <Image
+    src="/RM Logo.png"   // put logo in public folder
+    alt="RouteMaestro Logo"
+    width={160}
+    height={40}
+    priority
+    className={`transition-all duration-300 ${
+      isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+    }`}
+  />
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
@@ -66,7 +62,7 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm text-white/70 hover:text-white transition-colors"
+                className="text-sm lg:text-[16px] text-white/70 hover:text-white transition-colors"
               >
                 {item.label}
               </Link>
@@ -76,7 +72,7 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden sm:block">
             <button
-              className={`bg-teal-500 hover:bg-teal-600 text-white rounded-full font-medium transition-all duration-200 ${
+              className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all duration-200 ${
                 isScrolled ? 'px-5 py-3 text-sm' : 'px-6 py-2 text-sm'
               }`}
             >

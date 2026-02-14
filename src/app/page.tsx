@@ -5,8 +5,11 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import TrustedClients from './components/TrustedClient'
-import Features from './components/Features'
+
 import { TestimonialsSection } from './components/TestimonialSection'
+import { LandingUiCard } from './components/LandingUiCard'
+import { FeaturesSection } from './components/FeatureSection'
+import LandingPageWidget from './components/LandingPageWidget'
 export default function Page() {
   const [mounted, setMounted] = useState(false)
 
@@ -20,9 +23,11 @@ export default function Page() {
     <div className="min-h-screen bg-black text-white overflow-hidden">
       <Header />
       <Hero />
+      <LandingUiCard/>
       <TrustedClients/>
+<FeaturesSection/>
+<LandingPageWidget/>
       {/* payment ui make  */}
-<Features/>
 <TestimonialsSection/>
       <Footer />
     </div>

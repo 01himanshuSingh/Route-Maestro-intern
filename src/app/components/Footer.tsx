@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -9,14 +10,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">+</span>
-              </div>
-              <span className="font-bold text-white">Lexend</span>
-            </div>
-            <p className="text-sm text-white/60">
-              Build beautiful websites effortlessly with our powerful page builder.
+        <div className="flex items-center mb-4">
+  <Image
+    src="/RM Logo.png"   // place your logo in public folder
+    alt="RouteMaestro Logo"
+    width={140}
+    height={40}
+    className="h-8 w-auto object-contain"
+    priority
+  />
+</div>
+            <p className="text-sm text-white/60 ">
+            A powerful platform to manage bookings, billing, 
+
+
             </p>
           </div>
 

@@ -85,50 +85,74 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
         {/* Badge */}
                {/* Main heading */}
-        <div className="mb-8">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight text-balance">
-            Build websites
-            <br />
-            <span className="inline-flex items-center justify-center relative">
-              <span className="absolute inset-0 bg-white/10 blur-2xl" />
-              <span className="relative bg-white text-black px-6 py-2 rounded-2xl">
-                effortlessly
-              </span>
-            </span>
-            <br />
-            now or never!
-          </h1>
-        </div>
+       <div className="mb-8 text-center">
+  <h1 className="text-4xl  lg:text-[68px] font-bold text-white leading-tight">
+    Digitize Your
+    <br />
+    Travel Infrastructure
+    <br />
+    <span className="inline-flex items-center justify-center relative mt-3">
+      {/* Glow background */}
+      <span className="absolute inset-0 bg-teal-500/20 blur-2xl rounded-xl" />
+
+      {/* Highlight text */}
+      <span className="relative bg-white text-black px-6 py-2 rounded-xl text-2xl lg:text-4xl font-semibold">
+        With RouteMaestro
+      </span>
+    </span>
+  </h1>
+</div>
 
         {/* Description */}
         <p className="text-lg sm:text-xl text-white/70 mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
-          Easy-to-use and powerful page builder, your gateway to intuitive tools and expansive customization options that
-          transform how you build websites.
+          An AI Powered Dynamic Travel Packaging & A Natural Workflow Booking Platform For Your Business!
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <button className="group bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 flex items-center gap-2">
+          <button className="group bg-[#e2472b] hover:bg-[#fe6652] text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 flex items-center gap-2">
             Join Us 
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button className="border border-white/20 hover:border-white/40 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 bg-white/5 hover:bg-white/10">
-            Learn more
+            Start free trial
           </button>
         </div>
 
         {/* Avatar section */}
-        <div className="flex items-center justify-center gap-3">
+        {/* <div className="flex items-center justify-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center border border-white/20">
             <span className="text-white text-sm font-bold">👤</span>
           </div>
           <p className="text-sm text-white/60">
-            Join 5,000+ designers already building with Lexend
+            Trusted by travel agencies and tour operators to manage bookings, billing, and operations
           </p>
-        </div>
+        </div> */}
+
+       {/* Hero preview image */}
+       <div className="relative mx-auto w-full max-w-[1200px]">
+
+  
+  {/* Glow background */}
+  <div className="absolute inset-0 bg-teal-500/10 blur-3xl rounded-3xl" />
+
+  {/* Image container */}
+  <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
+    <Image
+      src="/landingpagepic.png"   // put your image in public folder
+      alt="RouteMaestro dashboard preview"
+      width={1200}
+      height={700}
+      className="w-full h-auto object-cover"
+      priority
+    />
+  </div>
+
+</div>
+
       </div>
     </section>
   )
