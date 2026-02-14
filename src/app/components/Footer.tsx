@@ -20,7 +20,7 @@ export default function Footer() {
     priority
   />
 </div>
-            <p className="text-sm text-white/60 ">
+            <p className="text-sm text-white/60 max-w-[132px]  ">
             A powerful platform to manage bookings, billing, 
 
 
@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/60">
-            © 2026 Lexend. All rights reserved.
+            © 2026 Route Maestro. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-white/60 hover:text-white transition-colors">
