@@ -102,9 +102,7 @@ export function TestimonialsSection() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center gap-12 py-20 px-4 bg-white dark:bg-black overflow-hidden">
       <div className="text-center max-w-2xl">
-        <p className="text-sm font-medium tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">
-          Testimonials
-        </p>
+       
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl text-balance">
           What our clients say
         </h2>

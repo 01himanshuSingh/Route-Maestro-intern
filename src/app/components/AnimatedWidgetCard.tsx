@@ -28,9 +28,9 @@ const AnimatedCardRow: React.FC<CardRowProps> = ({ items, direction }) => {
             key={index}
             className="flex-shrink-0 flex items-center gap-3 px-6 py-4 rounded-full border border-accent/40 bg-secondary/30 hover:bg-secondary/50 hover:border-accent/70 transition-all duration-300 cursor-pointer"
           >
-            <div className="text-accent text-xl flex-shrink-0">
+            {/* <div className="text-accent text-xl flex-shrink-0">
               {item.icon}
-            </div>
+            </div> */}
             <span className="text-[#b9b9bf] font-medium text-sm lg:text-[14px] whitespace-nowrap">
               {item.label}
             </span>
@@ -55,7 +55,7 @@ export const AnimatedWidgetCard: React.FC<AnimatedCardsProps> = ({
   rows,
 }) => {
   return (
-    <div className="w-full min-h-screen  py-16">
+    <div className="w-full min-h-screen  py-10">
       <div className="max-w-6xl mx-auto px-4">
         {title && (
           <h1 className="text-4xl lg:text-[24px] font-bold text-center text-white mb-12">

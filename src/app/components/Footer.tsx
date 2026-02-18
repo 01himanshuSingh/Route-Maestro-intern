@@ -26,6 +26,7 @@ export default function Footer() {
 
             </p>
           </div>
+          
 
           {/* Product */}
           <div>
