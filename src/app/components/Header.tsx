@@ -72,11 +72,11 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden sm:block">
             <button
-              className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all duration-200 ${
+              className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all hover:cursor-pointer duration-200 ${
                 isScrolled ? 'px-5 py-3 text-sm' : 'px-6 py-2 text-sm'
               }`}
             >
-              See pricing
+              Schedule A Demo
             </button>
           </div>
 
