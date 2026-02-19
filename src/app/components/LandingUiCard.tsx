@@ -4,19 +4,58 @@ import { Plus, BarChart3 } from 'lucide-react'
 import { HeroFeature2 } from './HeroFeature2'
 import { HeroFeature } from './HeroFeature'
 
+import { motion } from "framer-motion"
 export function LandingUiCard() {
+const sentence =
+  "Next Gen Travel Technology Solution"
+
+const words = sentence.split(" ")
+
+
   return (
     <div className="min-h-screen  px-4 py-8 sm:px-6 lg:px-8">
       {/* Header section */}
    <div className="max-w-7xl mx-auto mb-12 text-center">
-  <h1 className="text-[40px] sm:text-5xl font-bold text-white mb-4 leading-tight">
-    Next Gen Travel Technology Solution
-    <br />
-    <span className="text-[#e2472b] ">
-      For Travel Business
-    </span>
-  </h1>
+    <h1 className="text-[40px] sm:text-5xl font-bold text-white mb-4 leading-tight">
+      
+      {/* WORD BY WORD ANIMATION */}
+      <motion.span
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.08 }}
+        className="inline-block"
+      >
+        {words.map((word, index) => (
+          <motion.span
+            key={index}
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-block mr-2"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </motion.span>
 
+      <br />
+
+      {/* SECOND LINE */}
+      <motion.span
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="text-[#e2472b] inline-block"
+      >
+        For Travel Business
+      </motion.span>
+
+    </h1>
+ 
   <p className="text-slate-400 text-[16px] max-w-2xl mx-auto">
     A powerful platform to manage bookings, billing, and operations with modern tools built for travel agencies.
   </p>
