@@ -10,6 +10,7 @@ import { TestimonialsSection } from './components/TestimonialSection'
 import { LandingUiCard } from './components/LandingUiCard'
 import { FeaturesSection } from './components/FeatureSection'
 import LandingPageWidget from './components/LandingPageWidget'
+import MemoryPic from './components/LandingPagesemicircularcards/MemoryPix'
 export default function Page() {
   const [mounted, setMounted] = useState(false)
 
@@ -26,7 +27,8 @@ export default function Page() {
       <LandingUiCard/>
       <TrustedClients/>
 <FeaturesSection/>
-<LandingPageWidget/>
+<MemoryPic/>
+{/* <LandingPageWidget/> */}
       {/* payment ui make  */}
 <TestimonialsSection/>
       <Footer />

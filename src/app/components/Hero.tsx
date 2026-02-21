@@ -140,9 +140,9 @@ export default function Hero() {
   <div className="absolute inset-0 bg-teal-500/10 blur-3xl rounded-3xl" />
 
   {/* Image container */}
-  <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
+  <div className="relative rounded-2xl  overflow-hidden">
     <Image
-      src="/landingpagepic.png"   // put your image in public folder
+      src="/routemaestrolandingpic.png"   // put your image in public folder
       alt="RouteMaestro dashboard preview"
       width={1200}
       height={700}
