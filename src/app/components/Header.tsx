@@ -43,17 +43,25 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-       <Link href="/" className="flex items-center">
-  <Image
-    src="/RM Logo.png"   // put logo in public folder
-    alt="RouteMaestro Logo"
-    width={160}
-    height={40}
-    priority
-    className={`transition-all duration-300 ${
-      isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+      <Link href="/" className="flex items-center">
+  <div
+    className={`transition-all duration-300 rounded-lg ${
+      isScrolled
+        ? "bg-white/90 backdrop-blur-sm px-2 py-1 shadow-md"
+        : "bg-transparent"
     }`}
-  />
+  >
+    <Image
+      src="/RM Logo.png"
+      alt="RouteMaestro Logo"
+      width={160}
+      height={40}
+      priority
+      className={`transition-all duration-300 ${
+        isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+      }`}
+    />
+  </div>
 </Link>
 
           {/* Desktop Navigation */}

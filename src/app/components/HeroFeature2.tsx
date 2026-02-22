@@ -19,7 +19,7 @@ export function HeroFeature2({
   
 }: DashboardCardProps) {
   return (
-<div className="w-full rounded-2xl 
+<div className="max-full rounded-2xl 
 
 bg-gradient-to-br from-[#111318] via-[#16181d] to-[#1b1e24]  
 border border-teal-400/20 

@@ -64,17 +64,14 @@ const words = sentence.split(" ")
 
       {/* Two-column grid layout */}
   <div className="max-w-6xl mx-auto">
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-    <div className="lg:col-span-2">
-      <HeroFeature
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-[650px]">
+   <HeroFeature
         icon={<Plus className="w-6 h-6" />}
         title="Generating Door-To-Door Travel Routes"
         description="RouteMaestro generates all possible multi-modal travel routes, seamlessly combining air travel routes with various local transit routes across trains, buses, taxis, & other transit choices within each city."
         imageSrc="/generating-door-door-routes.webp"
       />
-    </div>
-
-    <div className="lg:col-span-1">
+   
       <HeroFeature2
         title="AI Powered Dynamic Packaging"
         
@@ -83,10 +80,6 @@ const words = sentence.split(" ")
         chartImage="/AI Powered Dynamic Packaging & Itinerary Management.webp"
      
       />
-    </div>
-
- 
-    <div className="lg:col-span-1">
       <HeroFeature2
         title="Secure & Easy Payment Options"
         
@@ -95,16 +88,13 @@ const words = sentence.split(" ")
         chartImage="/Secure & Easy Payment Options.webp"
      
       />
-    </div>
-    <div className="lg:col-span-2">
       <HeroFeature
         icon={<Plus className="w-6 h-6" />}
         title="Comprehensive Diverse Global Travel Inventory"
         description="Choose from multiple global travel inventories, across flights, hotels, sightseeing, activities, transfers and start generating personalised trips, instantly."
         imageSrc="/Comprehensive Diverse Global Travel Inventory.webp"
       />
-    </div>
-
+ 
 
   </div>
 </div>
