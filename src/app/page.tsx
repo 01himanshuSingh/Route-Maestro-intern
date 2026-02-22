@@ -9,8 +9,6 @@ import TrustedClients from './components/TrustedClient'
 import { TestimonialsSection } from './components/TestimonialSection'
 import { LandingUiCard } from './components/LandingUiCard'
 import { FeaturesSection } from './components/FeatureSection'
-import LandingPageWidget from './components/LandingPageWidget'
-import MemoryPic from './components/LandingPagesemicircularcards/MemoryPix'
 import SemiCircleCards from './components/LandingPagesemicircularcards/SemicircleCards'
 export default function Page() {
   const [mounted, setMounted] = useState(false)
