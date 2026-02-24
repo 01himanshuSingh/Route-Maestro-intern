@@ -82,8 +82,8 @@ function MarqueeRow({
   return (
     <div className="relative overflow-hidden">
       {/* Fade edges */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent dark:from-black" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent dark:from-black" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r  to-transparent from-black" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l  to-transparent from-black" />
 
       <div className={`flex gap-6 ${animationClass}`} style={{ width: "max-content" }}>
         {[...testimonials, ...testimonials].map((testimonial, index) => (
@@ -111,12 +111,12 @@ const subtitleWords = subtitleText.split(" ")
 
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center gap-12 py-20 px-4 bg-white dark:bg-black overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center gap-12 py-20 px-4 bg-black overflow-hidden">
       <div className="text-center max-w-2xl">
        
       
 <motion.h2
-  className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl text-balance"
+  className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl text-balance"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -139,7 +139,7 @@ const subtitleWords = subtitleText.split(" ")
 
 
 <motion.p
-  className="mt-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed"
+  className="mt-4 text-gray-400 text-lg leading-relaxed"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.4 }}

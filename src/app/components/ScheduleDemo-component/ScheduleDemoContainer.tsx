@@ -1,6 +1,7 @@
 import { cn } from "@/app/lib/util";
 import { DemoHeader } from "./ScheduleDemoHeader";
 import { TestimonialCard } from "./ScheduleDemoTestinomial";
+import { DemoForm } from "./ScheduleDemoForm";
 
 interface ScheduleDemoContainerProps {
   className?: string;
@@ -22,9 +23,9 @@ export function ScheduleDemoContainer({ className }: ScheduleDemoContainerProps)
         </div>
 
         {/* Right Column: Form */}
-        {/* <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start">
           <DemoForm />
-        </div> */}
+        </div>
       </div>
     </div>
   );
