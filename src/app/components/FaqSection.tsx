@@ -19,9 +19,9 @@ export default function FaqSection() {
                 </div>
 
                 <div className="space-y-3">
-                  <h1 className="text-4xl md:text-5xl font-bold text-accent/80 leading-tight">
+                  <h1 className="text-4xl md:text-5xl font-bold text-slate/80 leading-tight">
                     Frequently Asked
-                    <span className="text-accent"> Questions</span>
+                    <span className="text-slate/100"> Questions</span>
                   </h1>
                   <p className="text-base md:text-lg text-[#b9b9bf] leading-relaxed">
                     We're looking for people who share our vision! Most of our time used to be taken up by most of who created new websites for their businesses.

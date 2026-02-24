@@ -46,7 +46,7 @@ export function FAQAccordion() {
         {faqItems.map((item) => (
           <div
             key={item.id}
-            className="border border-border rounded-lg bg-card/50 overflow-hidden transition-all duration-300 hover:border-accent/50"
+            className="border border-border rounded-lg bg-card/50 overflow-hidden transition-all duration-300 hover:border-slate-50"
           >
             <button
               onClick={() =>
@@ -54,7 +54,7 @@ export function FAQAccordion() {
               }
               className="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/30 transition-colors text-left"
             >
-              <span className="text-lg font-semibold text-accent/80">
+              <span className="text-lg font-semibold text-slate/300">
                 {item.question}
               </span>
               <div
