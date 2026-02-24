@@ -22,9 +22,9 @@ export function ScheduleDemoContainer({ className }: ScheduleDemoContainerProps)
         </div>
 
         {/* Right Column: Form */}
-        <div className="flex flex-col justify-start">
+        {/* <div className="flex flex-col justify-start">
           <DemoForm />
-        </div>
+        </div> */}
       </div>
     </div>
   );
