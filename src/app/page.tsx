@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Header from './components/Header'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import TrustedClients from './components/TrustedClient'
@@ -10,6 +9,7 @@ import { TestimonialsSection } from './components/TestimonialSection'
 import { LandingUiCard } from './components/LandingUiCard'
 import { FeaturesSection } from './components/FeatureSection'
 import SemiCircleCards from './components/LandingPagesemicircularcards/SemicircleCards'
+import FaqSection from './components/FaqSection'
 export default function Page() {
   const [mounted, setMounted] = useState(false)
 
@@ -21,7 +21,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <LandingUiCard/>
       <TrustedClients/>
@@ -30,18 +30,9 @@ export default function Page() {
 {/* <LandingPageWidget/> */}
       {/* payment ui make  */}
 <TestimonialsSection/>
+<FaqSection/>
       <Footer />
     </div>
   )
 }
 
-
-// import React from 'react'
-
-// function page() {
-//   return (
-//     <div>page</div>
-//   )
-// }
-
-// export default page

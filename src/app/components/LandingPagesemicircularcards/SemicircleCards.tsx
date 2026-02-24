@@ -16,7 +16,7 @@ const cards: Card[] = [
   { id: 1, title: "Hotels", image: "/Hotels.png" , description:"Connect with thousands of hotels, from budget stays to luxury resorts, offering choices that suit every traveler’s preference."},
   { id: 2, title: "Sightseeing & Activities", image: "/Sightseeing.png" , description:"Offer curated sightseeing, activities, and unique experiences to make your customers' travel journeys memorable and hassle-free."},
   { id: 3, title: "Transfers", image: "/Transfers.png" , description:"Provide your customers with smooth and reliable transfers with diverse transportation options, ensuring seamless connectivity at every stage of their travel journey." },
-  { id: 4, title: "Inventory", image: "/Transfers.png" , description: "Unified travel inventory enabling faster planning and smarter bookings."},
+  { id: 4, title: "others", image: "/Transfers.png" , description: "Explore additional travel inventory and services designed to support diverse customer needs beyond flights, hotels, activities, and transfers. If you need any custom services or inventory, feel free to contact us."},
 ]
 
 export default function SemiCircleCards() {

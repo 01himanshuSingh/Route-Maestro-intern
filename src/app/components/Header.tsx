@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,7 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
+const router = useRouter()
   const navItems = [
     { label: 'Overview', href: '#overview' },
     { label: 'Features', href: '#features' },
@@ -83,6 +84,9 @@ export default function Header() {
               className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all hover:cursor-pointer duration-200 ${
                 isScrolled ? 'px-5 py-3 text-sm' : 'px-6 py-2 text-sm'
               }`}
+              onClick={() => {
+router.push('/schedule-demo')
+              }}
             >
               Schedule A Demo
             </button>
