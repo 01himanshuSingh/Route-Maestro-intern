@@ -1,7 +1,6 @@
 'use client'
 
 import Hero from './components/Hero'
-import Footer from './components/Footer'
 import TrustedClients from './components/TrustedClient'
 
 import { TestimonialsSection } from './components/TestimonialSection'
@@ -22,7 +21,7 @@ export default function Page() {
       {/* payment ui make  */}
 <TestimonialsSection/>
 <FaqSection/>
-      <Footer />
+      
     </div>
   )
 }
