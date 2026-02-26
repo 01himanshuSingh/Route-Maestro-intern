@@ -25,19 +25,11 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
   const [mobilePlanIndex, setMobilePlanIndex] = useState(0);
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-black py-20">
       <div className="max-w-7xl mx-auto md:px-4">
 
-        {/*
-          ── STICKY HEADER ──
-          DUB PATTERN:
-          - `sticky -top-px z-10` on a normal page-flow element (NO overflow parent)
-          - Mobile uses container queries (cqw units) for a sliding carousel
-          - grid is always grid-cols-3 (or 4), but on mobile the wrapper is made
-            3x (or 4x) the container width so all plans exist side-by-side off-screen,
-            then translated into view with --index
-        */}
-        <div className="sticky -top-px z-10">
+   {/* sticky header */}
+        <div className="sticky top-20 z-10">
           <div className="overflow-x-hidden rounded-b-xl @container">
             <div
               className={cn(
@@ -46,7 +38,7 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
               )}
               style={{ "--index": mobilePlanIndex } as CSSProperties}
             >
-               <div className="bg-white sm:block hidden"></div>
+              <div className="bg-black sm:block hidden"></div>
               {PLANS.map((plan, index) => {
                 const planKey = PLAN_KEYS[index];
                 const price = resolvePrice(plan, "monthly", currency);
@@ -56,21 +48,21 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
                   <div
                     key={plan.id}
                     className={cn(
-                      "relative flex h-full flex-col gap-4 bg-white p-5",
-                      "max-lg:rounded-none max-lg:border max-lg:border-neutral-200",
+                      "relative flex h-full flex-col gap-4 bg-black p-5",
+                      "max-lg:rounded-none ",
                       index !== mobilePlanIndex && "max-lg:opacity-0",
                     )}
                   >
                     <div>
-                      <h3 className="font-bricolage text-base font-semibold text-neutral-800">
+                      <h3 className="font-bricolage text-base font-semibold text-white">
                         {plan.name}
                       </h3>
-                      <p className="font-bricolage mt-0.5 text-[16px] font-medium text-neutral-700">
+                      <p className="font-bricolage mt-0.5 text-[16px] font-medium text-neutral-100">
                         {isCustom
                           ? "Custom"
                           : formatPrice(price as number, currency)}
                         {!isCustom && (
-                          <span className="ml-1 text-sm text-neutral-400">/per month</span>
+                          <span className="ml-1 text-sm text-neutral-300">/per month</span>
                         )}
                       </p>
                     </div>
@@ -79,19 +71,24 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
                     <div className="flex gap-3">
                       <button
                         type="button"
-                        className="h-full w-fit rounded-full bg-neutral-100 px-2 transition-colors hover:bg-neutral-200/80 disabled:opacity-30 lg:hidden"
+                        className="h-full w-fit rounded-full 
+  bg-zinc-800/80 backdrop-blur-sm
+  border border-zinc-700
+  px-2 transition-all duration-200
+  hover:bg-zinc-700
+  disabled:opacity-30 lg:hidden"
                         disabled={mobilePlanIndex === 0}
                         onClick={() => setMobilePlanIndex((i) => i - 1)}
                       >
-                        <ChevronLeft className="size-5 text-neutral-800" />
+                        <ChevronLeft className="size-5 text-zinc-200" />
                       </button>
 
                       <button
                         className={cn(
-                          "h-8 w-full rounded-full text-[13px] font-medium font-bricolage text-white transition-all duration-200",
+                          "h-8 w-full rounded-full text-[13.5px] font-medium font-bricolage  transition-all duration-200",
                           planKey === "enterprise"
-                            ? "bg-black hover:bg-black/90"
-                            : "bg-[#FF5F42] hover:bg-[#e14e36]",
+                            ? "bg-white hover:bg-white/90 text-black"
+                            : "bg-[#FF5F42] hover:bg-[#e14e36] text-white",
                         )}
                       >
                         {planKey === "enterprise" ? "Book a call" : "Get Started"}
@@ -99,11 +96,16 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
 
                       <button
                         type="button"
-                        className="h-full w-fit rounded-full   bg-neutral-100 px-2 transition-colors hover:bg-neutral-200/80 disabled:opacity-30 lg:hidden"
+                        className="h-full w-fit rounded-full 
+  bg-zinc-800/80 backdrop-blur-sm
+  border border-zinc-700
+  px-2 transition-all duration-200
+  hover:bg-zinc-700
+  disabled:opacity-30 lg:hidden"
                         disabled={mobilePlanIndex >= PLANS.length - 1}
                         onClick={() => setMobilePlanIndex((i) => i + 1)}
                       >
-                        <ChevronRight className="size-5 text-neutral-800" />
+                        <ChevronRight className="size-5 text-zinc-200" />
                       </button>
                     </div>
                   </div>
@@ -113,7 +115,7 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
           </div>
 
           {/* Fade gradient below header */}
-          <div className="h-4 bg-linear-to-b from-white" />
+          <div className="h-4 bg-linear-to-b from-black" />
         </div>
 
         {/* ── FEATURE COMPARISON BODY ── */}
@@ -143,8 +145,8 @@ function CompareCategorySection({
   return (
     <div className="w-full overflow-x-hidden @container">
       {/* Category label row — full width, no carousel */}
-      <div className="border-b border-neutral-200 bg-[#FFFAF9] px-5 py-3">
-        <h4 className="font-bricolage text-sm font-semibold text-[#696969]">
+      <div className="border-b border-[#3d3d3d] bg-black px-5 py-3">
+        <h4 className="font-bricolage text-sm font-semibold text-neutral-100">
           {category.category}
         </h4>
       </div>
@@ -159,16 +161,16 @@ function CompareCategorySection({
           )}
           style={{ "--index": mobilePlanIndex } as CSSProperties}
         >
-            <div className="px-5 py-4 sm:block hidden">
-                 <span className="font-bricolage text-sm">{feature.text}</span>
-            </div>
+          <div className="px-5 py-4 sm:block hidden">
+            <span className="font-bricolage text-sm text-neutral-300/80">{feature.text}</span>
+          </div>
           {PLAN_KEYS.map((planKey, i) => {
             const enabled = resolveCheck(feature.check, planKey);
             return (
               <div
                 key={planKey}
                 className={cn(
-                  "flex items-center gap-2 border-b border-neutral-200 bg-white px-5 py-4",
+                  "flex items-center gap-2 border-b border-[#3d3d3d] bg-black px-5 py-4",
                   !enabled && "text-neutral-300",
                   // Fade out non-active on mobile (matching header behaviour)
                   i !== mobilePlanIndex && "max-lg:opacity-0",
@@ -177,9 +179,9 @@ function CompareCategorySection({
                 {enabled ? (
                   <Check className="size-4 shrink-0 text-neutral-500" />
                 ) : (
-                   <X className="w-5 h-5 text-neutral-400/80" />
+                  <X className="w-5 h-5 text-neutral-400/80" />
                 )}
-                     <span className="font-bricolage text-sm md:hidden block">{feature.text}</span>
+                <span className="font-bricolage text-sm md:hidden block text-neutral-300/80">{feature.text}</span>
               </div>
             );
           })}
