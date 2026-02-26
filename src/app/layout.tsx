@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto,Bricolage_Grotesque } from "next/font/google";
+import { Geist, Geist_Mono,Bricolage_Grotesque ,Carlito} from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
+import Header from "./components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const roboto = Roboto({
+const carlito = Carlito({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto",
+  weight: ["400", "700"],
+  variable: "--font-carlito",
 });
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -36,8 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${bricolageGrotesque.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${carlito.variable} ${bricolageGrotesque.variable} antialiased`}
       >
+        <SmoothScroll/>
+        <Header/>
         {children}
       </body>
     </html>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,7 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
+const router = useRouter()
   const navItems = [
     { label: 'Overview', href: '#overview' },
     { label: 'Features', href: '#features' },
@@ -43,17 +44,25 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-       <Link href="/" className="flex items-center">
-  <Image
-    src="/RM Logo.png"   // put logo in public folder
-    alt="RouteMaestro Logo"
-    width={160}
-    height={40}
-    priority
-    className={`transition-all duration-300 ${
-      isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+      <Link href="/" className="flex items-center">
+  <div
+    className={`transition-all duration-300 rounded-lg ${
+      isScrolled
+        ? "bg-white/90 backdrop-blur-sm px-2 py-1 shadow-md"
+        : "bg-transparent"
     }`}
-  />
+  >
+    <Image
+      src="/RM Logo.png"
+      alt="RouteMaestro Logo"
+      width={160}
+      height={40}
+      priority
+      className={`transition-all duration-300 ${
+        isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+      }`}
+    />
+  </div>
 </Link>
 
           {/* Desktop Navigation */}
@@ -72,11 +81,14 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden sm:block">
             <button
-              className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all duration-200 ${
+              className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all hover:cursor-pointer duration-200 ${
                 isScrolled ? 'px-5 py-3 text-sm' : 'px-6 py-2 text-sm'
               }`}
+              onClick={() => {
+router.push('/schedule-demo')
+              }}
             >
-              See pricing
+              Schedule A Demo
             </button>
           </div>
 

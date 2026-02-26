@@ -99,10 +99,13 @@ export default function Hero() {
       <span className="absolute inset-0 bg-teal-500/20 blur-2xl rounded-xl" />
 
       {/* Highlight text */}
-      <span className="relative bg-white text-black px-6 py-2 rounded-xl text-2xl lg:text-4xl font-semibold">
-        With RouteMaestro
-      </span>
-    </span>
+  <span className="relative bg-white px-6 py-2 rounded-xl text-2xl lg:text-4xl font-semibold">
+  <span className="bg-gradient-to-r from-[#1E2A78] via-[#8B3F73] to-[#FF3B3B] bg-clip-text text-transparent">
+    With RouteMaestro
+  </span>
+</span>
+    </span>   
+   
   </h1>
 </div>
 
@@ -140,7 +143,7 @@ export default function Hero() {
   <div className="absolute inset-0 bg-teal-500/10 blur-3xl rounded-3xl" />
 
   {/* Image container */}
-  <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl overflow-hidden">
+  <div className="relative rounded-2xl  overflow-hidden">
     <Image
       src="/landingpagepic.png"   // put your image in public folder
       alt="RouteMaestro dashboard preview"

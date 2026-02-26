@@ -1,4 +1,5 @@
 "use client"
+import { motion } from "framer-motion"
 
 import { TestimonialCard } from "./TestimonialCard"
 
@@ -81,8 +82,8 @@ function MarqueeRow({
   return (
     <div className="relative overflow-hidden">
       {/* Fade edges */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent dark:from-black" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent dark:from-black" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r  to-transparent from-black" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l  to-transparent from-black" />
 
       <div className={`flex gap-6 ${animationClass}`} style={{ width: "max-content" }}>
         {[...testimonials, ...testimonials].map((testimonial, index) => (
@@ -99,18 +100,65 @@ function MarqueeRow({
 }
 
 export function TestimonialsSection() {
+
+const headingText = "What our clients say"
+const headingWords = headingText.split(" ")
+
+const subtitleText =
+  "Trusted by leaders and teams building the future of work."
+
+const subtitleWords = subtitleText.split(" ")
+
+
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center gap-12 py-20 px-4 bg-white dark:bg-black overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center gap-12 py-20 px-4 bg-black overflow-hidden">
       <div className="text-center max-w-2xl">
-        <p className="text-sm font-medium tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">
-          Testimonials
-        </p>
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl text-balance">
-          What our clients say
-        </h2>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-          Trusted by leaders and teams building the future of work.
-        </p>
+       
+      
+<motion.h2
+  className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl text-balance"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+  transition={{ staggerChildren: 0.08 }}
+>
+  {headingWords.map((word, index) => (
+    <motion.span
+      key={index}
+      variants={{
+        hidden: { opacity: 0, x: -25 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="inline-block mr-2"
+    >
+      {word}
+    </motion.span>
+  ))}
+</motion.h2>
+
+
+<motion.p
+  className="mt-4 text-gray-400 text-lg leading-relaxed"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.4 }}
+  transition={{ staggerChildren: 0.04 }}
+>
+  {subtitleWords.map((word, index) => (
+    <motion.span
+      key={index}
+      variants={{
+        hidden: { opacity: 0, x: -15 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="inline-block mr-1.5"
+    >
+      {word}
+    </motion.span>
+  ))}
+</motion.p>
       </div>
 
       <div className="w-full flex flex-col gap-6">

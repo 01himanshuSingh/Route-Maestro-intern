@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-        <div className="flex items-center mb-4">
+        <div className="flex bg-white/90 backdrop-blur-sm w-[123px] rounded-md items-center mb-4">
   <Image
     src="/RM Logo.png"   // place your logo in public folder
     alt="RouteMaestro Logo"
@@ -26,6 +26,7 @@ export default function Footer() {
 
             </p>
           </div>
+          
 
           {/* Product */}
           <div>
