@@ -55,7 +55,7 @@ export const AnimatedWidgetCard: React.FC<AnimatedCardsProps> = ({
   rows,
 }) => {
   return (
-    <div className="w-full min-h-screen  py-16">
+    <div className="w-full h-fit  ">
       <div className="max-w-6xl mx-auto px-4">
         {title && (
           <h1 className="text-4xl lg:text-[24px] font-bold text-center text-white mb-12">
