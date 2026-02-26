@@ -43,10 +43,10 @@ p-6  overflow-hidden">
 
       {/* Image bottom */}
      <div className="mt-5 relative h-[200px] md:h-[440px] rounded-xl overflow-hidden border border-white/10">
-  <Image
+  <img
     src={imageSrc}
     alt="Product preview"
-    fill
+    
     className="object-contain"
   />
 </div>
