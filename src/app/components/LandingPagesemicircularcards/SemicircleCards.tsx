@@ -16,7 +16,7 @@ const cards: Card[] = [
   { id: 1, title: "Hotels", image: "/Hotels.png" , description:"Connect with thousands of hotels, from budget stays to luxury resorts, offering choices that suit every traveler’s preference."},
   { id: 2, title: "Sightseeing & Activities", image: "/Sightseeing.png" , description:"Offer curated sightseeing, activities, and unique experiences to make your customers' travel journeys memorable and hassle-free."},
   { id: 3, title: "Transfers", image: "/Transfers.png" , description:"Provide your customers with smooth and reliable transfers with diverse transportation options, ensuring seamless connectivity at every stage of their travel journey." },
-  { id: 4, title: "others", image: "/Transfers.png" , description: "Explore additional travel inventory and services designed to support diverse customer needs beyond flights, hotels, activities, and transfers. If you need any custom services or inventory, feel free to contact us."},
+  { id: 4, title: "others", image: "/Transfers.png" , description: "Explore additional travel inventory and services designed to support diverse customer needs beyond flights, hotels, activities, and transfers. If you need any custom services or inventory, feel free to contact "},
 ]
 
 export default function SemiCircleCards() {
@@ -47,10 +47,10 @@ export default function SemiCircleCards() {
             <button
               key={card.id}
               onClick={() => setActiveIndex(i)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all
+              className={`px-5 py-2 rounded-full text-sm lg:text-[18px] font-medium transition-all
               ${
                 activeIndex === i
-                  ? "bg-white text-black"
+                  ? "bg-[#e2472b] text-white"
                   : "bg-zinc-900 text-white hover:bg-zinc-800"
               }`}
             >
@@ -59,13 +59,13 @@ export default function SemiCircleCards() {
           ))}
         </div>
 
-        {/* ===== SEMICIRCLE ===== */}<div className="relative max-w-full h-[190px] mx-auto overflow-visible">
+        {/* ===== SEMICIRCLE ===== */}<div className="relative max-w-full h-[182px] mx-auto overflow-visible">
 
           {cards.map((card, i) => {
     const offset = getOffset(i)
 
 /* ⭐ REAL semicircle angle */
-const angleStep = 39 // controls spread
+const angleStep = 37 // controls spread
 const angleDeg = offset * angleStep
 const angleRad = (angleDeg * Math.PI) / 180
 
@@ -81,50 +81,41 @@ const scale = 1 - Math.abs(offset) * 0.08
 const opacity = 1 - Math.abs(offset) * 0.15
     
     return (
-              <motion.div
-                key={card.id}
-              className="absolute w-[320px] h-[400px] rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 shadow-2xl"
-              animate={{
-  x,
-  y,
-  rotate,
-  scale,
-  opacity,
-}}
-transition={{
-  type: "spring",
-  stiffness: 120,
-  damping: 20,
-}}
-                style={{
-                  transform: "translate(-50%, -50%)",
-                  zIndex: 10 - Math.abs(offset),
-                }}
-              >
-             <div className="flex flex-col h-full p-4 bg-zinc-900">
+             <motion.div
+  key={card.id}
+  className="
+  absolute
+  w-[250px] h-[440px]
+  rounded-2xl
+  overflow-hidden
+  bg-gradient-to-b from-zinc-900 to-zinc-950
+  border border-white/10
+  shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+  backdrop-blur-xl
+  "
+  animate={{ x, y, rotate, scale, opacity }}
+  whileHover={{ y: y - 12, scale: scale + 0.03 }}
+  transition={{ type: "spring", stiffness: 120, damping: 20 }}
+  style={{
+    transform: "translate(-50%, -50%)",
+    zIndex: 10 - Math.abs(offset),
+  }}
+>
+  <div className="flex flex-col h-full p-3">
 
-  {/* Small image */}
-  <div className="relative w-full h-[180px] rounded-xl overflow-hidden mb-4">
-    <Image
-      src={card.image}
-      alt={card.title}
-      fill
-      className="object-cover"
-    />
+    <div className="relative w-full h-[140px] rounded-xl overflow-hidden mb-3">
+      <Image src={card.image} alt={card.title} fill className="object-cover" />
+    </div>
+
+    <h3 className="text-white text-[27px] font-semibold mb-1">
+      {card.title}
+    </h3>
+<p className="text-zinc-400 text-[17px] leading-relaxed">
+  {card.description}
+</p>
+
   </div>
-
-  {/* Title */}
-  <h3 className="text-white text-[20px] font-semibold mb-2">
-    {card.title}
-  </h3>
-
-  {/* Description */}
-  <p className="text-zinc-400 text-sm   leading-relaxed">
-    {card.description}
-  </p>
-
-</div>
-              </motion.div>
+</motion.div>
             )
           })}
         </div>

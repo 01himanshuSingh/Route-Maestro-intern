@@ -30,11 +30,11 @@ p-6  overflow-hidden">
       {/* Top content */}
       <div className="space-y-4 max-w-2lg">
        
-        <h3 className="text-[18px] font-semibold text-white leading-snug">
+        <h3 className="text-[20px] font-semibold text-white leading-snug">
           {title}
         </h3>
 
-        <p className="text-slate-300 text-sm leading-relaxed">
+        <p className="text-slate-300 text-[16px] leading-relaxed">
           {description}
         </p>
 
@@ -42,17 +42,14 @@ p-6  overflow-hidden">
       </div>
 
       {/* Image bottom */}
-      {imageSrc && (
-        <div className="mt-6 rounded-xl overflow-hidden border border-white/10">
-          <Image
-            src={imageSrc} // put your image in public folder
-            alt="Product preview"
-            width={900}
-            height={500}
-            className="w-full h-auto object-cover"
-          />
-        </div>
-      )}
+     <div className="mt-5 relative h-[200px] md:h-[440px] rounded-xl overflow-hidden border border-white/10">
+  <Image
+    src={imageSrc}
+    alt="Product preview"
+    fill
+    className="object-contain"
+  />
+</div>
     </div>
   )
 }

@@ -1,39 +1,66 @@
-import { ReactNode } from 'react'
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface FeatureCardProps {
-  icon: ReactNode
+  imageSrc: string
   title: string
   description?: string
   className?: string
 }
 
 export function FeatureCard({
-  icon,
+  imageSrc,
   title,
   description,
   className = '',
 }: FeatureCardProps) {
   return (
-    <div
-      className={`relative overflow-hidden rounded-lg border border-white/10 
-      bg-gradient-to-br from-[#111318] via-[#16181d] to-[#1b1e24] 
-      p-8 transition-all duration-300 ${className}`}
+    <motion.div
+      className={`relative h-[280px] w-full ${className}`}
+      whileHover={{ rotateY: 180 }}
+      transition={{ duration: 0.6, ease: 'easeInOut' }}
+      style={{
+        transformStyle: 'preserve-3d',
+        perspective: 1000,
+      }}
     >
-      {/* Icon */}
-      <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-full  ">
-        {icon}
+      {/* FRONT SIDE */}
+      <div
+        className="absolute inset-0 overflow-hidden rounded-lg border border-white/10
+        bg-gradient-to-br from-[#111318] via-[#16181d] to-[#1b1e24]
+        p-8 flex flex-col items-center justify-center"
+        style={{ backfaceVisibility: 'hidden' }}
+      >
+        <div className="mb-6 relative h-16 w-16">
+          <Image
+            src={imageSrc}
+            alt={title}
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        <h3 className="text-center text-xl lg:text-[20px] font-bold text-white">
+          {title}
+        </h3>
       </div>
 
-      {/* Content */}
-      <div className="relative">
-        <h3 className="mb-2 text-xl font-bold text-white">{title}</h3>
-        {description && (
-          <p className="text-sm text-slate-400 leading-relaxed">
-            {description}
-          </p>
-        )}
+      {/* BACK SIDE */}
+      <div
+        className="absolute inset-0 overflow-hidden rounded-lg border border-white/10
+        bg-gradient-to-br from-[#111318] via-[#16181d] to-[#1b1e24]
+        p-8 flex items-center justify-center"
+        style={{
+          transform: 'rotateY(180deg)',
+          backfaceVisibility: 'hidden',
+        }}
+      >
+        <p className="text-sm lg:text-[16px] text-slate-300 leading-relaxed text-center">
+          {description}
+        </p>
       </div>
-
-    </div>
+    </motion.div>
   )
 }

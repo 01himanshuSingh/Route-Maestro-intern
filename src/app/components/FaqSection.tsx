@@ -19,7 +19,7 @@ export default function FaqSection() {
                 </div>
 
                 <div className="space-y-3">
-                  <h1 className="text-4xl md:text-5xl font-bold text-slate/80 leading-tight">
+                  <h1 className="text-4xl md:text-5xl text-[#ff7043] font-bold text-slate/80 leading-tight">
                     Frequently Asked
                     <span className="text-slate/100"> Questions</span>
                   </h1>
@@ -29,7 +29,7 @@ export default function FaqSection() {
                 </div>
 
                 <div>
-                  <button className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold transition-all duration-300 hover:gap-4">
+                  <button className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#e2472b] hover:bg-[#ff7043] hover:cursor-pointer text-accent-foreground font-semibold transition-all duration-300 hover:gap-4">
                     Still have a question?
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </button>

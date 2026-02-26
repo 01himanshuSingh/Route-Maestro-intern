@@ -9,37 +9,37 @@ const features = [
     id: 1,
     title: 'Travel Companies & Agents ',
     description:
-      "RouteMaestro: Personalized door-to-door trips, built in minutes—optimized for cost and profit",
-    icon: <Zap className="h-6 w-6" />,
+      "RouteMaestro’s AI generates Door-To-Door Traveller Personalized Trips in under 2 Minutes, reducing operational costs & enhancing Profit Margins for agents.",
+    imageSrc: "/Travel Companies & Agents.png",
   },
   {
     id: 2,
     title: 'DMCs/DMOs',
     description:
-      "DMC`s, DMO`s can integrate RouteMaestro onto their own platform seamlessly to enhance convenience & get preferred by their partners, agents to generate Personalized Trips in 2 Minutes",
-    icon: <BookTemplate className="h-6 w-6" />,
+      "DMC’s, DMO’s can integrate RouteMaestro onto their own platform seamlessly to enhance convenience & get preferred by their partners, agents to generate Personalized Trips in 2 Minutes.",
+     imageSrc:"/DMO.png" ,
   },
   {
     id: 3,
     title: 'Tourism Boards',
     description:
       "Tourism Boards can harness RouteMaestro to boost regional tourism by empowering travel buyers with the tools to create, promote & sell real-time, end-to-end itineraries seamlessly scheduled down to the minute.",
-    icon: <Smartphone className="h-6 w-6" />,
+     imageSrc:"/Tourism Boards.png" ,
   },
   {
     id: 4,
     title: 'Influencers',
     description:
       "Travel Influencers can use RouteMaestro’s AI to design personalized itineraries that showcase their travel style, highlight favorite spots, and feature curated travel recommendations.",
-    icon: <Palette className="h-6 w-6" />,
+   imageSrc:"/Influencers.png",
   },
 ]
 
 export function FeaturesSection() {
-
 const text = "Solutions For Different Sectors In Travel Industry"
 const words = text.split(" ")
 
+const highlightWords = [ "Travel", "Industry"]
 const descriptionText =
   "Built to support travel agencies, tour operators, corporate travel teams, and transportation providers with tools designed to streamline operations and scale efficiently."
 
@@ -53,31 +53,36 @@ const descriptionWords = descriptionText.split(" ")
         {/* Header */}
         <div className="mb-16 text-center">
 
-  
-<motion.h2
-  className="mb-6 text-balance text-4xl font-bold text-[#b9b9bf] lg:text-[30px]"
+  <motion.h2
+  className="mb-6 text-balance text-4xl font-bold text-[#b9b9bf] lg:text-[29px]"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
   transition={{ staggerChildren: 0.07 }}
 >
-  {words.map((word, index) => (
-    <motion.span
-      key={index}
-      variants={{
-        hidden: { opacity: 0, x: -25 },
-        visible: { opacity: 1, x: 0 },
-      }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className="inline-block mr-2"
-    >
-      {word}
-    </motion.span>
-  ))}
+  {words.map((word, index) => {
+    const isHighlight = highlightWords.includes(word)
+
+    return (
+      <motion.span
+        key={index}
+        variants={{
+          hidden: { opacity: 0, x: -25 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`inline-block mr-2 ${
+          isHighlight ? "text-[#ff7043]" : "text-white"
+        }`}
+      >
+        {word}
+      </motion.span>
+    )
+  })}
 </motion.h2>
 
 <motion.p
-  className="mx-auto max-w-5xl text-lg text-slate-400 leading-relaxed"
+  className="mx-auto max-w-5xl text-lg lg:text-[18px] text-slate-400 leading-relaxed"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.4 }}
@@ -102,11 +107,11 @@ const descriptionWords = descriptionText.split(" ")
 </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <FeatureCard
               key={feature.id}
-              icon={feature.icon}
+              imageSrc={feature.imageSrc}
               title={feature.title}
               description={feature.description}
             />

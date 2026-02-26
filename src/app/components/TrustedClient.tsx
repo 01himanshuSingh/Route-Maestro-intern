@@ -26,7 +26,7 @@ const words = text.split(" ")
         <div className="text-center mb-12 ">
          
 <motion.h2
-  className="text-xl lg:text-[27px] font-bold text-white text-balance"
+  className="text-2xl lg:text-[27px] font-bold text-white text-balance"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}

@@ -64,7 +64,7 @@ const words = sentence.split(" ")
 
       {/* Two-column grid layout */}
   <div className="max-w-6xl mx-auto">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-[650px]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-auto">
    <HeroFeature
         icon={<Plus className="w-6 h-6" />}
         title="Generating Door-To-Door Travel Routes"
