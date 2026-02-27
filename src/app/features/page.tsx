@@ -28,6 +28,8 @@ export default function Home() {
             lg:w-2/3
             lg:h-screen
             lg:overflow-y-auto
+                no-scrollbar
+
           "
         >
           <div className="p-4 md:p-6 lg:p-8">
