@@ -18,6 +18,57 @@ interface DemoFormProps {
 }
 
 export function DemoForm({ className }: DemoFormProps) {
+
+
+  interface DarkSelectProps {
+  value: string;
+  onChange: (value: string) => void;
+  options: { label: string; value: string }[];
+  placeholder: string;
+}
+
+function DarkSelect({
+  value,
+  onChange,
+  options,
+  placeholder,
+}: DarkSelectProps) {
+  return (
+    <select
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="
+        w-full
+        bg-gray-900/89
+        border border-slate-700/50
+        text-slate-200
+        rounded-md
+        px-3 py-2
+        text-sm
+        focus:outline-none
+        focus:border-[#e2472b]/60
+        focus:ring-2
+        focus:ring-[#e2472b]/20
+        transition-all
+      "
+    >
+      <option value="" disabled>
+        {placeholder}
+      </option>
+
+      {options.map((opt) => (
+        <option
+          key={opt.value}
+          value={opt.value}
+          className="bg-slate-900 text-white"
+        >
+          {opt.label}
+        </option>
+      ))}
+    </select>
+  );
+}
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -128,56 +179,61 @@ export function DemoForm({ className }: DemoFormProps) {
       </div>
 
       {/* Company Size */}
-      <div className='grid grid-cols-2 gap-4'>
- <div className="space-y-2">
-        <Label className="text-sm font-semibold text-slate-100">
-          Company size <span className="text-red-400">*</span>
-        </Label>
-        <Select
-          value={formData.companySize}
-          onValueChange={(value) => handleSelectChange('companySize', value)}
-        >
-          <SelectTrigger className="bg-slate-800/50 border-slate-700/50 text-slate-400 focus:border-[#e2472b]/60 focus:ring-[#e2472b]/20">
-            <SelectValue placeholder="Company size" />
-          </SelectTrigger>
-          <SelectContent className="bg-slate-800 border-slate-700">
-            <SelectItem value="1-10">1-10 employees</SelectItem>
-            <SelectItem value="11-50">11-50 employees</SelectItem>
-            <SelectItem value="51-200">51-200 employees</SelectItem>
-            <SelectItem value="201-500">201-500 employees</SelectItem>
-            <SelectItem value="501+">501+ employees</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
+     {/* Company Size + Timeline */}
+<div className="grid grid-cols-2 gap-4">
+  
+  <div className="space-y-2 min-w-0">
+    <Label className="text-sm font-semibold text-slate-100">
+      Company size <span className="text-red-400">*</span>
+    </Label>
 
-      {/* Timeline */}
-      <div className="space-y-2">
-        <Label className="text-sm font-semibold text-slate-100">
-          When do you want to roll out ? <span className="text-red-400">*</span>
-        </Label>
-        <Select
-          value={formData.timeline}
-          onValueChange={(value) => handleSelectChange('timeline', value)}
-        >
-          <SelectTrigger className="bg-slate-800/50 border-slate-700/50 text-slate-400 focus:border-[#e2472b]/60 focus:ring-[#e2472b]/20">
-            <SelectValue placeholder="Select" />
-          </SelectTrigger>
-          <SelectContent className="bg-slate-800 border-slate-700">
-            <SelectItem value="immediately">Immediately</SelectItem>
-            <SelectItem value="1-3-months">In 1-3 months</SelectItem>
-            <SelectItem value="3-6-months">In 3-6 months</SelectItem>
-            <SelectItem value="6-12-months">In 6-12 months</SelectItem>
-            <SelectItem value="not-sure">Not sure yet</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
+  <DarkSelect
+  value={formData.companySize}
+  onChange={(value) => handleSelectChange('companySize', value)}
+  placeholder="Company size"
+  options={[
+    { label: "1-10 employees", value: "1-10" },
+    { label: "11-50 employees", value: "11-50" },
+    { label: "51-200 employees", value: "51-200" },
+    { label: "201-500 employees", value: "201-500" },
+    { label: "501+ employees", value: "501+" },
+  ]}
+/>
+  </div>
 
-      </div>
+  <div className="space-y-2 min-w-0">
+    <Label className="lg:text-sm text-[12px] font-semibold text-slate-100">
+      When do you want to roll out? 
+    </Label>
+
+   <DarkSelect
+  value={formData.timeline}
+  onChange={(value) => handleSelectChange('timeline', value)}
+  placeholder="Select"
+  options={[
+    { label: "Immediately", value: "immediately" },
+    { label: "In 1-3 months", value: "1-3-months" },
+    { label: "In 3-6 months", value: "3-6-months" },
+    { label: "In 6-12 months", value: "6-12-months" },
+    { label: "Not sure yet", value: "not-sure" },
+  ]}
+/>
+  </div>
+
+</div>
      
       {/* Privacy Text */}
-      <p className="text-sm text-slate-400 leading-relaxed">
-        By submitting this form, you consent to the processing of your data in accordance with our Privacy Policy.
-      </p>
+    <div className="flex items-start gap-3">
+  <input
+    type="checkbox"
+    required
+    className="mt-1 h-4 w-4 rounded border-slate-600 bg-slate-800 text-[#e2472b] focus:ring-[#e2472b]"
+  />
+
+  <p className="text-sm text-slate-400 leading-relaxed">
+    By submitting this form, you consent to the processing of your data in accordance with our Privacy Policy.
+  </p>
+</div>
 
       {/* Submit Button */}
       <Button

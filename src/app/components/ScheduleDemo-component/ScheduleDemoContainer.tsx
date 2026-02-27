@@ -18,7 +18,7 @@ export function ScheduleDemoContainer({ className }: ScheduleDemoContainerProps)
       {/* Content Section with Two Columns */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Column: Testimonial */}
-        <div className="flex flex-col justify-start">
+        <div className="lg:flex flex-col hidden  justify-start">
           <TestimonialCard />
         </div>
 

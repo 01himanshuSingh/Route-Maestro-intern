@@ -8,10 +8,12 @@ import { LandingUiCard } from './components/LandingUiCard'
 import { FeaturesSection } from './components/FeatureSection'
 import SemiCircleCards from './components/LandingPagesemicircularcards/SemicircleCards'
 import FaqSection from './components/FaqSection'
+import SmoothScroll from './components/SmoothScroll'
 export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* <Header /> */}
+       <SmoothScroll/>
       <Hero />
       <LandingUiCard/>
       <TrustedClients/>

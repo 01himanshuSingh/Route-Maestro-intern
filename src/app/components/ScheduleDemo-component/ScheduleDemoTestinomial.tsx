@@ -30,14 +30,7 @@ export function TestimonialCard({ className }: TestimonialCardProps) {
           </p>
         </blockquote>
 
-        <div className="space-y-3 border-t border-slate-700/50 pt-6">
-          <p className="font-semibold text-[14px] text-slate-100">
-            Jerome Bell
-          </p>
-          <p className="text-[13px] text-slate-400">
-            HR Executive • PayUp
-          </p>
-        </div>
+       
 
         {/* Bottom Section - Feature Highlight */}
         <div className="border-t border-slate-700/50 pt-6">
@@ -45,6 +38,14 @@ export function TestimonialCard({ className }: TestimonialCardProps) {
             Route Maestro is more than a travel management platform — it’s a complete
             operational hub. Manage packages, hotel inventory, route planning, pricing,
             and agency workflows from one powerful system built for modern travel businesses.
+          </p>
+        </div>
+         <div className="space-y-3 border-t border-slate-700/50 pt-6">
+          <p className="font-semibold text-[14px] text-slate-100">
+            Jerome Bell
+          </p>
+          <p className="text-[13px] text-slate-400">
+            HR Executive • PayUp
           </p>
         </div>
       </div>

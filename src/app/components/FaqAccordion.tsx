@@ -9,33 +9,28 @@ interface FAQItem {
   answer: string;
 }
 
-const faqItems: FAQItem[] = [
+const faqItems: FAQItem[] =[
   {
-    id: '1',
-    question: 'Do I need to know about how to code?',
-    answer: 'Yes, you need to have a fair amount of knowledge in dealing with HTML/CSS as well as JavaScript in order to be able to use this platform effectively.',
-  },
-  {
-    id: '2',
-    question: 'Can I use it for commercial projects?',
-    answer: 'Yes, absolutely. This product is licensed for commercial use. You can use it for any commercial project without additional fees.',
-  },
-  {
-    id: '3',
-    question: 'Can I use it for multiple projects?',
-    answer: 'Yes, you can use this for as many projects as you want. There are no limitations on the number of projects you can create.',
-  },
-  {
-    id: '4',
-    question: 'Can I use this to create and sell a product?',
-    answer: 'Yes, you can create products and sell them. The license allows for commercial resale of products built with this platform.',
-  },
-  {
-    id: '5',
-    question: 'What kind of support is available?',
-    answer: 'We offer comprehensive documentation, email support, and a community forum where you can get help from other users and our support team.',
-  },
-];
+  id: '1',
+  question: 'How does RouteMaestro help travel agencies?',
+  answer: 'RouteMaestro helps travel agencies streamline operations by managing routes, packages, hotel inventory, and pricing from one centralized platform. It reduces manual work and improves operational efficiency.'
+},
+{
+  id: '2',
+  question: 'Can RouteMaestro handle dynamic travel packages?',
+  answer: 'Yes. RouteMaestro allows agencies to create and update dynamic travel packages based on customer preferences, availability, and real-time pricing to maximize profitability.'
+},
+{
+  id: '3',
+  question: 'Is RouteMaestro suitable for growing travel businesses?',
+  answer: 'Absolutely. RouteMaestro is built for scalability, allowing small and large travel agencies to manage increasing bookings, multiple destinations, and complex itineraries with ease.'
+},
+{
+  id: '4',
+  question: 'Does RouteMaestro support real-time pricing and updates?',
+  answer: 'Yes. The platform enables real-time updates for pricing, routes, and hotel availability, helping agencies provide accurate and up-to-date travel options to their clients.'
+},
+]
 
 export function FAQAccordion() {
   const [expandedId, setExpandedId] = useState<string | null>(null);

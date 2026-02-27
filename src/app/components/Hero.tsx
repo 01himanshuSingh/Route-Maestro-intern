@@ -99,7 +99,7 @@ export default function Hero() {
       <span className="absolute inset-0 bg-teal-500/20 blur-2xl rounded-xl" />
 
       {/* Highlight text */}
-  <span className="relative bg-white px-6 py-2 rounded-xl text-2xl lg:text-4xl font-semibold">
+ <span className="relative bg-white px-6 py-2 rounded-xl text-2xl lg:text-4xl font-semibold animate-bounce-in">
   <span className="bg-gradient-to-r from-[#1E2A78] via-[#8B3F73] to-[#FF3B3B] bg-clip-text text-transparent">
     With RouteMaestro
   </span>
