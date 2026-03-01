@@ -6,69 +6,68 @@ import { TestimonialCard } from "./TestimonialCard"
 const topRowTestimonials = [
   {
     quote:
-      "We're looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.",
-    name: "Mark Zellers",
-    title: "CEO, Co-Founder.",
+      "RouteMaestro reduced our itinerary creation time from hours to minutes. Dynamic packaging and pricing automation helped us increase margins instantly.",
+    name: "Arjun Mehta",
+    title: "Director, Skyline Travels",
   },
   {
     quote:
-      "We're looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.",
-    name: "Natalia Larsson",
-    title: "CEO, Co-Founder.",
+      "Managing hotels, transfers, and activities from one dashboard changed everything for our operations team. It feels built for modern travel agencies.",
+    name: "Sophia Williams",
+    title: "Operations Head, Global Routes",
   },
   {
     quote:
-      "The platform completely transformed how we manage our team operations. It's intuitive and powerful at the same time, saving us countless hours every week.",
-    name: "David Chen",
-    title: "CTO, Startup Labs.",
+      "The route optimization engine helped us offer smarter travel plans while keeping costs low. Clients noticed the difference immediately.",
+    name: "Daniel Kim",
+    title: "Founder, TripSphere",
   },
   {
     quote:
-      "Since adopting this solution our productivity has increased by 40%. The integration was seamless and the support team was incredibly responsive.",
-    name: "Sarah Mitchell",
-    title: "VP Engineering, TechCo.",
+      "Real-time pricing and commission automation removed so much manual work. Our team now focuses more on selling than managing spreadsheets.",
+    name: "Priya Sharma",
+    title: "Sales Lead, Voyager Hub",
   },
   {
     quote:
-      "A game-changer for our organization. We reduced administrative overhead significantly and our team can now focus on what truly matters.",
-    name: "James Wright",
-    title: "Director, InnovateCorp.",
+      "RouteMaestro feels like having an extra operations team. Everything from proposals to bookings is faster and more professional.",
+    name: "James Carter",
+    title: "CEO, NextWay Travel",
   },
 ]
 
 const bottomRowTestimonials = [
   {
     quote:
-      "We're looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.",
-    name: "Anna Yon",
-    title: "CEO, Co-Founder.",
+      "Proposal sharing is incredibly smooth. Clients love receiving clear, branded itineraries instantly.",
+    name: "Nisha Verma",
+    title: "Travel Consultant, FlyHigh Tours",
   },
   {
     quote:
-      "We're looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.",
-    name: "Mark Zellers",
-    title: "CEO, Co-Founder.",
+      "The multi-payment support helped us serve international clients without extra friction. Huge win for our agency.",
+    name: "Michael Tan",
+    title: "Finance Lead, ExploreWorld",
   },
   {
     quote:
-      "Outstanding experience from day one. The onboarding was smooth and we saw immediate value. Our employees love the streamlined workflows.",
+      "Cancellation policy automation saved us from constant manual follow-ups. It's a real operational upgrade.",
     name: "Elena Rodriguez",
-    title: "COO, GlobalVentures.",
+    title: "COO, TravelNest",
   },
   {
     quote:
-      "Best decision we made this year. The ROI speaks for itself and the team adoption rate was incredible. Highly recommend to any growing business.",
-    name: "Michael Park",
-    title: "Head of Ops, ScaleUp.",
+      "We scaled from 5 to 20 agents using RouteMaestro without increasing operational complexity.",
+    name: "Rahul Kapoor",
+    title: "Founder, Horizon Trips",
   },
   {
     quote:
-      "What sets this apart is the attention to detail and the seamless user experience. It feels like it was built specifically for our needs.",
+      "The platform feels premium and reliable — exactly what a B2B travel SaaS should deliver.",
     name: "Lisa Thompson",
-    title: "Founder, BrightPath.",
+    title: "Managing Partner, BrightPath Travel",
   },
 ]
-
 function MarqueeRow({
   testimonials,
   direction,
@@ -111,12 +110,22 @@ const subtitleWords = subtitleText.split(" ")
 
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center gap-12 py-20 px-4 bg-black overflow-hidden">
+  <section className="
+  min-h-screen
+  flex flex-col
+  items-center
+  justify-center
+  gap-10 sm:gap-12
+  py-16 sm:py-20
+  px-3 sm:px-4
+  bg-black
+  overflow-hidden
+">
       <div className="text-center max-w-2xl">
        
       
 <motion.h2
-  className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl text-balance"
+  className="text-4xl font-bold tracking-tight text-slate-100 lg:text-5xl text-balance"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}

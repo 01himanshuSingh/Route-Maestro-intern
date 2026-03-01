@@ -16,7 +16,7 @@ const words = sentence.split(" ")
     <div className="min-h-screen  px-4 py-8 sm:px-6 lg:px-8">
       {/* Header section */}
    <div className="max-w-7xl mx-auto mb-12 text-center">
-    <h1 className="text-[40px] sm:text-5xl font-bold text-white mb-4 leading-tight">
+    <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
       
       {/* WORD BY WORD ANIMATION */}
       <motion.span

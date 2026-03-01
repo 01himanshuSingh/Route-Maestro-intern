@@ -4,6 +4,10 @@ import { Zap, BookTemplate, Smartphone, Palette } from 'lucide-react'
 import { FeatureCard } from './FeatureCard'
 import { motion } from "framer-motion"
 
+import { AnimatePresence } from 'framer-motion'
+import { MobileSwipeStack } from './MobileSwipeStack'
+import { useState } from 'react'
+import { SwipeHint } from './SwipHint'
 const features = [
   {
     id: 1,
@@ -36,6 +40,24 @@ const features = [
 ]
 
 export function FeaturesSection() {
+
+ const [cards, setCards] = useState(features)
+  const [direction, setDirection] = useState(0)
+
+  const handleSwipe = (dir: number) => {
+    setDirection(dir)
+
+    setTimeout(() => {
+      setCards((prev) => {
+        const arr = [...prev]
+        const first = arr.shift()
+        if (first) arr.push(first)
+        return arr
+      })
+    }, 250)
+  }
+
+  
 const text = "Solutions For Different Sectors In Travel Industry"
 const words = text.split(" ")
 
@@ -107,7 +129,7 @@ const descriptionWords = descriptionText.split(" ")
 </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="lg:grid hidden  grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <FeatureCard
               key={feature.id}
@@ -117,6 +139,25 @@ const descriptionWords = descriptionText.split(" ")
             />
           ))}
         </div>
+
+       <div className="lg:hidden relative h-[420px] w-full flex items-center justify-center overflow-hidden">
+
+        <SwipeHint/>
+      <AnimatePresence>
+        {cards.map((card, index) => (
+          <MobileSwipeStack
+            key={card.title}
+            imageSrc={card.imageSrc}
+            title={card.title}
+            description={card.description}
+            index={index}
+            isTop={index === 0}
+            direction={direction}
+            onSwipe={handleSwipe}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
       </div>
     </section>
   )

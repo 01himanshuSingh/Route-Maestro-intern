@@ -6,25 +6,30 @@ function FeatureRightsidesection() {
     <div className="w-full min-h-screen bg-black">
 
       {/* HERO IMAGE SECTION */}
-      <section
-        className="
-          relative w-auto
-          h-[60vh]           /* mobile */
-               lg:h-screen        /* desktop unchanged */
-          overflow-hidden
-        "
-      >
-        <Image
-          src="/ai-trip-plan.webp"
-          alt="Travel Demo"
-          fill
-          priority
-          className="object-fill"
-        />
-      </section>
-
+  <section
+  className="
+    relative
+    w-full
+    h-[45vh]          /* mobile */
+    sm:h-[55vh]       /* tablet */
+    lg:h-screen       /* desktop SAME */
+    overflow-hidden
+  "
+>
+  <Image
+    src="/ai-trip-plan.webp"
+    alt="Travel Demo"
+    fill
+    priority
+    className="
+      object-fill
+      object-center
+    "
+    sizes="(max-width: 1024px) 100vw, 66vw"
+  />
+</section>
       {/* TITLE */}
-      <div className="text-slate-300 px-3 sm:px-4 lg:px-2 py-4">
+      <div className="text-slate-300 flex justify-center px-3 sm:px-4 lg:px-2 py-3">
         <h2
           className="
             text-xl sm:text-2xl
@@ -32,6 +37,7 @@ function FeatureRightsidesection() {
             font-bold
             leading-tight
             max-w-full lg:max-w-xl
+            mt-4
           "
         >
           AI Powered Trip Planning & Itinerary Management System

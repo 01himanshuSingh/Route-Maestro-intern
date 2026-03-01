@@ -66,7 +66,16 @@ export default function FeaturemotionCard() {
     {cards.map((card, index) => (
       <figure
         key={index}
-        className="sticky top-0 h-screen grid place-content-center px-4"
+       className="
+  sticky
+  top-0
+  h-[88vh]        /* mobile → smaller */
+  sm:h-[85vh]
+  lg:h-screen     /* desktop unchanged */
+  grid
+  place-content-center
+  px-6
+"
       >
         <article
           className={`

@@ -144,15 +144,17 @@ export default function Hero() {
 
   {/* Image container */}
   <div className="relative rounded-2xl  overflow-hidden">
-    <Image
-      src="/landingpagepic.png"   // put your image in public folder
-      alt="RouteMaestro dashboard preview"
-      width={1200}
-      height={700}
-      className="w-full h-auto object-cover"
-      priority
-    />
-  </div>
+  <video
+    className="w-full h-auto object-cover rounded-2xl"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+  >
+    <source src="/Final Video Hero Section.mp4" type="video/mp4" />
+  </video>
+</div>
 
 </div>
 
