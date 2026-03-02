@@ -1,6 +1,6 @@
 'use client';
 import { PopupModal } from "react-calendly";
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -71,6 +71,12 @@ function DarkSelect({
     companySize: '',
     timeline: '',
   });
+
+const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -248,12 +254,14 @@ function DarkSelect({
           'Get free demo'
         )}
       </Button>
-    <PopupModal
-  url="https://calendly.com/hr1411687/route-maestro-schedule"
-  open={isOpen}
-  onModalClose={() => setIsOpen(false)}
-  rootElement={document.body}
-/>
+   {mounted && (
+  <PopupModal
+    url="https://calendly.com/hr1411687/route-maestro-event"
+    open={isOpen}
+    onModalClose={() => setIsOpen(false)}
+    rootElement={document.body}
+  />
+)}
     </form>
     
   );
