@@ -1,17 +1,10 @@
 'use client';
-
+import { PopupModal } from "react-calendly";
 import { useState, FormEvent } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 
 interface DemoFormProps {
   className?: string;
@@ -98,21 +91,26 @@ function DarkSelect({
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
+  setTimeout(() => {
+  console.log("Form submitted:", formData);
 
-      setFormData({
-        firstName: '',
-        lastName: '',
-        workEmail: '',
-        phone: '',
-        companySize: '',
-        timeline: '',
-      });
-    }, 1000);
+  setIsSubmitting(false);
+
+  // OPEN CALENDLY
+  setIsOpen(true);
+
+  setFormData({
+    firstName: "",
+    lastName: "",
+    workEmail: "",
+    phone: "",
+    companySize: "",
+    timeline: "",
+  });
+}, 1000);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-6', className)}>
       {/* Name Fields */}
@@ -250,6 +248,14 @@ function DarkSelect({
           'Get free demo'
         )}
       </Button>
+    <PopupModal
+  url="https://calendly.com/hr1411687/route-maestro-schedule"
+  open={isOpen}
+  onModalClose={() => setIsOpen(false)}
+  rootElement={document.body}
+/>
     </form>
+    
   );
 }
+
