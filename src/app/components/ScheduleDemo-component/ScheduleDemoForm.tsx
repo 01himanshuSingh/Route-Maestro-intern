@@ -256,7 +256,7 @@ useEffect(() => {
       </Button>
    {mounted && (
   <PopupModal
-    url="https://calendly.com/hr1411687/route-maestro-event"
+    url="https://calendly.com/hr1411687/route-maestro-schedule"
     open={isOpen}
     onModalClose={() => setIsOpen(false)}
     rootElement={document.body}

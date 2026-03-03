@@ -68,7 +68,7 @@ const descriptionText =
 const descriptionWords = descriptionText.split(" ")
 
   return (
-    <section className="relative w-full bg-black py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full bg-black py-18 px-4 sm:px-6 lg:px-8">
       {/* Background pattern */}
      
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -76,7 +76,7 @@ const descriptionWords = descriptionText.split(" ")
         <div className="mb-16 text-center">
 
   <motion.h2
-  className="mb-6 text-balance text-4xl font-bold text-[#b9b9bf] lg:text-[29px]"
+  className="mb-6 text-balance text-4xl font-bold text-[#b9b9bf] lg:text-4xl"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -104,7 +104,7 @@ const descriptionWords = descriptionText.split(" ")
 </motion.h2>
 
 <motion.p
-  className="mx-auto max-w-5xl text-lg lg:text-[18px] text-slate-400 leading-relaxed"
+  className="mx-auto max-w-4xl text-lg lg:text-[18px] text-slate-400 leading-relaxed"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.4 }}

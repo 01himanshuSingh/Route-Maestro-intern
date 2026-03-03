@@ -3,6 +3,7 @@ import { Geist, Geist_Mono,Bricolage_Grotesque ,Carlito} from "next/font/google"
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SmoothScroll from "./components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${carlito.variable} ${bricolageGrotesque.variable} antialiased`}
       >
-       
+       <SmoothScroll/>
         <Header/>
         {children}
          <Footer />

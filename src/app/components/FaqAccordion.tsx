@@ -49,7 +49,7 @@ export function FAQAccordion() {
               }
               className="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/30 transition-colors text-left"
             >
-              <span className="text-lg font-semibold text-slate/300">
+              <span className="text-lg font-semibold text-slate-300">
                 {item.question}
               </span>
               <div

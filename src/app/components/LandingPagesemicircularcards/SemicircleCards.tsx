@@ -35,9 +35,9 @@ export default function SemiCircleCards() {
   }
 
   return (
-    <section className="w-full bg-black py-12 lg:py-16 overflow-hidden">
-<div className="flex justify-center items-center mb-8 lg:mb-12 px-4">
-  <motion.h1
+    <section className="w-full bg-black py-12 lg:py-15 overflow-hidden">
+<div className="flex justify-center items-center mb-8 lg:mb-10 px-4">
+  <motion.h2
     initial={{ opacity: 0, x: -60 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{
@@ -47,7 +47,7 @@ export default function SemiCircleCards() {
     className="
       text-center
       text-2xl
-      lg:text-5xl
+      lg:text-4xl
       font-bold
       tracking-tight
       text-white
@@ -58,7 +58,7 @@ export default function SemiCircleCards() {
     <span className="bg-gradient-to-r from-[#e2472b] to-orange-400 bg-clip-text text-transparent">
       Flexibility to Book
     </span>
-  </motion.h1>
+  </motion.h2>
 </div>
       {/* ================= MOBILE GRID ================= */}
       <div className="lg:hidden px-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -129,7 +129,6 @@ export default function SemiCircleCards() {
 
             const rotate = angleDeg * 1.2
             const scale = 1 - Math.abs(offset) * 0.08
-            const opacity = 1 - Math.abs(offset) * 0.15
 
             return (
               <motion.div
@@ -144,7 +143,7 @@ export default function SemiCircleCards() {
                   shadow-[0_20px_60px_rgba(0,0,0,0.45)]
                   backdrop-blur-xl
                 "
-                animate={{ x, y, rotate, scale, opacity }}
+                animate={{ x, y, rotate, scale }}
                 whileHover={{ y: y - 12, scale: scale + 0.03 }}
                 transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 style={{

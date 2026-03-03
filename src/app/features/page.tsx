@@ -1,49 +1,43 @@
-import FaqSection from "../components/FaqSection";
-import FeatureRightsidesection from "./FeatureRightsidesection";
-import { FeatureScheduledemocard } from "./FeatureScheduledemocard";
+import Image from 'next/image'
+import FeatureHero from './FeatureHero'
+import FeaturesSection from './FeatureSection'
+import FaqSection from '../components/FaqSection'
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-2 bg-black text-white">
+    <main className="flex flex-col  min-h-screen bg-black">
 
-      {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row mt-12">
+      {/* Hero Section */}
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
 
-        {/* LEFT SIDE */}
-        <aside
-          className="
-            w-full
-            lg:w-1/3
-            lg:sticky lg:top-12
-            lg:h-screen
-          "
-        >
-          <FeatureScheduledemocard />
-        </aside>
-
-        {/* RIGHT SIDE */}
-        <section
-          className="
-            w-full
-            lg:w-2/3
-            lg:h-screen
-            lg:overflow-y-auto
-                no-scrollbar
-
-          "
-        >
-          <div className="p-4 md:p-6 lg:p-8">
-            <FeatureRightsidesection />
+          {/* Left Side - Hero Text */}
+          <div className="w-full lg:w-1/2">
+            <FeatureHero />
           </div>
-        </section>
 
-      </div>
+          {/* Right Side - Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <Image
+              src="/ai-trip-plan.webp"
+              alt="Travel booking dashboard"
+              width={600}
+              height={700}
+              priority
+              className="w-full max-w-md lg:max-w-lg xl:max-w-xl 
+              h-auto rounded-2xl shadow-2xl object-cover"
+            />
+          </div>
 
-      {/* FAQ SECTION */}
-      <section className="w-full px-4 md:px-6 lg:px-8 py-12">
-        <FaqSection />
+        </div>
       </section>
 
-    </div>
-  );
+      {/* Features Section */}
+      <FeaturesSection />
+
+      {/* FAQ Section */}
+      <FaqSection />
+
+    </main>
+  )
 }

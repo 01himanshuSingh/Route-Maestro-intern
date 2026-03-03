@@ -148,7 +148,7 @@ const subtitleWords = subtitleText.split(" ")
 
 
 <motion.p
-  className="mt-4 text-gray-400 text-lg leading-relaxed"
+  className="mt-4 text-gray-400 text-lg lg:text-[18px] leading-relaxed"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.4 }}

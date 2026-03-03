@@ -39,7 +39,7 @@ const router = useRouter()
         <nav
           className={`flex items-center justify-between transition-all duration-300 ${
             isScrolled
-              ? 'bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-4 py-3'
+              ? 'bg-black/70 backdrop-blur-xl border border border-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] rounded-full px-4 py-3  ring-1 ring-white/5'
               : 'bg-transparent px-0 py-0'
           }`}
         >
@@ -81,7 +81,7 @@ const router = useRouter()
           {/* CTA Button */}
           <div className="hidden sm:block">
             <button
-              className={`bg-[#e2472b] hover:bg-[#fe6652] text-white rounded-full font-medium transition-all hover:cursor-pointer duration-200 ${
+              className={`bg-[#e2472b] hidden lg:flex hover:bg-[#fe6652] text-white rounded-full font-medium transition-all hover:cursor-pointer duration-200 ${
                 isScrolled ? 'px-5 py-3 text-sm' : 'px-6 py-2 text-sm'
               }`}
               onClick={() => {
@@ -116,8 +116,12 @@ router.push('/schedule-demo')
                 {item.label}
               </Link>
             ))}
-            <button className="px-6 py-3 text-left bg-teal-500 text-white rounded-b-2xl">
-              See pricing
+            <button className="px-6 py-3 text-left bg-[#e2472b] text-white rounded-b-2xl" 
+             onClick={() => {
+router.push('/schedule-demo')
+              }}
+            >
+              Schedule A Demo 
             </button>
           </nav>
         </div>

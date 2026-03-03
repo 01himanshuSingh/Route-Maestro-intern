@@ -71,7 +71,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen pt-32 pb-13  flex items-center justify-center overflow-hidden">
       {/* Animated background */}
       <canvas
         ref={canvasRef}
@@ -115,47 +115,34 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <button className="group bg-[#e2472b] hover:bg-[#fe6652] text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 flex items-center gap-2">
-            Join Us 
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="border border-white/20 hover:border-white/40 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 bg-white/5 hover:bg-white/10">
-            Start free trial
-          </button>
-        </div>
+      
 
-        {/* Avatar section */}
-        {/* <div className="flex items-center justify-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center border border-white/20">
-            <span className="text-white text-sm font-bold">👤</span>
-          </div>
-          <p className="text-sm text-white/60">
-            Trusted by travel agencies and tour operators to manage bookings, billing, and operations
-          </p>
-        </div> */}
-
+      
        {/* Hero preview image */}
-       <div className="relative mx-auto w-full max-w-[1200px]">
-
-  
-  {/* Glow background */}
+    <div className="relative mx-auto w-full max-w-[1200px] mb-10">
   <div className="absolute inset-0 bg-teal-500/10 blur-3xl rounded-3xl" />
 
-  {/* Image container */}
-  <div className="relative rounded-2xl  overflow-hidden">
-  <video
-    className="w-full h-auto object-cover rounded-2xl"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-  >
-    <source src="/Final Video Hero Section.mp4" type="video/mp4" />
-  </video>
+  <div className="relative rounded-2xl overflow-hidden">
+    <Image
+      src="/landingpageeditpic.png"
+      alt="RouteMaestro Preview"
+      width={1200}
+      height={700}
+      priority
+      className="w-full h-auto object-cover rounded-2xl"
+    />
+  </div>
 </div>
 
+<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+  <button className="group bg-[#e2472b] hover:bg-[#fe6652] text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 flex items-center gap-2 w-full sm:w-auto justify-center">
+    Join Us
+    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+  </button>
+
+  <button className="border border-white/20 hover:border-white/40 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 bg-white/5 hover:bg-white/10 w-full sm:w-auto">
+    Start free trial
+  </button>
 </div>
 
       </div>
