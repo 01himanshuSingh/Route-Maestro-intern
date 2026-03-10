@@ -10,7 +10,7 @@ export default function TrustedClients() {
       {imagesrc:"/volonlinelogo.png"},
        {imagesrc:"/voyzantLogo-White-.png"},
   ]
-const text = "Trusted by thousands of clients more than 4,000+"
+const text = "RouteMaestro Tried By Teams At"
 const words = text.split(" ")
 
   return (
@@ -23,7 +23,7 @@ const words = text.split(" ")
         <div className="text-center mb-12 ">
          
 <motion.h2
-  className="text-2xl lg:text-4xl font-bold text-white text-balance"
+  className="text-3xl lg:text-4xl font-bold text-white text-balance"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -57,16 +57,16 @@ const words = text.split(" ")
     alt="client logo"
     width={140}
     height={60}
-    className="
-      w-auto h-8 sm:h-10 lg:h-12
-      object-contain
-      opacity-50
-      grayscale
-      transition-all duration-300 ease-in-out
-      group-hover:opacity-100
-      group-hover:grayscale-0
-      group-hover:scale-105
-    "
+   className="
+  w-auto h-8 sm:h-10 lg:h-12
+  object-contain
+  opacity-100 lg:opacity-50
+  lg:grayscale
+  transition-all duration-300 ease-in-out
+  lg:group-hover:opacity-100
+  lg:group-hover:grayscale-0
+  lg:group-hover:scale-105
+"
   />
 </div>
           ))}

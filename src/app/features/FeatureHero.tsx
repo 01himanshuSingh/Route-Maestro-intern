@@ -11,7 +11,7 @@ export default function FeatureHero() {
       items-center lg:items-start 
       justify-center 
       px-4 sm:px-6 lg:px-12 
-      py-12 lg:py-15
+      py-12 lg:py-10  lg:mt-10 mt-2
       text-center lg:text-left
     ">
       <div className="max-w-2xl">

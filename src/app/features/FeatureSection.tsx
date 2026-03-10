@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from "framer-motion"
 import Image from 'next/image'
 
 interface Feature {
@@ -72,18 +73,37 @@ const features: Feature[] = [
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full bg-black py-10 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-black py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl  lg:text-5xl font-bold text-white mb-4">
-            AI Powered <span className="text-[#e2472b]">Trip Planning & Itinerary</span>
-          </h2>
-          <p className="text-3xl  lg:text-5xl font-bold text-white">
-            Management <span className="text-[#e2472b]">System</span>
-          </p>
-        </div>
+
+<div className="text-center mb-12 lg:mb-16">
+
+  <motion.h2
+    className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-2 lg:mb-4 leading-tight"
+    initial={{ opacity: 0, x: -40 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+  >
+    AI Powered{" "}
+    <span className="text-[#e2472b]">
+      Trip Planning & Itinerary
+    </span>
+  </motion.h2>
+
+  <motion.p
+    className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight"
+    initial={{ opacity: 0, x: -40 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+  >
+    Management <span className="text-[#e2472b]">System</span>
+  </motion.p>
+
+</div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

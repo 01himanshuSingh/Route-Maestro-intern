@@ -110,26 +110,26 @@ export default function Hero() {
 </div>
 
         {/* Description */}
-        <p className="text-lg sm:text-xl text-white/70 mb-12 max-w-2xl mx-auto text-balance leading-relaxed">
-          An AI Powered Dynamic Travel Packaging & A Natural Workflow Booking Platform For Your Business!
-        </p>
+       <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-4xl mx-auto leading-relaxed">
+  An AI Powered Dynamic Travel Packaging Platform For Your Business!
+</p>
 
         {/* CTA Buttons */}
       
 
       
        {/* Hero preview image */}
-    <div className="relative mx-auto w-full max-w-[1200px] mb-10">
+   <div className="relative mx-auto w-full max-w-[1000px] mb-9 px-4">
   <div className="absolute inset-0 bg-teal-500/10 blur-3xl rounded-3xl" />
 
   <div className="relative rounded-2xl overflow-hidden">
     <Image
       src="/landingpageeditpic.png"
       alt="RouteMaestro Preview"
-      width={1200}
-      height={700}
+      width={1000}
+      height={600}
       priority
-      className="w-full h-auto object-cover rounded-2xl"
+      className="w-full h-auto object-contain rounded-2xl"
     />
   </div>
 </div>

@@ -4,10 +4,6 @@ import { Zap, BookTemplate, Smartphone, Palette } from 'lucide-react'
 import { FeatureCard } from './FeatureCard'
 import { motion } from "framer-motion"
 
-import { AnimatePresence } from 'framer-motion'
-import { MobileSwipeStack } from './MobileSwipeStack'
-import { useState } from 'react'
-import { SwipeHint } from './SwipHint'
 const features = [
   {
     id: 1,
@@ -41,21 +37,8 @@ const features = [
 
 export function FeaturesSection() {
 
- const [cards, setCards] = useState(features)
-  const [direction, setDirection] = useState(0)
 
-  const handleSwipe = (dir: number) => {
-    setDirection(dir)
 
-    setTimeout(() => {
-      setCards((prev) => {
-        const arr = [...prev]
-        const first = arr.shift()
-        if (first) arr.push(first)
-        return arr
-      })
-    }, 250)
-  }
 
   
 const text = "Solutions For Different Sectors In Travel Industry"
@@ -68,7 +51,7 @@ const descriptionText =
 const descriptionWords = descriptionText.split(" ")
 
   return (
-    <section className="relative w-full bg-black py-18 px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full bg-black py-10 px-4 sm:px-6 lg:px-8">
       {/* Background pattern */}
      
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -76,7 +59,7 @@ const descriptionWords = descriptionText.split(" ")
         <div className="mb-16 text-center">
 
   <motion.h2
-  className="mb-6 text-balance text-4xl font-bold text-[#b9b9bf] lg:text-4xl"
+  className="mb-6 text-balance text-3xl font-bold text-[#b9b9bf] lg:text-4xl"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -103,6 +86,7 @@ const descriptionWords = descriptionText.split(" ")
   })}
 </motion.h2>
 
+
 <motion.p
   className="mx-auto max-w-4xl text-lg lg:text-[18px] text-slate-400 leading-relaxed"
   initial="hidden"
@@ -126,38 +110,23 @@ const descriptionWords = descriptionText.split(" ")
 </motion.p>
 
 
+
 </div>
 
         {/* Features Grid */}
-        <div className="lg:grid hidden  grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <FeatureCard
-              key={feature.id}
-              imageSrc={feature.imageSrc}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
-        </div>
+      {/* Features Grid */}
+<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+  {features.map((feature) => (
+    <FeatureCard
+      key={feature.id}
+      imageSrc={feature.imageSrc}
+      title={feature.title}
+      description={feature.description}
+    />
+  ))}
+</div>
 
-       <div className="lg:hidden relative h-[420px] w-full flex items-center justify-center overflow-hidden">
-
-        <SwipeHint/>
-      <AnimatePresence>
-        {cards.map((card, index) => (
-          <MobileSwipeStack
-            key={card.title}
-            imageSrc={card.imageSrc}
-            title={card.title}
-            description={card.description}
-            index={index}
-            isTop={index === 0}
-            direction={direction}
-            onSwipe={handleSwipe}
-          />
-        ))}
-      </AnimatePresence>
-    </div>
+      
       </div>
     </section>
   )
