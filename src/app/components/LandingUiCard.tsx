@@ -31,35 +31,65 @@ function FeatureCard({
         border border-white/10
         bg-gradient-to-br from-[#111318] via-[#16181d] to-[#1b1e24]
         transition-all duration-300
-        hover:scale-[1.02] hover:shadow-xl
-        flex flex-col
+        hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/50
+        hover:border-white/20
+        flex flex-col group
         ${isLarge ? "lg:row-span-2" : ""}
       `}
     >
-      {/* Image */}
-      <div
-        className={`
-          relative w-full
-          ${isLarge ? "aspect-[16/12]" : "aspect-[16/9]"}
-        `}
-      >
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-fill p-6"
-        />
+      {/* Image Container */}
+     {/* Image Container */}
+<div
+  className={`
+    relative w-full overflow-hidden
+    ${isLarge ? "aspect-[16/12]" : "aspect-[16/9]"}
+  `}
+>
+  <Image
+    src={image}
+    alt={title}
+    fill
+    quality={100}
+    sizes={
+      isLarge
+        ? "(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px "
+        : "(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
+    }
+    className={`
+      object-contain
+      transition-transform duration-500 ease-out
+      group-hover:scale-[1.04]
+      brightness-[1.05] contrast-[1.1] saturate-[1.08]
+    `}
+  />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-      </div>
+  {/* ONLY bottom fade — no vignette, no side darkening */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#111318] via-transparent to-transparent" />
+
+  {/* Subtle top highlight for depth (top only, not sides) */}
+  <div
+    className="absolute inset-x-0 top-0 h-1/3 opacity-10"
+    style={{
+      background: "linear-gradient(to bottom, rgba(255,255,255,0.15), transparent)",
+    }}
+  />
+</div>
 
       {/* Content */}
-      <div className="p-6 flex-1">
-        <h3 className="text-xl lg:text-2xl font-semibold text-white">
+      <div className="px-6 pb-6 pt-2 flex-1">
+        <h3
+          className={`font-semibold text-white tracking-tight
+            ${isLarge ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
+          `}
+        >
           {title}
         </h3>
 
-        <p className="text-slate-400 mt-3 text-sm lg:text-[18px] leading-relaxed">
+        <p
+          className={`text-slate-400 mt-2 leading-relaxed
+            ${isLarge ? "text-base lg:text-lg" : "text-sm lg:text-base"}
+          `}
+        >
           {description}
         </p>
       </div>

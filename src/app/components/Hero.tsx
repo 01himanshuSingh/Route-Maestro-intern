@@ -3,9 +3,11 @@
 import { useEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const router = useRouter()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -14,11 +16,9 @@ export default function Hero() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Set canvas size
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Create animated background
     const particles: Array<{
       x: number
       y: number
@@ -35,7 +35,7 @@ export default function Hero() {
         size: Math.random() * 2 + 0.5,
         speedX: Math.random() * 0.5 - 0.25,
         speedY: Math.random() * 0.5 - 0.25,
-        opacity: Math.random() * 0.5 + 0.2,
+        opacity: Math.random() * 0.3 + 0.08,
       })
     }
 
@@ -71,81 +71,195 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen pt-32 pb-13  flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Animated background canvas */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-60"
         style={{ display: 'block' }}
       />
 
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-950/20 via-black to-black pointer-events-none" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Layered gradient atmosphere */}
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-950/30 via-black/80 to-black pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-teal-400/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        {/* Badge */}
-               {/* Main heading */}
-       <div className="mb-8 text-center">
-  <h1 className="text-4xl  lg:text-[68px] font-bold text-white leading-tight">
-    Digitize Your
-    <br />
+      {/* Noise texture overlay for depth */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+        }}
+      />
+
+      {/* Main content */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-6 pt-20 lg:pt-30 pb-10 lg:pb-15 flex flex-col items-center text-center">
+
+        {/* Eyebrow badge */}
+     
+        {/* Heading */}
+        <div
+          className="mb-5 sm:mb-7"
+          style={{ animation: 'fadeSlideUp 0.7s ease-out 0.1s both' }}
+        >
+          <h1 className="text-[34px] sm:text-5xl lg:text-[68px] font-bold text-white leading-[1.1] sm:leading-[1.08] tracking-[-0.03em]">
+            Digitize Your
+            <br />
+           <span className="relative inline-block">
+  {/* Soft ambient bloom */}
+  <span
+    className="absolute -inset-2 blur-3xl opacity-20 pointer-events-none"
+    style={{
+      background: 'radial-gradient(ellipse at center, #ff7a5c 0%, #e2472b 50%, transparent 80%)',
+    }}
+  />
+
+  {/* Glass text */}
+  <span
+    className="relative bg-clip-text text-transparent"
+    style={{
+      backgroundImage: `linear-gradient(
+        160deg,
+        #c94030  0%,
+        #e2572b  22%,
+        #f08070  36%,
+        #fde8e4  50%,
+        #f08070  64%,
+        #e2572b  78%,
+        #c94030  100%
+      )`,
+      filter: 'drop-shadow(0 0 28px rgba(226,71,43,0.18))',
+    }}
+  >
     Travel Infrastructure
-    <br />
-    <span className="inline-flex items-center justify-center relative mt-3">
-      {/* Glow background */}
-      <span className="absolute inset-0 bg-teal-500/20 blur-2xl rounded-xl" />
-
-      {/* Highlight text */}
- <span className="relative bg-white px-6 py-2 rounded-xl text-2xl lg:text-4xl font-semibold animate-bounce-in">
-  <span className="bg-gradient-to-r from-[#1E2A78] via-[#8B3F73] to-[#FF3B3B] bg-clip-text text-transparent">
-    With RouteMaestro
   </span>
+
+  {/* Underline glow — shorter, softer */}
+  <span
+    className="absolute -bottom-1.5 left-[10%] right-[10%] h-px opacity-50"
+    style={{
+      background: 'linear-gradient(90deg, transparent, #ff9d8a, #fde8e4, #ff9d8a, transparent)',
+    }}
+  />
 </span>
-    </span>   
-   
-  </h1>
-</div>
+          </h1>
+        </div>
 
         {/* Description */}
-       <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-4xl mx-auto leading-relaxed">
-  An AI Powered Dynamic Travel Packaging Platform For Your Business!
-</p>
+        <p
+          className="text-[15px] sm:text-base lg:text-lg text-white/55 mb-8 sm:mb-10 max-w-[420px] sm:max-w-[600px] leading-relaxed tracking-wide"
+          style={{ animation: 'fadeSlideUp 0.7s ease-out 0.2s both' }}
+        >
+          An AI Powered Dynamic Travel Packaging Platform For Your Business!
+        </p>
 
-        {/* CTA Buttons */}
-      
+        {/* Hero preview image */}
+        <div
+          className="relative w-full max-w-[92vw] sm:max-w-[880px] mx-auto mb-8 sm:mb-10"
+          style={{ animation: 'fadeScaleUp 0.9s ease-out 0.3s both' }}
+        >
+          {/* Outer ambient glow — reduced on mobile */}
+          <div className="absolute -inset-2 sm:-inset-4 bg-teal-500/[0.07] sm:bg-teal-500/10 rounded-3xl blur-xl sm:blur-2xl" />
+          <div className="absolute -inset-1 bg-gradient-to-b from-teal-400/10 sm:from-teal-400/15 to-transparent rounded-3xl blur-lg" />
 
-      
-       {/* Hero preview image */}
-   <div className="relative mx-auto w-full max-w-[1000px] mb-9 px-4">
-  <div className="absolute inset-0 bg-teal-500/10 blur-3xl rounded-3xl" />
+          {/* Image frame */}
+          <div
+            className="
+              relative rounded-2xl overflow-hidden
+            
+              shadow-2xl shadow-black/60
+              bg-[#0d0f12]
+            "
+            style={{ animation: 'floatY 6s ease-in-out infinite' }}
+          >
+            {/* Top bar chrome — mimics browser/app window */}
+           
 
-  <div className="relative rounded-2xl overflow-hidden">
-    <Image
-      src="/landingpageeditpic.png"
-      alt="RouteMaestro Preview"
-      width={1000}
-      height={600}
-      priority
-      className="w-full h-auto object-contain rounded-2xl"
-    />
-  </div>
-</div>
+            <Image
+              src="/landingpageeditpic.png"
+              alt="RouteMaestro Preview"
+              width={1200}
+              height={700}
+              priority
+              quality={100}
+              unoptimized
+              className="
+                w-full h-auto
+                object-cover
+                brightness-[1.06] contrast-[1.08] saturate-[1.08]
+              "
+            />
 
-<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-  <button className="group bg-[#e2472b] hover:bg-[#fe6652] text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 flex items-center gap-2 w-full sm:w-auto justify-center">
-    Join Us
-    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-  </button>
+            {/* Bottom fade into page */}
+            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+          </div>
+        </div>
 
-  <button className="border border-white/20 hover:border-white/40 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 bg-white/5 hover:bg-white/10 w-full sm:w-auto">
-    Start free trial
-  </button>
-</div>
+        {/* CTA Buttons — after image, original position */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-3 w-full sm:w-auto px-2 sm:px-0"
+          style={{ animation: 'fadeSlideUp 0.7s ease-out 0.5s both' }}
+        >
+          <button
+            className="
+              group relative overflow-hidden
+              bg-[#e2472b] hover:bg-[#fe6652]
+              text-white text-sm font-semibold
+              px-7 py-3.5 sm:py-3 rounded-full
+              flex items-center gap-2
+              w-full sm:w-auto justify-center
+              shadow-lg shadow-red-500/20
+              hover:shadow-red-500/35 hover:shadow-xl
+              hover:-translate-y-0.5 active:translate-y-0
+              transition-all duration-200
+            "
+            onClick={() => router.push('/schedule-demo')}
+          >
+            <span className="relative z-10">Join Us</span>
+            <ArrowRight
+              size={16}
+              className="relative z-10 group-hover:translate-x-1 transition-transform duration-200"
+            />
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-500 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
+          </button>
+
+          <button
+            className="
+              border border-white/15 hover:border-white/30
+              text-white/80 hover:text-white
+              text-sm font-semibold
+              px-7 py-3.5 sm:py-3 rounded-full
+              bg-white/[0.04] hover:bg-white/[0.08]
+              backdrop-blur-sm
+              w-full sm:w-auto
+              hover:-translate-y-0.5 active:translate-y-0
+              transition-all duration-200
+            "
+            onClick={() => router.push('/schedule-demo')}
+          >
+            Start free trial
+          </button>
+        </div>
 
       </div>
+
+      {/* Keyframe styles */}
+      <style>{`
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeScaleUp {
+          from { opacity: 0; transform: scale(0.97) translateY(16px); }
+          to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes floatY {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-8px); }
+        }
+      `}</style>
     </section>
   )
 }
