@@ -8,13 +8,13 @@ const topRowTestimonials = [
     quote:
       "RouteMaestro reduced our itinerary creation time from hours to minutes. Dynamic packaging and pricing automation helped us increase margins instantly.",
     name: "Arjun Mehta",
-    title: "Director, Skyline Travels",
+    title: "Director, line Travels",
   },
   {
     quote:
       "Managing hotels, transfers, and activities from one dashboard changed everything for our operations team. It feels built for modern travel agencies.",
     name: "Sophia Williams",
-    title: "Operations Head, Global Routes",
+    title: "Operations Routings ",
   },
   {
     quote:
@@ -90,7 +90,7 @@ function MarqueeRow({
             key={`${testimonial.name}-${index}`}
             quote={testimonial.quote}
             name={testimonial.name}
-            title={testimonial.title}
+            // title={testimonial.title}
           />
         ))}
       </div>
@@ -116,7 +116,7 @@ const subtitleWords = subtitleText.split(" ")
   items-center
   justify-center
   gap-10 sm:gap-12
-  py-16 sm:py-20
+  py-14  lg:py-20
   px-3 sm:px-4
   bg-black
   overflow-hidden
@@ -172,7 +172,7 @@ const subtitleWords = subtitleText.split(" ")
 
       <div className="w-full flex flex-col gap-6">
         <MarqueeRow testimonials={topRowTestimonials} direction="left" />
-        <MarqueeRow testimonials={bottomRowTestimonials} direction="right" />
+        {/* <MarqueeRow testimonials={bottomRowTestimonials} direction="right" /> */}
       </div>
     </section>
   )

@@ -101,27 +101,42 @@ const features = [
 const RADIUS_MULTIPLIERS = [0.28, 0.42, 0.28, 0.42, 0.28, 0.42, 0.28, 0.42]
 
 // Near nodes slightly bigger, far nodes slightly smaller
-const NODE_SIZES =       [84,   68,   84,   68,   84,   68,   84,   68]
+const NODE_SIZES = [110, 92, 110, 92, 110, 92, 110, 92]
 
 // ─── Particles ────────────────────────────────────────────────────────────────
 
 function Particles() {
-  const particles = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 1.8 + 0.4,
-    duration: Math.random() * 9 + 5,
-    delay: Math.random() * 6,
-    opacity: Math.random() * 0.3 + 0.07,
-  }))
+  const [particles, setParticles] = useState<
+    { id: number; x: number; y: number; size: number; duration: number; delay: number; opacity: number }[]
+  >([])
+
+  useEffect(() => {
+    const generated = Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 1.8 + 0.4,
+      duration: Math.random() * 9 + 5,
+      delay: Math.random() * 6,
+      opacity: Math.random() * 0.3 + 0.07,
+    }))
+
+    setParticles(generated)
+  }, [])
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {particles.map((p) => (
         <motion.div
           key={p.id}
           className="absolute rounded-full bg-white"
-          style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size, opacity: p.opacity }}
+          style={{
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            width: p.size,
+            height: p.size,
+            opacity: p.opacity,
+          }}
           animate={{ y: [0, -16, 0], opacity: [p.opacity, p.opacity * 2.2, p.opacity] }}
           transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -245,7 +260,7 @@ function Tooltip({
             src={feature.image}
             alt={feature.title}
             fill
-            className="object-cover"
+            className="object-contain"
             style={{ opacity: 0.88 }}
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
           />
@@ -254,12 +269,7 @@ function Tooltip({
         <p className="text-white text-sm font-semibold mb-1">{feature.title}</p>
         <p className="text-white/45 text-xs leading-relaxed mb-3">{feature.description}</p>
 
-        <span className={`text-xs font-semibold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent flex items-center gap-1`}>
-          View details
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
+     
       </div>
     </motion.div>
   )
@@ -328,7 +338,7 @@ export default function FeatureOrbit() {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-24 px-4"
+      className="relative w-full overflow-hidden py-15 px-4"
       style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 50%, rgba(79,46,229,0.07) 0%, #050508 70%)' }}
     >
       {/* Radial glow */}
@@ -340,34 +350,31 @@ export default function FeatureOrbit() {
 
       {/* Section header */}
       <div className="relative z-10 text-center mb-14">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase text-violet-400 border border-violet-500/20 bg-violet-500/8 mb-5"
-          style={{ backdropFilter: 'blur(10px)' }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-          Unified Ecosystem
-        </motion.div>
-
+      
         <motion.h2
           initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-4"
         >
-          Everything connected.{' '}
-          <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-            Nothing missing.
+  AI Powered Trip Planning & Itinerary{' '}
+          <span  className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: `linear-gradient(
+      160deg,
+      #c94030 0%,
+      #e2572b 22%,
+      #f08070 36%,
+      #fde8e4 50%,
+      #f08070 64%,
+      #e2572b 78%,
+      #c94030 100%
+    )`,
+  }}>
+            Management System
           </span>
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-white/35 text-base max-w-md mx-auto"
-        >
-          RouteMaestro orchestrates your entire travel stack — one intelligent core, infinite reach.
-        </motion.p>
+     
       </div>
 
       {/* ── Desktop radial graph ── */}
@@ -388,9 +395,19 @@ export default function FeatureOrbit() {
             style={{
               width: 156, height: 156,
               left: cx - 78, top: cy - 78,
-              background: 'linear-gradient(140deg, #7C3AED 0%, #4338ca 100%)',
-              boxShadow: '0 0 0 1px rgba(139,92,246,0.45), 0 0 60px rgba(124,58,237,0.5), 0 0 120px rgba(79,70,229,0.2)',
-            }}
+               backgroundImage: `linear-gradient(
+      160deg,
+      #c94030 0%,
+      #e2572b 22%,
+      #f08070 36%,
+      #fde8e4 50%,
+      #f08070 64%,
+      #e2572b 78%,
+      #c94030 100%
+    )`,
+    boxShadow:
+      "0 0 0 1px rgba(226,71,43,0.35), 0 0 60px rgba(226,71,43,0.35), 0 0 120px rgba(226,71,43,0.18)",
+  }}
           >
             <div className="absolute inset-0 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.15)' }} />
             <motion.div
@@ -399,7 +416,7 @@ export default function FeatureOrbit() {
               className="flex flex-col items-center gap-1"
             >
               <Globe size={34} className="text-white" strokeWidth={1.4} />
-              <span className="text-white text-[10px] font-bold tracking-[0.14em] uppercase opacity-75">
+              <span className="text-white text-[13px] font-bold tracking-[0.14em] uppercase opacity-80">
                 RouteMaestro
               </span>
             </motion.div>
@@ -485,7 +502,7 @@ export default function FeatureOrbit() {
                       transition={{ duration: 0.2 }}
                       className="absolute text-center text-white font-medium leading-tight"
                       style={{
-                        fontSize: 10,
+                        fontSize: 13,
                         top: nodeSize + 6,
                         left: '50%',
                         transform: 'translateX(-50%)',

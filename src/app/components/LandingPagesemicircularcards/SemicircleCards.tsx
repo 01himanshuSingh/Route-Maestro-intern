@@ -25,9 +25,9 @@ export default function SemiCircleCards() {
   const total = cards.length
 
   // ── Desktop geometry ──────────────────────────────────────────────────────
-  const radius  = 620   // tighter arc → more precise semicircle
+  const radius  = 560   // tighter arc → more precise semicircle
   const centerX = 500   // horizontal centre of the arc
-  const centerY = 390   // vertical centre (above viewport so cards peek up)
+  const centerY = 320   // vertical centre (above viewport so cards peek up)
   const angleStep = 34  // even angular spacing between cards
 
   const getOffset = (index: number) => {
@@ -58,26 +58,45 @@ export default function SemiCircleCards() {
       {/* ══════════════════════════════════════════════════════════════════
           MOBILE GRID — unchanged
       ══════════════════════════════════════════════════════════════════ */}
-      <div className="lg:hidden px-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {cards.map((card, i) => (
-          <motion.div
-            key={card.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="rounded-2xl overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
-          >
-            <div className="p-3 flex flex-col">
-              <div className="relative w-full h-[160px] rounded-xl overflow-hidden mb-3">
-                <Image src={card.image} alt={card.title} fill className="object-cover" />
-              </div>
-              <h3 className="text-white text-xl font-semibold mb-2">{card.title}</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">{card.description}</p>
-            </div>
-          </motion.div>
-        ))}
+   {/* MOBILE GRID */}
+<div className="lg:hidden grid grid-cols-2 gap-3 w-full max-w-sm mx-auto px-3">
+  {cards.map((card, i) => (
+    <motion.div
+      key={card.id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.07, duration: 0.5, ease: "easeOut" }}
+      className="relative rounded-2xl overflow-hidden cursor-pointer"
+      style={{
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.07)",
+        transition: "all 0.3s",
+      }}
+    >
+      {/* image */}
+      <div className="w-full h-24 relative bg-gradient-to-br from-zinc-800 to-zinc-900">
+        <Image
+          src={card.image}
+          alt={card.title}
+          fill
+          className="object-cover opacity-85"
+        />
       </div>
+
+      {/* text */}
+      <div className="p-3">
+        <p className="text-white text-xs font-semibold mb-1">
+          {card.title}
+        </p>
+
+        <p className="text-white/40 text-xs leading-relaxed line-clamp-3">
+          {card.description}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
       {/* ══════════════════════════════════════════════════════════════════
           DESKTOP SEMICIRCLE — refined
@@ -105,7 +124,7 @@ export default function SemiCircleCards() {
         </div>
 
         {/* Arc stage */}
-        <div className="relative w-full h-[120px] mx-auto overflow-visible">
+        <div className="relative w-full h-[90px] mx-auto overflow-visible">
           {cards.map((card, i) => {
             const offset  = getOffset(i)
             const angleDeg = offset * angleStep

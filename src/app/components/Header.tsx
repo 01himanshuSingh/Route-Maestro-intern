@@ -20,7 +20,7 @@ export default function Header() {
   }, [])
 const router = useRouter()
   const navItems = [
-    { label: 'Overview', href: '#overview' },
+    { label: 'home', href: '/' },
     { label: 'Features', href: '/features' },
     // { label: 'How it works', href: '#how-it-works' },
     { label: 'Pricing', href: '/pricing' },
@@ -32,7 +32,7 @@ const router = useRouter()
     <header className="fixed  top-0 left-0 right-0 z-50 transition-all duration-300">
 
       <div
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
+        className={`max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
           isScrolled ? 'py-3' : 'py-4'
         }`}
       >

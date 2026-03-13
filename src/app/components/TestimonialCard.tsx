@@ -3,7 +3,7 @@ import { Star } from "lucide-react"
 interface TestimonialCardProps {
   quote: string
   name: string
-  title: string
+  title?: string
   rating?: number
 }
 
