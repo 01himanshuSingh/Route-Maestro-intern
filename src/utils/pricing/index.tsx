@@ -23,12 +23,12 @@ export const PLANS: PlanDetails[] = [
         id: 1,
         name: "Trust",
         category:"Free",
-        description: "No credit card required",
+       description: "",
                 featureLine:"Key features ",
         prices: [
             {
                 currency: "INR",
-                monthly: 0,
+                monthly: 9999,
                 yearly: 0,
             },
             {
@@ -39,26 +39,26 @@ export const PLANS: PlanDetails[] = [
         ],
         features: [
             {
-                name: "Includes 1 user"
+                name: "Includes 6 user"
             },
             {
                 name: "2% Per Booking"
             },
             {
-                name: "Up to 50 Package Bookings / Month"
+                name: "Up to 65 Package Bookings / Month"
             },
         ]
     },
     {
         id: 2,
-        name: " Pro",
-        category:"Pro",
+        name: " agency",
+        category:"agency",
                 featureLine:"Everything in Free, plus:",
-  description: "Make your competition sweat",
+  description: "",
         prices: [
             {
                 currency: "INR",
-                monthly: 80000,
+                monthly: 19999,
                 yearly: 60000
             },
             {
@@ -69,7 +69,7 @@ export const PLANS: PlanDetails[] = [
         ],
         features: [
             {
-                name: "upto 10 users"
+                name: "upto 20 users"
             },
             {
                 name: "2% Per Booking"
@@ -82,8 +82,8 @@ export const PLANS: PlanDetails[] = [
         id: 3,
         name: "Enterprise",
         category:"Enterprise",
-        description: "Self-serve answers at scale",
-        featureLine:"Everything in Pro, plus:",
+        description: "",
+        featureLine:"Everything in agency, plus:",
         features:[
             {
                 name: "Custom Requirements"

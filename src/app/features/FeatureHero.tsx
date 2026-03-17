@@ -38,34 +38,43 @@ const item = {
     ">
       {/* Heading */}
   <motion.h1
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, ease: "easeOut" }}
-  className="
-    text-4xl sm:text-5xl lg:text-5xl xl:text-6xl
-    font-bold text-white mb-5
-    leading-[1.1] tracking-tight
-  "
->
-  AI Powered{' '}
-  <span className="bg-gradient-to-r from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
-    Dynamic
-  </span>
-  <br />Packaging
-</motion.h1>
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="
+          text-[32px] sm:text-5xl lg:text-5xl xl:text-6xl
+          font-bold text-white
+          mb-3 lg:mb-5
+          leading-[1.15] lg:leading-[1.1]
+          tracking-tight
+        "
+      >
+        AI Powered{' '}
+        <span className="bg-gradient-to-r from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
+          Dynamic
+        </span>
+        <br />Packaging
+      </motion.h1>
 
       {/* Description */}
-   <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-  className="text-base sm:text-lg text-slate-400 mb-10 leading-relaxed max-w-md lg:max-w-lg"
->
-  <span className="font-semibold text-white">RouteMaestro</span> enables quick
-  map-based travel planning, and facilitates booking{' '}
-  <span className="font-semibold text-white">Personalized & Profitable</span>{' '}
-  travel itineraries within minutes.
-</motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+        className="
+          text-[14px] sm:text-lg
+          text-slate-400
+          mb-7 lg:mb-10
+          leading-relaxed
+          max-w-[88%] sm:max-w-md lg:max-w-lg
+          mx-auto lg:mx-0
+        "
+      >
+        <span className="font-semibold text-white">RouteMaestro</span> enables quick
+        map-based travel planning, and facilitates booking{' '}
+        <span className="font-semibold text-white">Personalized & Profitable</span>{' '}
+        travel itineraries within minutes.
+      </motion.p>
 
       {/* Buttons — HIDDEN on mobile, visible on desktop */}
       <div className="hidden lg:flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-center lg:items-start">

@@ -116,9 +116,9 @@ export default function Home() {
           {/* ── Mobile-only buttons (below image) ── */}
           <div className="flex lg:hidden w-full flex-col sm:flex-row gap-3">
 
-         <Link
+       <Link
   href="/schedule-demo"
-  className="group relative inline-flex w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+  className="group relative inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
   style={{
     background: "linear-gradient(135deg, #e2472f, #fe6652)",
     boxShadow: "0 0 0 1px rgba(226,71,47,0.5), 0 8px 32px rgba(226,71,47,0.35)",

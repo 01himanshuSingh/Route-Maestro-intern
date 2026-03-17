@@ -11,7 +11,7 @@ export function ScheduleDemoContainer({ className }: ScheduleDemoContainerProps)
   return ( 
     <div className={cn('w-full', className)}>
       {/* Header Section */}
-      <div className="mb-16 md:mb-18">
+      <div className="py-10 ">
         <DemoHeader />
       </div>
 

@@ -1,5 +1,4 @@
 'use client'
-
 import { motion } from "framer-motion"
 import Image from "next/image"
 
@@ -14,16 +13,16 @@ const text = "RouteMaestro Tried By Teams At"
 const words = text.split(" ")
 
   return (
-    <section className="relative py-16  lg:py-18 bg-black overflow-hidden">
+    <section className="relative py-10 lg:py-18 bg-black overflow-hidden">
       {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent pointer-events-none" />
       
-      <div className="relative max-w-5xl mx-auto px-4 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-5 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-12 ">
+        <div className="text-center mb-7 lg:mb-12">
          
 <motion.h2
-  className="text-3xl lg:text-4xl font-bold text-white text-balance"
+  className="text-[22px] leading-snug lg:text-4xl font-bold text-white text-balance"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -37,7 +36,7 @@ const words = text.split(" ")
         visible: { opacity: 1, x: 0 },
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="inline-block mr-2"
+      className="inline-block mr-[6px]"
     >
       {word}
     </motion.span>
@@ -46,11 +45,11 @@ const words = text.split(" ")
         </div>
 
         {/* Clients Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
           {clients.map((client) => (
            <div
   key={client.imagesrc}
-  className="group flex items-center justify-center p-4 sm:p-5 rounded-lg transition-all duration-300 cursor-pointer"
+  className="group flex items-center justify-center p-3 sm:p-5 rounded-xl bg-white/[0.02] border border-white/[0.05] transition-all duration-300 cursor-pointer"
 >
   <Image
     src={client.imagesrc}
@@ -58,8 +57,9 @@ const words = text.split(" ")
     width={140}
     height={60}
    className="
-  w-auto h-8 sm:h-10 lg:h-12
+  w-auto h-7 sm:h-10 lg:h-12
   object-contain
+  brightness-110 contrast-110
   opacity-100 lg:opacity-50
   lg:grayscale
   transition-all duration-300 ease-in-out

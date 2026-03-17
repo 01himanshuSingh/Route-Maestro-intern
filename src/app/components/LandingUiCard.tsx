@@ -27,67 +27,66 @@ function FeatureCard({
   return (
     <div
       className={`
-        relative overflow-hidden rounded-2xl
+        relative overflow-hidden rounded-xl lg:rounded-2xl
         border border-white/10
         bg-gradient-to-br from-[#111318] via-[#16181d] to-[#1b1e24]
         transition-all duration-300
-        hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/50
-        hover:border-white/20
+        lg:hover:scale-[1.02] lg:hover:shadow-2xl lg:hover:shadow-black/50
+        lg:hover:border-white/20
         flex flex-col group
         ${isLarge ? "lg:row-span-2" : ""}
       `}
     >
       {/* Image Container */}
-     {/* Image Container */}
-<div
-  className={`
-    relative w-full overflow-hidden
-    ${isLarge ? "aspect-[16/12]" : "aspect-[16/9]"}
-  `}
->
-  <Image
-    src={image}
-    alt={title}
-    fill
-    quality={100}
-    sizes={
-      isLarge
-        ? "(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px "
-        : "(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
-    }
-    className={`
-      object-contain
-      transition-transform duration-500 ease-out
-      group-hover:scale-[1.04]
-      brightness-[1.05] contrast-[1.1] saturate-[1.08]
-    `}
-  />
+      <div
+        className={`
+          relative w-full overflow-hidden
+          ${isLarge ? "aspect-[16/10] lg:aspect-[16/12]" : "aspect-[16/8] lg:aspect-[16/9]"}
+        `}
+      >
+        <Image
+          src={image}
+          alt={title}
+          fill
+          quality={100}
+          sizes={
+            isLarge
+              ? "(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px "
+              : "(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
+          }
+          className={`
+            object-contain
+            transition-transform duration-500 ease-out
+            lg:group-hover:scale-[1.04]
+            brightness-[1.05] contrast-[1.1] saturate-[1.08]
+          `}
+        />
 
-  {/* ONLY bottom fade — no vignette, no side darkening */}
-  <div className="absolute inset-0 bg-gradient-to-t from-[#111318] via-transparent to-transparent" />
+        {/* ONLY bottom fade — no vignette, no side darkening */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111318] via-transparent to-transparent" />
 
-  {/* Subtle top highlight for depth (top only, not sides) */}
-  <div
-    className="absolute inset-x-0 top-0 h-1/3 opacity-10"
-    style={{
-      background: "linear-gradient(to bottom, rgba(255,255,255,0.15), transparent)",
-    }}
-  />
-</div>
+        {/* Subtle top highlight for depth (top only, not sides) */}
+        <div
+          className="absolute inset-x-0 top-0 h-1/3 opacity-10"
+          style={{
+            background: "linear-gradient(to bottom, rgba(255,255,255,0.15), transparent)",
+          }}
+        />
+      </div>
 
       {/* Content */}
-      <div className="px-6 pb-6 pt-2 flex-1">
+      <div className="px-4 pb-4 pt-2 lg:px-6 lg:pb-6 flex-1">
         <h3
           className={`font-semibold text-white tracking-tight
-            ${isLarge ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
+            ${isLarge ? "text-lg lg:text-2xl lg:text-3xl" : "text-base lg:text-xl lg:text-2xl"}
           `}
         >
           {title}
         </h3>
 
         <p
-          className={`text-slate-400 mt-2 leading-relaxed
-            ${isLarge ? "text-base lg:text-lg" : "text-sm lg:text-base"}
+          className={`text-slate-400 mt-1.5 lg:mt-2 leading-relaxed
+            ${isLarge ? "text-[13px] lg:text-base lg:text-lg" : "text-[13px] lg:text-sm lg:text-base"}
           `}
         >
           {description}
@@ -135,11 +134,11 @@ export function LandingUiCard() {
   ]
 
   return (
-    <section className="min-h-screen px-6 py-14">
+    <section className="min-h-screen px-4 lg:px-6 lg:py-12 py-5">
 
       {/* ================= HEADER ================= */}
-      <div className="max-w-6xl mx-auto text-center mb-16">
-        <h1 className="text-3xl  lg:text-4xl font-bold text-white leading-tight">
+      <div className="max-w-6xl mx-auto text-center mb-8 lg:mb-16">
+        <h1 className="text-[22px] lg:text-4xl font-bold text-white leading-snug lg:leading-tight">
           <motion.span
             initial="hidden"
             whileInView="visible"
@@ -162,30 +161,43 @@ export function LandingUiCard() {
             ))}
           </motion.span>
 
-          
-
-          <span className="text-[#e2472b]">
-            For Travel Business
-          </span>
+         <span
+  className="relative bg-clip-text text-transparent"
+  style={{
+    backgroundImage: `linear-gradient(
+      160deg,
+      #c94030 0%,
+      #e2572b 22%,
+      #f08070 36%,
+      #fde8e4 50%,
+      #f08070 64%,
+      #e2572b 78%,
+      #c94030 100%
+    )`,
+    filter: 'drop-shadow(0 0 28px rgba(226,71,43,0.18))',
+  }}
+>
+  For Travel Business
+</span>
         </h1>
 
-        <p className="text-slate-400 text-lg lg:text-[18px] max-w-4xl mx-auto mt-6">
+        <p className="text-slate-400 text-[14px] lg:text-[18px] max-w-4xl mx-auto mt-3 lg:mt-6 leading-relaxed">
           A powerful platform to manage bookings, billing, and operations with modern tools built for travel agencies.
         </p>
       </div>
 
       {/* ================= GRID ================= */}
       <div className="max-w-6xl mx-auto">
-        <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
+        <div className="grid gap-4 lg:gap-6 grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT COLUMN */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4 lg:gap-5">
             <FeatureCard {...features[0]} />
             <FeatureCard {...features[2]} />
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4 lg:gap-5">
             <FeatureCard {...features[1]} />
             <FeatureCard {...features[3]} />
           </div>

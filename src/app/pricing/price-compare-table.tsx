@@ -177,9 +177,9 @@ function CompareCategorySection({
                 )}
               >
                 {enabled ? (
-                  <Check className="size-4 shrink-0 text-neutral-500" />
+                  <Check className="size-4 shrink-0 text-green-500" />
                 ) : (
-                  <X className="w-5 h-5 text-neutral-400/80" />
+                  <X className="w-5 h-5 text-red-400/80" />
                 )}
                 <span className="font-bricolage text-sm md:hidden block text-neutral-300/80">{feature.text}</span>
               </div>

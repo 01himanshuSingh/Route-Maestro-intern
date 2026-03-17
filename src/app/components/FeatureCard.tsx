@@ -25,12 +25,14 @@ export function FeatureCard({
           relative
           h-auto
           w-full
-          rounded-lg
-          border border-white/10
+          rounded-xl
+          border border-white/[0.08]
           bg-gradient-to-br
           from-[#111318] via-[#16181d] to-[#1b1e24]
-          p-6
-          flex flex-col items-center text-center gap-4
+          bg-white/[0.02]
+          shadow-sm shadow-black/30
+          p-4
+          flex flex-col items-center text-center gap-3
           ${className}
         `}
       >
@@ -39,15 +41,15 @@ export function FeatureCard({
             src={imageSrc}
             alt={title}
             fill
-            className="object-contain"
+            className="object-contain brightness-110 contrast-110"
           />
         </div>
 
-        <h3 className="text-lg font-bold text-white">
+        <h3 className="text-[16px] font-bold tracking-tight text-white">
           {title}
         </h3>
 
-        <p className="text-sm text-slate-300 leading-relaxed">
+        <p className="text-[13.5px] text-slate-400 leading-relaxed">
           {description}
         </p>
       </div>

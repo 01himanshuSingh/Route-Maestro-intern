@@ -49,9 +49,24 @@ export default function SemiCircleCards() {
           className="text-center text-2xl lg:text-4xl font-bold tracking-tight text-white leading-tight"
         >
           Freedom to Choose,{" "}
-          <span className="bg-gradient-to-r from-[#e2472b] to-orange-400 bg-clip-text text-transparent">
-            Flexibility to Book
-          </span>
+         <span
+  className="relative bg-clip-text text-transparent"
+  style={{
+    backgroundImage: `linear-gradient(
+      160deg,
+      #c94030 0%,
+      #e2572b 22%,
+      #f08070 36%,
+      #fde8e4 50%,
+      #f08070 64%,
+      #e2572b 78%,
+      #c94030 100%
+    )`,
+    filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
+  }}
+>
+  Flexibility to Book
+</span>
         </motion.h2>
       </div>
 
@@ -59,7 +74,8 @@ export default function SemiCircleCards() {
           MOBILE GRID — unchanged
       ══════════════════════════════════════════════════════════════════ */}
    {/* MOBILE GRID */}
-<div className="lg:hidden grid grid-cols-2 gap-3 w-full max-w-sm mx-auto px-3">
+{/* MOBILE GRID */}
+<div className="lg:hidden flex flex-col gap-4 w-full max-w-md mx-auto px-4">
   {cards.map((card, i) => (
     <motion.div
       key={card.id}
@@ -67,30 +83,31 @@ export default function SemiCircleCards() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: i * 0.07, duration: 0.5, ease: "easeOut" }}
-      className="relative rounded-2xl overflow-hidden cursor-pointer"
+      className="relative rounded-xl overflow-hidden cursor-pointer flex items-center gap-3 p-3"
       style={{
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(255,255,255,0.02)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: "0 1px 8px rgba(0,0,0,0.3)",
         transition: "all 0.3s",
       }}
     >
       {/* image */}
-      <div className="w-full h-24 relative bg-gradient-to-br from-zinc-800 to-zinc-900">
+      <div className="w-14 h-14 relative flex-shrink-0">
         <Image
           src={card.image}
           alt={card.title}
           fill
-          className="object-cover opacity-85"
+          className="object-contain brightness-110 contrast-110"
         />
       </div>
 
       {/* text */}
-      <div className="p-3">
-        <p className="text-white text-xs font-semibold mb-1">
+      <div className="flex flex-col flex-1 min-w-0">
+        <p className="text-white text-[14px] font-semibold tracking-tight mb-0.5">
           {card.title}
         </p>
 
-        <p className="text-white/40 text-xs leading-relaxed line-clamp-3">
+        <p className="text-slate-400 text-[13px] leading-relaxed line-clamp-2">
           {card.description}
         </p>
       </div>

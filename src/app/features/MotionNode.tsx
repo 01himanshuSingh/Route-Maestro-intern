@@ -338,7 +338,7 @@ export default function FeatureOrbit() {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-15 px-4"
+      className="relative w-full overflow-hidden py-8 px-4"
       style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 50%, rgba(79,46,229,0.07) 0%, #050508 70%)' }}
     >
       {/* Radial glow */}
@@ -354,7 +354,7 @@ export default function FeatureOrbit() {
         <motion.h2
           initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-4"
+          className=" text-[32px] sm:text-5xl lg:text-5xl xl:text-6xl font-bold text-white tracking-tight mb-4"
         >
   AI Powered Trip Planning & Itinerary{' '}
           <span  className="bg-clip-text text-transparent"

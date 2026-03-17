@@ -1,6 +1,5 @@
 'use client'
 
-import { Zap, BookTemplate, Smartphone, Palette } from 'lucide-react'
 import { FeatureCard } from './FeatureCard'
 import { motion } from "framer-motion"
 
@@ -9,14 +8,14 @@ const features = [
     id: 1,
     title: 'Travel Companies & Agents ',
     description:
-      "RouteMaestro’s AI generates Door-To-Door Traveller Personalized Trips in under 2 Minutes, reducing operational costs & enhancing Profit Margins for agents.",
+      "RouteMaestro's AI generates Door-To-Door Traveller Personalized Trips in under 2 Minutes, reducing operational costs & enhancing Profit Margins for agents.",
     imageSrc: "/Travel Companies & Agents.png",
   },
   {
     id: 2,
     title: 'DMCs/DMOs',
     description:
-      "DMC’s, DMO’s can integrate RouteMaestro onto their own platform seamlessly to enhance convenience & get preferred by their partners, agents to generate Personalized Trips in 2 Minutes.",
+      "DMC's, DMO's can integrate RouteMaestro onto their own platform seamlessly to enhance convenience & get preferred by their partners, agents to generate Personalized Trips in 2 Minutes.",
      imageSrc:"/DMO.png" ,
   },
   {
@@ -30,17 +29,13 @@ const features = [
     id: 4,
     title: 'Influencers',
     description:
-      "Travel Influencers can use RouteMaestro’s AI to design personalized itineraries that showcase their travel style, highlight favorite spots, and feature curated travel recommendations.",
+      "Travel Influencers can use RouteMaestro's AI to design personalized itineraries that showcase their travel style, highlight favorite spots, and feature curated travel recommendations.",
    imageSrc:"/Influencers.png",
   },
 ]
 
 export function FeaturesSection() {
 
-
-
-
-  
 const text = "Solutions For Different Sectors In Travel Industry"
 const words = text.split(" ")
 
@@ -51,15 +46,13 @@ const descriptionText =
 const descriptionWords = descriptionText.split(" ")
 
   return (
-    <section className="relative w-full bg-black py-10 px-4 sm:px-6 lg:px-8">
-      {/* Background pattern */}
-     
+    <section className="relative w-full bg-black py-8 px-5 sm:px-6 lg:px-8">
       <div className="relative z-10 mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-8 text-center lg:mb-16">
 
   <motion.h2
-  className="mb-6 text-balance text-3xl font-bold text-[#b9b9bf] lg:text-4xl"
+  className="mb-4 text-balance text-[22px] leading-snug font-bold text-[#b9b9bf] lg:text-4xl lg:mb-6"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -69,26 +62,43 @@ const descriptionWords = descriptionText.split(" ")
     const isHighlight = highlightWords.includes(word)
 
     return (
-      <motion.span
-        key={index}
-        variants={{
-          hidden: { opacity: 0, x: -25 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`inline-block mr-2 ${
-          isHighlight ? "text-[#ff7043]" : "text-white"
-        }`}
-      >
-        {word}
-      </motion.span>
+    <motion.span
+  key={index}
+  variants={{
+    hidden: { opacity: 0, x: -25 },
+    visible: { opacity: 1, x: 0 },
+  }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  className={`inline-block mr-1.5 ${
+    isHighlight ? "bg-clip-text text-transparent" : "text-white"
+  }`}
+  style={
+    isHighlight
+      ? {
+          backgroundImage: `linear-gradient(
+            160deg,
+            #c94030 0%,
+            #e2572b 22%,
+            #f08070 36%,
+            #fde8e4 50%,
+            #f08070 64%,
+            #e2572b 78%,
+            #c94030 100%
+          )`,
+          filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
+        }
+      : {}
+  }
+>
+  {word}
+</motion.span>
     )
   })}
 </motion.h2>
 
 
 <motion.p
-  className="mx-auto max-w-4xl text-lg lg:text-[18px] text-slate-400 leading-relaxed"
+  className="mx-auto max-w-[90%] text-[14px] leading-relaxed text-slate-400 lg:max-w-4xl lg:text-[18px]"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.4 }}
@@ -102,20 +112,17 @@ const descriptionWords = descriptionText.split(" ")
         visible: { opacity: 1, x: 0 },
       }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="inline-block mr-1.5"
+      className="inline-block mr-1"
     >
       {word}
     </motion.span>
   ))}
 </motion.p>
 
-
-
 </div>
 
         {/* Features Grid */}
-      {/* Features Grid */}
-<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
   {features.map((feature) => (
     <FeatureCard
       key={feature.id}
@@ -126,7 +133,6 @@ const descriptionWords = descriptionText.split(" ")
   ))}
 </div>
 
-      
       </div>
     </section>
   )
