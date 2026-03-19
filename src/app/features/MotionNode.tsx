@@ -6,8 +6,16 @@ import Image from 'next/image'
 import { Globe } from 'lucide-react'
 
 // ─── Feature Data ─────────────────────────────────────────────────────────────
-
-const features = [
+type Feature = {
+  image: string
+  title: string
+  description: string
+  gradient: string
+  glow: string
+  lineColor: string
+  borderColor: string
+}
+const features:Feature[] = [
   {
    image: "/AI-Powered Route Generation for Budget Optimization (1).png",
     title: "Route Generating Engine For Travel Budget Optimisation",
@@ -155,7 +163,7 @@ function OrbitLines({
   nodes: { x: number; y: number }[]
   center: { x: number; y: number }
   hoveredIndex: number | null
-   features: any[]
+   
 }) {
   // Compute both ring radii for dashed orbit circles
   const nearR  = Math.hypot((nodes[0]?.x ?? 0) - center.x, (nodes[0]?.y ?? 0) - center.y)
