@@ -13,24 +13,28 @@ const faqItems: FAQItem[] = [
   {
     id: '1',
     question: 'How does RouteMaestro help travel agencies?',
-    answer: 'RouteMaestro helps travel agencies streamline operations by managing routes, packages, hotel inventory, and pricing from one centralized platform. It reduces manual work and improves operational efficiency.'
+    answer:
+      'RouteMaestro helps travel agencies streamline operations by managing routes, packages, hotel inventory, and pricing from one centralized platform.',
   },
   {
     id: '2',
     question: 'Can RouteMaestro handle dynamic travel packages?',
-    answer: 'Yes. RouteMaestro allows agencies to create and update dynamic travel packages based on customer preferences, availability, and real-time pricing to maximize profitability.'
+    answer:
+      'Yes. RouteMaestro allows agencies to create and update dynamic travel packages based on customer preferences.',
   },
   {
     id: '3',
     question: 'Is RouteMaestro suitable for growing travel businesses?',
-    answer: 'Absolutely. RouteMaestro is built for scalability, allowing small and large travel agencies to manage increasing bookings, multiple destinations, and complex itineraries with ease.'
+    answer:
+      'Absolutely. RouteMaestro is built for scalability for small and large agencies.',
   },
   {
     id: '4',
-    question: 'Does RouteMaestro support real-time pricing and updates?',
-    answer: 'Yes. The platform enables real-time updates for pricing, routes, and hotel availability, helping agencies provide accurate and up-to-date travel options to their clients.'
+    question: 'Does RouteMaestro support real-time pricing?',
+    answer:
+      'Yes. The platform enables real-time updates for pricing, routes, and hotel availability.',
   },
-]
+];
 
 export function FAQAccordion() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -49,16 +53,15 @@ export function FAQAccordion() {
               }
               className="w-full px-4 py-3 lg:px-5 lg:py-4 flex items-center justify-between hover:bg-white/[0.02] transition-colors text-left gap-3"
             >
-              <span className="text-[15px] lg:text-[16px] font-semibold tracking-tight text-slate-300">
+              <span className="text-[15px] lg:text-[16px] font-semibold text-slate-300">
                 {item.question}
               </span>
-              <div
-                className={`flex-shrink-0 transition-transform duration-300 ${
+
+              <ChevronDown
+                className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
                   expandedId === item.id ? 'rotate-180' : ''
                 }`}
-              >
-                <ChevronDown className="w-5 h-5 text-slate-400" />
-              </div>
+              />
             </button>
 
             {expandedId === item.id && (

@@ -12,27 +12,29 @@ export default function FaqSection() {
               {/* Left Column */}
               <div className="flex flex-col justify-center space-y-5">
                 <div className="space-y-3">
+                  
                   <h1 className="text-[26px] lg:text-4xl font-bold text-slate-200 leading-tight tracking-tight">
                     Frequently Asked
-                   <span
-  className="relative bg-clip-text text-transparent ml-2"
-  style={{
-    backgroundImage: `linear-gradient(
-      160deg,
-      #c94030 0%,
-      #e2572b 22%,
-      #f08070 36%,
-      #fde8e4 50%,
-      #f08070 64%,
-      #e2572b 78%,
-      #c94030 100%
-    )`,
-    filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
-  }}
->
-  Questions
-</span>
+                    <span
+                      className="relative bg-clip-text text-transparent ml-2"
+                      style={{
+                        backgroundImage: `linear-gradient(
+                          160deg,
+                          #c94030 0%,
+                          #e2572b 22%,
+                          #f08070 36%,
+                          #fde8e4 50%,
+                          #f08070 64%,
+                          #e2572b 78%,
+                          #c94030 100%
+                        )`,
+                        filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
+                      }}
+                    >
+                      Questions
+                    </span>
                   </h1>
+
                   <p className="text-[15px] lg:text-[18px] text-slate-400 leading-relaxed max-w-md">
                     We're looking for people who share our vision! Most of our time used to be taken up by most of who created new websites for their businesses.
                   </p>
@@ -46,7 +48,7 @@ export default function FaqSection() {
                 </div>
               </div>
 
-              {/* Right Column - FAQ Accordion */}
+              {/* Right Column */}
               <div className="md:pl-3">
                 <FAQAccordion />
               </div>
