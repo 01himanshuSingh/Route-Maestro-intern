@@ -45,6 +45,9 @@ export const metadata = {
       "AI-powered travel planning and booking platform for travel agencies.",
     type: "website",
   },
+  icons:{
+     icon: "/rmMetalogo.png"
+  }
 }
 
 export default function RootLayout({

@@ -11,7 +11,7 @@ import { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://routemaestro.com/"),
 
   title: "AI Travel Agency Software & Itinerary Builder | RouteMaestro",
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "https://routemaestro.com/",
   },
 
   robots: {
@@ -49,12 +49,12 @@ export const metadata: Metadata = {
     title: "RouteMaestro – AI Travel Agency Software",
     description:
       "AI-powered travel agency software to build itineraries, manage bookings, and launch travel platforms faster.",
-    url: "https://yourdomain.com",
+    url: "https://routemaestro.com/",
     siteName: "RouteMaestro",
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/rmMetalogo.png",
         width: 1200,
         height: 630,
         alt: "RouteMaestro AI Travel Planning Platform",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "RouteMaestro – AI Travel Agency Software",
     description:
       "AI travel agency software for itinerary building, booking automation, and OTA platform management.",
-    images: ["/og-image.jpg"],
+    images: ["/rmMetalogo.png"],
   },
 
   viewport: {

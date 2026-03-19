@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://routemaestro.com/"),
 
   title: "RouteMaestro Pricing | Travel Agency Software Plans",
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://yourdomain.com/pricing",
+    canonical: "https://routemaestro.com/pricing",
   },
 
   robots: {
@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     title: "RouteMaestro Pricing | Travel Agency Software",
     description:
       "Discover RouteMaestro pricing plans designed for travel agencies and tour operators to build itineraries, automate bookings, and launch OTA platforms.",
-    url: "https://yourdomain.com/pricing",
+    url: "https://routemaestro.com/pricing",
     siteName: "RouteMaestro",
     type: "website",
     images: [
       {
-        url: "/og-pricing.jpg",
+        url: "/rmMetalogo.png",
         width: 1200,
         height: 630,
         alt: "RouteMaestro Travel Agency Software Pricing",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "RouteMaestro Pricing | Travel Agency Software",
     description:
       "Explore RouteMaestro pricing plans for AI-powered travel itinerary builder and booking automation.",
-    images: ["/og-pricing.jpg"],
+    images: ["/rmMetalogo.png"],
   },
 
   viewport: {

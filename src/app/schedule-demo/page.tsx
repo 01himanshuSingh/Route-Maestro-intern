@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://yourdomain.com/schedule-demo",
+    canonical: "https://routemaestro.com/schedule-demo",
   },
 
   robots: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "RouteMaestro – AI Travel Agency Software",
     description:
       "Book a live demo of RouteMaestro and discover how AI-powered travel planning and booking automation can transform your travel agency.",
-    url: "https://yourdomain.com/schedule-demo",
+    url: "https://routemaestro.com/schedule-demo",
     siteName: "RouteMaestro",
     type: "website",
   },

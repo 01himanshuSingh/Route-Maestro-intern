@@ -8,7 +8,7 @@ import Link from 'next/link'
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://routemaestro.com/"),
 
   title: "Travel Agency Software Features | AI Itinerary Builder & Route Planning",
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://yourdomain.com/features",
+    canonical: "https://routemaestro.com/features",
   },
 
   robots: {
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     title: "RouteMaestro Features | AI Travel Planning & Booking Platform",
     description:
       "Explore RouteMaestro features including AI itinerary builder, multi-city route planning, travel booking automation, and travel CRM for agencies.",
-    url: "https://yourdomain.com/features",
+    url: "https://routemaestro.com/features",
     siteName: "RouteMaestro",
     type: "website",
     images: [
       {
-        url: "/og-features.jpg",
+        url: "/rmMetalogo.png",
         width: 1200,
         height: 630,
         alt: "RouteMaestro Travel Agency Software Features",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "RouteMaestro Features | AI Travel Agency Software",
     description:
       "Explore AI-powered itinerary builder, travel booking automation, and CRM tools for travel agencies.",
-    images: ["/og-features.jpg"],
+    images: ["/rmMetalogo.png"],
   },
 
   viewport: {
