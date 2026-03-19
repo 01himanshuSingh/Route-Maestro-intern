@@ -155,6 +155,7 @@ function OrbitLines({
   nodes: { x: number; y: number }[]
   center: { x: number; y: number }
   hoveredIndex: number | null
+   features: any[]
 }) {
   // Compute both ring radii for dashed orbit circles
   const nearR  = Math.hypot((nodes[0]?.x ?? 0) - center.x, (nodes[0]?.y ?? 0) - center.y)
