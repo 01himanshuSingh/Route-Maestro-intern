@@ -104,7 +104,7 @@ export default function Hero() {
           className="mb-5 sm:mb-7"
           style={{ animation: 'fadeSlideUp 0.7s ease-out 0.1s both' }}
         >
-          <h1 className="text-[34px] sm:text-5xl lg:text-[68px] font-bold text-white leading-[1.1] sm:leading-[1.08] tracking-[-0.03em]">
+          <h1 className="text-[34px] sm:text-5xl lg:text-[76px] xl:text-[84px] font-bold text-white leading-[1.1] sm:leading-[1.05] tracking-[-0.03em]">
             Digitize Your
             <br />
            <span className="relative inline-block">
@@ -149,7 +149,7 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className="text-[15px] sm:text-base lg:text-lg text-white/55 mb-8 sm:mb-10 max-w-[420px] sm:max-w-[600px] leading-relaxed tracking-wide"
+          className="text-[15px] sm:text-base lg:text-[20px] xl:text-[22px] text-white/55 mb-8 sm:mb-10 max-w-[420px] sm:max-w-[600px] lg:max-w-[720px] leading-relaxed tracking-wide"
           style={{ animation: 'fadeSlideUp 0.7s ease-out 0.2s both' }}
         >
           An AI Powered Dynamic Travel Packaging Platform For Your Business!
@@ -206,7 +206,7 @@ export default function Hero() {
             className="
               group relative overflow-hidden
               bg-[#e2472b] hover:bg-[#fe6652]
-              text-white text-sm font-semibold
+              text-white text-sm lg:text-[18px] font-semibold
               px-7 py-3.5 sm:py-3 rounded-full
               flex items-center gap-2
               w-full sm:w-auto justify-center
@@ -229,7 +229,7 @@ export default function Hero() {
             className="
               border border-white/15 hover:border-white/30
               text-white/80 hover:text-white
-              text-sm font-semibold
+              text-sm lg:text-[18px] font-semibold
               px-7 py-3.5 sm:py-3 rounded-full
               bg-white/[0.04] hover:bg-white/[0.08]
               backdrop-blur-sm

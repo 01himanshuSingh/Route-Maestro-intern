@@ -29,7 +29,7 @@ export const PLANS: PlanDetails[] = [
             {
                 currency: "INR",
                 monthly: 9999,
-                yearly: 0,
+                yearly: 109999,
             },
             {
                 currency: "USD",
@@ -51,7 +51,7 @@ export const PLANS: PlanDetails[] = [
     },
     {
         id: 2,
-        name: " agency",
+        name: " Agency",
         category:"agency",
                 featureLine:"Everything in Free, plus:",
   description: "",
@@ -59,7 +59,7 @@ export const PLANS: PlanDetails[] = [
             {
                 currency: "INR",
                 monthly: 19999,
-                yearly: 60000
+                yearly: 219999
             },
             {
                 currency: "USD",

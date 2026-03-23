@@ -11,7 +11,7 @@ interface DemoFormProps {
 }
 
 export function DemoForm({ className }: DemoFormProps) {
-
+const calendyurl=  process.env.NEXT_PUBLIC_CALENDLY_URL
   interface DarkSelectProps {
     value: string;
     onChange: (value: string) => void;
@@ -266,7 +266,7 @@ export function DemoForm({ className }: DemoFormProps) {
 
       {mounted && (
         <PopupModal
-          url="https://calendly.com/hr1411687/route-maestro-schedule"
+          url= {calendyurl!}
           open={isOpen}
           onModalClose={() => setIsOpen(false)}
           rootElement={document.body}

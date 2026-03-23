@@ -76,7 +76,7 @@ const currency = country === "IN" ? "INR" : "USD";
                 </h1>
 
                 <p className="mt-3 text-[16px] sm:text-base lg:text-lg font-bricolage text-neutral-100 max-w-2xl mx-auto">
-                    Find the perfect plan for your growth stage.
+                    Find the perfect plan for your bussiness .
                 </p>
             </div>
             <PriceCompareTable currency={currency} />

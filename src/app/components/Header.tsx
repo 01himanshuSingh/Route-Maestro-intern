@@ -20,7 +20,7 @@ export default function Header() {
   }, [])
 const router = useRouter()
   const navItems = [
-    { label: 'home', href: '/' },
+    { label: 'Home', href: '/' },
     { label: 'Features', href: '/features' },
     // { label: 'How it works', href: '#how-it-works' },
     { label: 'Pricing', href: '/pricing' },

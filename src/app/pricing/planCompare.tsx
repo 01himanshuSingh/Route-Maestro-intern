@@ -26,7 +26,7 @@ export const PLAN_COMPARE_FEATURES: {
                 },
                 {
                     text: "Offline Contracting & Supplier Management",
-                    check: { default: false, enterprise: true },
+                    check: { default: false, pro:false,enterprise: true },
                 },
             ],
         },

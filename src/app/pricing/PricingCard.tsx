@@ -8,7 +8,7 @@ type PricingSectionProps = {
 };
 
 export default function PricingSection({ currency }: PricingSectionProps) {
-  const [billing, setBilling] = React.useState<"yearly" | "monthly">("yearly");
+  const [billing, setBilling] = React.useState<"yearly" | "monthly">("monthly");
 
   return (
     <section className="bg-black py-25">
@@ -31,17 +31,7 @@ export default function PricingSection({ currency }: PricingSectionProps) {
         </div>
 
         {/* Toggle */}
-        <div className="w-fit px-1 py-1 rounded-full flex items-center mx-auto my-8 sm:my-10">
-          <button
-            onClick={() => setBilling("yearly")}
-            aria-pressed={billing === "yearly"}
-            className={`relative z-10 w-fit px-3 py-0.5 text-[16px] font-medium font-bricolage rounded-full transition-colors duration-200 ${billing === "yearly"
-              ? "text-[#FF5F42]"
-              : "text-[#C3C3C3] hover:text-neutral-500"
-              }`}
-          >
-            Yearly
-          </button>
+        <div className="w-fit px-1 py-1 rounded-full border  flex items-center mx-auto my-8 sm:my-10">
           <button
             onClick={() => setBilling("monthly")}
             aria-pressed={billing === "monthly"}
@@ -51,6 +41,16 @@ export default function PricingSection({ currency }: PricingSectionProps) {
               }`}
           >
             Monthly
+          </button>
+          <button
+            onClick={() => setBilling("yearly")}
+            aria-pressed={billing === "yearly"}
+            className={`relative z-10 w-fit px-3 py-0.5 text-[16px] font-medium font-bricolage rounded-full transition-colors duration-200 ${billing === "yearly"
+              ? "text-[#FF5F42]"
+              : "text-[#C3C3C3] hover:text-neutral-500"
+              }`}
+          >
+            Yearly
           </button>
         </div>
       </div>

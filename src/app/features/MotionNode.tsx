@@ -106,7 +106,7 @@ const features:Feature[] = [
 ]
 
 // Even index = near (0.28), odd index = far (0.42) — alternating pattern
-const RADIUS_MULTIPLIERS = [0.28, 0.42, 0.28, 0.42, 0.28, 0.42, 0.28, 0.42]
+const RADIUS_MULTIPLIERS = [0.38, 0.62, 0.38, 0.62, 0.38, 0.62, 0.38, 0.62]
 
 // Near nodes slightly bigger, far nodes slightly smaller
 const NODE_SIZES = [110, 92, 110, 92, 110, 92, 110, 92]
@@ -396,41 +396,28 @@ export default function FeatureOrbit() {
           <OrbitLines nodes={nodePositions} center={{ x: cx, y: cy }} hoveredIndex={hovered} />
 
           {/* Center node */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1] }}
-            className="absolute flex flex-col items-center justify-center rounded-full"
-            style={{
-              width: 156, height: 156,
-              left: cx - 78, top: cy - 78,
-               backgroundImage: `linear-gradient(
-      160deg,
-      #c94030 0%,
-      #e2572b 22%,
-      #f08070 36%,
-      #fde8e4 50%,
-      #f08070 64%,
-      #e2572b 78%,
-      #c94030 100%
-    )`,
-    boxShadow:
-      "0 0 0 1px rgba(226,71,43,0.35), 0 0 60px rgba(226,71,43,0.35), 0 0 120px rgba(226,71,43,0.18)",
+         <motion.div
+  initial={{ opacity: 0, scale: 0.5 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1] }}
+  className="absolute flex  items-center justify-center"
+  style={{
+    width: 140,
+    height: 140,
+    left: cx - 50,
+    top: cy - 50,
   }}
-          >
-            <div className="absolute inset-0 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.15)' }} />
-            <motion.div
-              animate={{ scale: [1, 1.04, 1] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="flex flex-col items-center gap-1"
-            >
-              <Globe size={34} className="text-white" strokeWidth={1.4} />
-              <span className="text-white text-[13px] font-bold tracking-[0.14em] uppercase opacity-80">
-                RouteMaestro
-              </span>
-            </motion.div>
-          </motion.div>
+>
 
+  <div>
+
+  <img
+    src="/RM Logo.png"  // 🔁 replace with your logo path
+    alt="Logo"
+    className="w-full h-full rounded-lg bg-white/90 p-2 object-contain"
+    />
+    </div>
+</motion.div>
           {/* Feature nodes */}
           {features.map((feature, i) => {
             const pos = nodePositions[i]

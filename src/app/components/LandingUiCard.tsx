@@ -55,7 +55,7 @@ function FeatureCard({
               : "(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
           }
           className={`
-            object-contain
+            object-cover p-4
             transition-transform duration-500 ease-out
             lg:group-hover:scale-[1.04]
             brightness-[1.05] contrast-[1.1] saturate-[1.08]

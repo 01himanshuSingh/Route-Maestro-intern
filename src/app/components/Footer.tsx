@@ -21,7 +21,11 @@ export default function Footer() {
   />
 </div>
             <p className="text-sm text-white/60 max-w-[132px]  ">
-            A powerful platform to manage bookings, billing, 
+            AI-powered platform to build and sell personalized travel packages in minutes.
+            <span className='flex ml-2 text-[12px]'>
+              
+Save time. Close faster. Scale smarter.
+              </span>
 
 
             </p>
@@ -33,7 +37,7 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="/features" className="text-sm text-white/60 hover:text-white transition-colors">
                   Features
                 </Link>
               </li>
@@ -42,11 +46,11 @@ export default function Footer() {
                   Pricing
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
                   Security
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -55,15 +59,11 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="https://ascentialabs.com/about-us" className="text-sm text-white/60 hover:text-white transition-colors">
                   About
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
+             
               <li>
                 <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
                   Contact
@@ -77,20 +77,20 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="/privacy" className="text-sm text-white/60 hover:text-white transition-colors">
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="/terms-conditions" className="text-sm text-white/60 hover:text-white transition-colors">
                   Terms
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
                   Cookies
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

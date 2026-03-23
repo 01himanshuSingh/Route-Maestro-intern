@@ -33,7 +33,7 @@ const item = {
       items-center lg:items-start
       justify-center
       px-0 sm:px-2 lg:px-4
-      py-2 pt-12 lg:pt-1 lg:py-12
+      py-2 pt-8 lg:pt-1 lg:py-12
       text-center lg:text-left
     ">
       {/* Heading */}

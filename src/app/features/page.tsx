@@ -83,7 +83,7 @@ export default function Home() {
          {/* Right Side - Image */}
 <div className="
   w-full lg:w-[60%]
-  rounded-2xl
+  rounded-2xl pt-12
   flex justify-center lg:justify-end
   
   transition-all duration-300
@@ -97,7 +97,7 @@ export default function Home() {
   }}
 >
   <Image
-    src="/ai-trip-plan (1).webp"
+    src="/featurepagelandingpicc.png"
     alt="Travel booking dashboard"
     width={1600}
     height={1000}

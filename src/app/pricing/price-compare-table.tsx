@@ -6,9 +6,10 @@ import { PLANS, resolvePrice, formatPrice } from "@/utils/pricing";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CSSProperties, useState } from "react";
 import { cn } from "@/utils/cn"; // adjust to your cn import path
+import FeatureComparisonPage from "./FeatureComparisonPage";
 
-type PlanKey = "default" | "pro" | "enterprise";
-const PLAN_KEYS: PlanKey[] = ["default", "pro", "enterprise"];
+type PlanKey = "default" | "agency" | "enterprise";
+const PLAN_KEYS: PlanKey[] = ["default", "agency", "enterprise"];
 
 function resolveCheck(
   check: boolean | Partial<Record<PlanKey, boolean>> | undefined,
@@ -119,15 +120,7 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
         </div>
 
         {/* ── FEATURE COMPARISON BODY ── */}
-        <div className="flex flex-col pb-12">
-          {PLAN_COMPARE_FEATURES.map((category) => (
-            <CompareCategorySection
-              key={category.category}
-              category={category}
-              mobilePlanIndex={mobilePlanIndex}
-            />
-          ))}
-        </div>
+          <FeatureComparisonPage mobilePlanIndex={mobilePlanIndex} />
 
       </div>
     </section>
