@@ -140,7 +140,10 @@ export default function Hero() {
         </div>
 
         {/* Description */}
-        <p className="text-[15px] sm:text-base lg:text-[20px] xl:text-[22px] text-white/55 mb-8 sm:mb-10 max-w-[720px] leading-relaxed">
+          <p
+          className="text-[15px] sm:text-base lg:text-[20px] xl:text-[22px] text-white/55 mb-8 sm:mb-10 max-w-[420px] sm:max-w-[600px] lg:max-w-[720px] leading-relaxed tracking-wide"
+          style={{ animation: 'fadeSlideUp 0.7s ease-out 0.2s both' }}
+        >
           An AI Powered Dynamic Travel Packaging Platform For Your Business!
         </p>
 
@@ -149,32 +152,70 @@ export default function Hero() {
           <div className="absolute -inset-4 bg-blue-500/[0.05] rounded-3xl blur-2xl" />
 
           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60 bg-[#0d0f12]">
-            <Image
+             <Image
               src="/landingpageeditpic.png"
-              alt="Preview"
+              alt="RouteMaestro Preview"
               width={1200}
               height={700}
-              className="w-full h-auto"
+              priority
+              quality={100}
+              unoptimized
+              className="
+                w-full h-auto
+                object-cover
+                brightness-[1.06] contrast-[1.08] saturate-[1.08]
+              "
             />
+
           </div>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-3 w-full sm:w-auto px-2 sm:px-0"
+          style={{ animation: 'fadeSlideUp 0.7s ease-out 0.5s both' }}
+        >
           <button
-            className="bg-[#e2472b] text-white px-7 py-3 rounded-full"
+            className="
+              group relative overflow-hidden
+              bg-[#e2472b] hover:bg-[#fe6652]
+              text-white text-sm lg:text-[18px] font-semibold
+              px-7 py-3.5 sm:py-3 rounded-full
+              flex items-center gap-2
+              w-full sm:w-auto justify-center
+              shadow-lg shadow-red-500/20
+              hover:shadow-red-500/35 hover:shadow-xl
+              hover:-translate-y-0.5 active:translate-y-0
+              transition-all duration-200
+            "
             onClick={() => router.push('/schedule-demo')}
           >
-            Join Us
+            <span className="relative z-10">Join Us</span>
+            <ArrowRight
+              size={16}
+              className="relative z-10 group-hover:translate-x-1 transition-transform duration-200"
+            />
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-500 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
           </button>
 
           <button
-            className="border border-white/20 text-white px-7 py-3 rounded-full"
+            className="
+              border border-white/15 hover:border-white/30
+              text-white/80 hover:text-white
+              text-sm lg:text-[18px] font-semibold
+              px-7 py-3.5 sm:py-3 rounded-full
+              bg-white/[0.04] hover:bg-white/[0.08]
+              backdrop-blur-sm
+              w-full sm:w-auto
+              hover:-translate-y-0.5 active:translate-y-0
+              transition-all duration-200
+            "
             onClick={() => router.push('/schedule-demo')}
           >
             Start free trial
           </button>
         </div>
+
 
       </div>
     </section>
