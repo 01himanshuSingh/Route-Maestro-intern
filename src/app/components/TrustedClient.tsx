@@ -20,9 +20,17 @@ const words = text.split(" ")
       <div className="relative max-w-5xl mx-auto px-5 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-7 lg:mb-12">
-         
-<motion.h2
-  className="text-[22px] leading-snug lg:text-4xl font-bold text-white text-balance"
+       <motion.h2
+  className="
+    text-[22px] 
+    leading-snug 
+    lg:text-[42px] 
+    font-semibold 
+    text-white 
+    text-balance
+    lg:leading-[1.2]
+    lg:tracking-tight
+  "
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -36,7 +44,10 @@ const words = text.split(" ")
         visible: { opacity: 1, x: 0 },
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="inline-block mr-[6px]"
+      className="
+        inline-block mr-[6px]
+        lg:mr-2
+      "
     >
       {word}
     </motion.span>

@@ -495,21 +495,7 @@ function FeatureTable({ mobilePlanIndex }: { mobilePlanIndex: number }) {
   return (
     <section className="w-full px-3 sm:px-4 py-12 lg:py-16 bg-zinc-950">
       {/* Section heading */}
-      <div className="max-w-6xl mx-auto mb-8 lg:mb-10 text-center">
-        <p className="text-[11px] sm:text-xs lg:text-[13px] uppercase tracking-[0.22em] text-zinc-500 mb-2 font-semibold">
-          Compare Plans
-        </p>
-        <h2
-          className="text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[48px] font-bold text-white tracking-tight leading-[1.1]"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
-        >
-          Features Comparison
-        </h2>
-        <p className="mt-3 text-[13px] sm:text-[14px] lg:text-[15px] text-zinc-500 leading-relaxed">
-          Everything you need to scale your travel business
-        </p>
-        <div className="mt-6 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-zinc-600 to-transparent" />
-      </div>
+    
 
       {/* Mobile active-plan pill indicator */}
       <div className="max-w-6xl mx-auto mb-3 flex lg:hidden items-center justify-end px-1">

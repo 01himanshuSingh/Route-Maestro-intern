@@ -11,7 +11,7 @@ interface DemoFormProps {
 }
 
 export function DemoForm({ className }: DemoFormProps) {
-const calendyurl=  process.env.NEXT_PUBLIC_CALENDLY_URL
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL
   interface DarkSelectProps {
     value: string;
     onChange: (value: string) => void;
@@ -85,7 +85,7 @@ const calendyurl=  process.env.NEXT_PUBLIC_CALENDLY_URL
   };
 
   const [isOpen, setIsOpen] = useState(false);
-
+console.log("Calendly URL:", calendlyUrl)
   return (
     <form
       onSubmit={handleSubmit}
@@ -260,13 +260,13 @@ const calendyurl=  process.env.NEXT_PUBLIC_CALENDLY_URL
             <span className="text-[13.5px] lg:text-sm">Scheduling...</span>
           </span>
         ) : (
-          'Get free demo'
+          'Schedule  demo'
         )}
       </Button>
 
       {mounted && (
         <PopupModal
-          url= {calendyurl!}
+          url={calendlyUrl || ""}
           open={isOpen}
           onModalClose={() => setIsOpen(false)}
           rootElement={document.body}

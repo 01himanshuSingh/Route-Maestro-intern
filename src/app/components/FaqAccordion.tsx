@@ -45,30 +45,76 @@ export function FAQAccordion() {
         {faqItems.map((item) => (
           <div
             key={item.id}
-            className="border border-white/[0.08] rounded-xl bg-white/[0.02] overflow-hidden shadow-sm shadow-black/20 transition-all duration-300 hover:border-white/[0.15]"
+            className="
+  border border-white/[0.08] 
+  rounded-xl 
+  bg-white/[0.02] 
+  overflow-hidden 
+  shadow-sm shadow-black/20 
+  transition-all duration-300 
+
+  hover:border-white/[0.15]
+
+  lg:hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)]
+"
           >
             <button
               onClick={() =>
                 setExpandedId(expandedId === item.id ? null : item.id)
               }
-              className="w-full px-4 py-3 lg:px-5 lg:py-4 flex items-center justify-between hover:bg-white/[0.02] transition-colors text-left gap-3"
-            >
-              <span className="text-[15px] lg:text-[16px] font-semibold text-slate-300">
-                {item.question}
-              </span>
+             className="
+  w-full px-4 py-3 
+  lg:px-5 lg:py-4 
+  flex items-center justify-between 
+  hover:bg-white/[0.02] 
+  transition-colors 
+  text-left 
+  gap-3
 
-              <ChevronDown
-                className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
-                  expandedId === item.id ? 'rotate-180' : ''
-                }`}
-              />
+  lg:gap-4
+"
+            >
+            <span
+  className="
+    text-[15px] 
+    lg:text-[17px] 
+    font-semibold 
+    text-slate-300
+
+    lg:text-slate-200
+    lg:tracking-tight
+    lg:leading-[1.4]
+  "
+>
+  {item.question}
+</span>
+
+            <ChevronDown
+  className={`
+    w-5 h-5 
+    text-slate-400 
+    lg:text-slate-300
+    transition-transform duration-300
+    ${expandedId === item.id ? 'rotate-180' : ''}
+  `}
+/>
             </button>
 
             {expandedId === item.id && (
               <div className="px-4 py-3 lg:px-5 lg:py-4 border-t border-white/[0.05]">
-                <p className="text-[14px] lg:text-[15px] text-slate-400 leading-relaxed">
-                  {item.answer}
-                </p>
+               <p
+  className="
+    text-[14px] 
+    text-slate-400 
+    leading-relaxed
+
+    lg:text-[15.5px] 
+    lg:text-slate-300
+    lg:leading-[1.75]
+  "
+>
+  {item.answer}
+</p>
               </div>
             )}
           </div>

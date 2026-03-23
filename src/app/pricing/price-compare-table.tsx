@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CSSProperties, useState } from "react";
 import { cn } from "@/utils/cn"; // adjust to your cn import path
 import FeatureComparisonPage from "./FeatureComparisonPage";
+import { useRouter } from "next/navigation";
 
 type PlanKey = "default" | "agency" | "enterprise";
 const PLAN_KEYS: PlanKey[] = ["default", "agency", "enterprise"];
@@ -24,7 +25,7 @@ type PricingSectionProps = { currency: "INR" | "USD" };
 
 export default function PriceCompareTable({ currency }: PricingSectionProps) {
   const [mobilePlanIndex, setMobilePlanIndex] = useState(0);
-
+const router = useRouter()
   return (
     <section className="bg-black py-20">
       <div className="max-w-7xl mx-auto md:px-4">
@@ -84,16 +85,21 @@ export default function PriceCompareTable({ currency }: PricingSectionProps) {
                         <ChevronLeft className="size-5 text-zinc-200" />
                       </button>
 
-                      <button
-                        className={cn(
-                          "h-8 w-full rounded-full text-[13.5px] font-medium font-bricolage  transition-all duration-200",
-                          planKey === "enterprise"
-                            ? "bg-white hover:bg-white/90 text-black"
-                            : "bg-[#FF5F42] hover:bg-[#e14e36] text-white",
-                        )}
-                      >
-                        {planKey === "enterprise" ? "Book a call" : "Get Started"}
-                      </button>
+                   <button
+  onClick={() => {
+   
+      router.push('/schedule-demo')
+   
+  }}
+  className={cn(
+    "h-8 w-full rounded-full text-[13.5px] font-medium font-bricolage transition-all duration-200",
+    planKey === "enterprise"
+      ? "bg-white hover:bg-white/90 text-black"
+      : "bg-[#FF5F42] hover:bg-[#e14e36] text-white",
+  )}
+>
+  {planKey === "enterprise" ? "Book a call" : "Get Started"}
+</button>
 
                       <button
                         type="button"

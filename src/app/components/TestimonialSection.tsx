@@ -127,7 +127,19 @@ export function TestimonialsSection() {
       <div className="text-center max-w-xl mx-auto px-2">
 
         <motion.h2
-          className="text-[26px] leading-tight tracking-tight font-bold text-slate-100 lg:text-4xl text-balance"
+         className="
+  text-[26px] 
+  leading-tight 
+  tracking-tight 
+  font-bold 
+  text-slate-100 
+  text-balance
+
+  lg:text-[44px] 
+  lg:leading-[1.2] 
+  lg:font-semibold 
+  lg:tracking-tight
+"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -149,7 +161,18 @@ export function TestimonialsSection() {
         </motion.h2>
 
         <motion.p
-          className="mt-3 text-gray-400 text-[15px] lg:text-[18px] leading-relaxed max-w-xl mx-auto"
+         className="
+  mt-3 
+  text-gray-400 
+  text-[15px] 
+  leading-relaxed 
+  max-w-xl 
+  mx-auto
+
+  lg:text-[18px] 
+  lg:leading-[1.8] 
+  lg:text-slate-300
+"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}

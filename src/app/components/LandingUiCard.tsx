@@ -76,19 +76,28 @@ function FeatureCard({
 
       {/* Content */}
       <div className="px-4 pb-4 pt-2 lg:px-6 lg:pb-6 flex-1">
-        <h3
-          className={`font-semibold text-white tracking-tight
-            ${isLarge ? "text-lg lg:text-2xl lg:text-3xl" : "text-base lg:text-xl lg:text-2xl"}
-          `}
-        >
+       <h3
+  className={`
+    font-medium text-white tracking-tight
+    ${isLarge 
+      ? "text-lg lg:text-[26px]" 
+      : "text-base lg:text-[20px]"
+    }
+  `}
+>
           {title}
         </h3>
 
-        <p
-          className={`text-slate-400 mt-1.5 lg:mt-2 leading-relaxed
-            ${isLarge ? "text-[13px] lg:text-base lg:text-lg" : "text-[13px] lg:text-sm lg:text-base"}
-          `}
-        >
+      <p
+  className={`
+    text-slate-400 mt-1.5 lg:mt-2
+    leading-relaxed lg:leading-[1.7]
+    ${isLarge 
+      ? "text-[13px] lg:text-[16px]" 
+      : "text-[13px] lg:text-[14px]"
+    }
+  `}
+>
           {description}
         </p>
       </div>
@@ -138,7 +147,15 @@ export function LandingUiCard() {
 
       {/* ================= HEADER ================= */}
       <div className="max-w-6xl mx-auto text-center mb-8 lg:mb-16">
-        <h1 className="text-[22px] lg:text-4xl font-bold text-white leading-snug lg:leading-tight">
+      <h1 className="
+  text-[22px] 
+  lg:text-[44px] 
+  font-semibold 
+  text-white 
+  leading-snug 
+  lg:leading-[1.2] 
+  tracking-tight
+">
           <motion.span
             initial="hidden"
             whileInView="visible"
@@ -161,29 +178,41 @@ export function LandingUiCard() {
             ))}
           </motion.span>
 
-         <span
-  className="relative bg-clip-text text-transparent"
-  style={{
-    backgroundImage: `linear-gradient(
-      160deg,
-      #c94030 0%,
-      #e2572b 22%,
-      #f08070 36%,
-      #fde8e4 50%,
-      #f08070 64%,
-      #e2572b 78%,
-      #c94030 100%
-    )`,
-    filter: 'drop-shadow(0 0 28px rgba(226,71,43,0.18))',
-  }}
+      <span
+  className="
+    relative bg-clip-text text-transparent
+    lg:font-semibold
+    lg:tracking-tight
+  "
+   style={{
+                  backgroundImage: `linear-gradient(
+                    135deg,
+                    #c94030 0%,
+                    #e2572b 25%,
+                    #ff7a5c 50%,
+                    #e2572b 75%,
+                    #c94030 100%
+                  )`,
+                }}
 >
   For Travel Business
 </span>
         </h1>
 
-        <p className="text-slate-400 text-[14px] lg:text-[18px] max-w-4xl mx-auto mt-3 lg:mt-6 leading-relaxed">
-          A powerful platform to manage bookings, billing, and operations with modern tools built for travel agencies.
-        </p>
+       <p className="
+  text-slate-400 
+  text-[14px] 
+  lg:text-[18px] 
+  max-w-4xl 
+  mx-auto 
+  mt-3 
+  lg:mt-6 
+  leading-relaxed 
+  lg:leading-[1.8]
+  lg:text-slate-300
+">
+  A powerful platform to manage bookings, billing, and operations with modern tools built for travel agencies.
+</p>
       </div>
 
       {/* ================= GRID ================= */}

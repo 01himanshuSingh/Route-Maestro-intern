@@ -26,7 +26,7 @@ export default function SemiCircleCards() {
 
   // ── Desktop geometry ──────────────────────────────────────────────────────
   const radius  = 560   // tighter arc → more precise semicircle
-  const centerX = 500   // horizontal centre of the arc
+  const centerX = 560   // horizontal centre of the arc
   const centerY = 320   // vertical centre (above viewport so cards peek up)
   const angleStep = 34  // even angular spacing between cards
 
@@ -46,23 +46,31 @@ export default function SemiCircleCards() {
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center text-2xl lg:text-4xl font-bold tracking-tight text-white leading-tight"
+         className="
+  text-center 
+  text-2xl 
+  lg:text-[42px] 
+  font-semibold 
+  tracking-tight 
+  text-white 
+  leading-tight
+  lg:leading-[1.2]
+"
         >
           Freedom to Choose,{" "}
-         <span
-  className="relative bg-clip-text text-transparent"
+     <span
+  className="relative bg-clip-text text-transparent lg:font-semibold"
   style={{
     backgroundImage: `linear-gradient(
-      160deg,
-      #c94030 0%,
-      #e2572b 22%,
-      #f08070 36%,
-      #fde8e4 50%,
-      #f08070 64%,
-      #e2572b 78%,
-      #c94030 100%
+       135deg,
+                    #c94030 0%,
+                    #e2572b 25%,
+                    #ff7a5c 50%,
+                    #e2572b 75%,
+                    #c94030 100%
+
     )`,
-    filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
+    filter: "drop-shadow(0 6px 24px rgba(255,120,80,0.25))",
   }}
 >
   Flexibility to Book
@@ -126,14 +134,19 @@ export default function SemiCircleCards() {
             <button
               key={card.id}
               onClick={() => setActiveIndex(i)}
-              className={`
-                px-5 py-2 rounded-full text-sm lg:text-[15px] font-medium
-                transition-all duration-200
-                ${activeIndex === i
-                  ? "bg-[#e2472b] text-white shadow-lg shadow-[#e2472b]/25"
-                  : "bg-white/[0.06] text-white/70 hover:bg-white/[0.1] hover:text-white border border-white/10"
-                }
-              `}
+          className={`
+  px-5 py-2 rounded-full 
+  text-sm lg:text-[15px] hover:cursor-pointer
+  font-medium 
+  tracking-[0.2px]
+  transition-all duration-300
+
+  ${
+    activeIndex === i
+      ? "bg-gradient-to-r from-[#e2472b] to-[#ff6a3d] text-white shadow-[0_8px_30px_rgba(255,90,60,0.3)]"
+      : "bg-white/[0.05] text-white/60 hover:bg-white/[0.1] hover:text-white border border-white/10"
+  }
+`}
             >
               {card.title}
             </button>
@@ -215,28 +228,35 @@ export default function SemiCircleCards() {
 
                   {/* Text area */}
                   <div className="flex flex-col flex-1 px-3.5 pt-3 pb-4">
-                    <h3
-                      className="font-semibold mb-1.5 leading-tight"
-                      style={{
-                        fontSize: 19,
-                        color: isActive ? "#fff" : "rgba(255,255,255,0.85)",
-                      }}
-                    >
-                      {card.title}
-                    </h3>
-                    <p
-                      className="leading-relaxed"
-                      style={{
-                        fontSize: 15,
-                        color: isActive ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.38)",
-                        display: "-webkit-box",
-                        WebkitLineClamp: 6,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                      }}
-                    >
-                      {card.description}
-                    </p>
+                   <h3
+  className="
+    font-semibold 
+    mb-1.5 
+    leading-tight
+    lg:tracking-tight
+  "
+  style={{
+    fontSize: 20,
+    color: isActive ? "#fff" : "rgba(255,255,255,0.85)",
+  }}
+>
+  {card.title}
+</h3>
+                 <p
+  className="leading-relaxed lg:leading-[1.7]"
+  style={{
+    fontSize: 15.5,
+    color: isActive
+      ? "rgba(255,255,255,0.6)"
+      : "rgba(255,255,255,0.4)",
+    display: "-webkit-box",
+    WebkitLineClamp: 6,
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+  }}
+>
+  {card.description}
+</p>
                   </div>
 
                   {/* Active indicator dot */}

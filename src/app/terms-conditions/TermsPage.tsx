@@ -481,10 +481,10 @@ export default function TermsPage() {
             <p className="text-sm text-zinc-400">
               Email:{" "}
               <a
-                href="mailto:legal@routemaestro.com"
+                href="mailto:anmol@ascentialabs.com"
                 className="text-indigo-400 transition-colors duration-200 hover:text-indigo-300"
               >
-                legal@routemaestro.com
+                anmol@ascentialabs.com
               </a>
             </p>
             <p className="mt-1 text-sm text-zinc-400">

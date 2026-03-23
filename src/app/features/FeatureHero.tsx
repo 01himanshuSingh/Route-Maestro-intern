@@ -50,10 +50,10 @@ const item = {
         "
       >
         AI Powered{' '}
-        <span className="bg-gradient-to-r from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r mr-2.5 from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
           Dynamic
         </span>
-        <br />Packaging
+        Packaging
       </motion.h1>
 
       {/* Description */}

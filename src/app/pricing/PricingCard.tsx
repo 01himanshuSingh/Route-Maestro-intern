@@ -3,13 +3,14 @@ import React from "react";
 import {  PLANS, resolvePrice } from "@/utils/pricing";
 import { Check } from "lucide-react";
 import NumberFlow from "@number-flow/react";
+import { useRouter } from "next/navigation";
 type PricingSectionProps = {
   currency: "INR" | "USD";
 };
 
 export default function PricingSection({ currency }: PricingSectionProps) {
   const [billing, setBilling] = React.useState<"yearly" | "monthly">("monthly");
-
+  const router = useRouter()
   return (
     <section className="bg-black py-25">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -128,7 +129,11 @@ export default function PricingSection({ currency }: PricingSectionProps) {
                 </div>
 
                 {/* CTA */}
-              <button
+              <button  onClick={() => {
+    
+      router.push('/schedule-demo')
+    
+  }}
   className="mt-auto w-full md:py-3 py-2 bg-white font-bricolage 
   md:text-[16.5px] text-[14px] text-black rounded-full font-medium 
   transition-all duration-300

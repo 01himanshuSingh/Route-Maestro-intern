@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function Footer() {
+  const router  = useRouter()
   return (
     <footer className="relative z-10 bg-black border-t border-white/10 py-12">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,9 +22,9 @@ export default function Footer() {
     priority
   />
 </div>
-            <p className="text-sm text-white/60 max-w-[132px]  ">
+            <p className="text-[15px] text-white/60 max-w-[132px]  ">
             AI-powered platform to build and sell personalized travel packages in minutes.
-            <span className='flex ml-2 text-[12px]'>
+            <span className='flex  text-[15px]'>
               
 Save time. Close faster. Scale smarter.
               </span>
@@ -34,15 +36,27 @@ Save time. Close faster. Scale smarter.
 
           {/* Product */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Product</h3>
+            <h3 className="font-semibold text-white mb-4 lg:text-[16px] lg:tracking-tight">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/features" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="/features" className="
+  text-sm lg:text-[15px]
+  text-white/60 hover:text-white 
+  transition-colors
+
+  lg:tracking-[0.2px]
+">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="#" className="
+  text-sm lg:text-[15px]
+  text-white/60 hover:text-white 
+  transition-colors
+
+  lg:tracking-[0.2px]
+">
                   Pricing
                 </Link>
               </li>
@@ -59,15 +73,32 @@ Save time. Close faster. Scale smarter.
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="https://ascentialabs.com/about-us" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="https://ascentialabs.com/about-us" className="
+  text-sm lg:text-[15px]
+  text-white/60 hover:text-white 
+  transition-colors
+
+  lg:tracking-[0.2px]
+">
                   About
                 </Link>
               </li>
              
               <li>
-                <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">
-                  Contact
-                </Link>
+               <button
+  onClick={() => router.push('/schedule-demo')}
+  className="
+    text-sm 
+    lg:text-[15px] 
+    text-white/60 hover:text-white 
+    transition-colors
+
+    lg:tracking-tight 
+    lg:font-medium
+  "
+>
+  Contact
+</button>
               </li>
             </ul>
           </div>
@@ -77,12 +108,24 @@ Save time. Close faster. Scale smarter.
             <h3 className="font-semibold text-white mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="/privacy" className="
+  text-sm lg:text-[15px]
+  text-white/60 hover:text-white 
+  transition-colors
+
+  lg:tracking-[0.2px]
+">
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-conditions" className="text-sm text-white/60 hover:text-white transition-colors">
+                <Link href="/terms-conditions"className="
+  text-sm lg:text-[15px]
+  text-white/60 hover:text-white 
+  transition-colors
+
+  lg:tracking-[0.2px]
+">
                   Terms
                 </Link>
               </li>
@@ -111,7 +154,13 @@ Save time. Close faster. Scale smarter.
       <Link
         href="https://ascentialabs.com/"
         target="_blank"
-        className="text-white/60 hover:text-white transition-colors underline underline-offset-4"
+        className="
+  text-sm lg:text-[15px]
+  text-white/60 hover:text-white 
+  transition-colors
+
+  lg:tracking-[0.2px]
+"
       >
         Ascentia Labs
       </Link>
@@ -120,23 +169,66 @@ Save time. Close faster. Scale smarter.
 
   {/* RIGHT SIDE ICONS */}
   <div className="flex items-center gap-4">
-    <Link href="#" className="text-white/60 hover:text-white transition-colors">
-      <span className="sr-only">Twitter</span>
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 9-5 9-5s-3 .954-5.5 1.694" />
-         
-      </svg>
-    </Link>
 
-    <Link href="#" className="text-white/60 hover:text-white transition-colors">
-      <span className="sr-only">GitHub</span>
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.186.092-.923.35-1.544.636-1.9-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
-              </svg>
-    </Link>
-  </div>
+  {/* LinkedIn */}
+  <Link
+    href="https://www.linkedin.com/company/ascentialabs/"
+    target="_blank"
+    className="
+      text-white/60 hover:text-white 
+      transition-all duration-300
+
+      lg:hover:scale-110
+      lg:hover:-translate-y-0.5
+    "
+  >
+    <span className="sr-only">LinkedIn</span>
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2C20.1 8 22 10.2 22 14.2V24h-4v-8.5c0-2-.04-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-4V8z" />
+    </svg>
+  </Link>
+
+  {/* Instagram */}
+  <Link
+    href="https://www.instagram.com/ascentialabs/"
+    target="_blank"
+    className="
+      text-white/60 hover:text-white 
+      transition-all duration-300
+
+      lg:hover:scale-110
+      lg:hover:-translate-y-0.5
+    "
+  >
+    <span className="sr-only">Instagram</span>
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2C4.13 2 2 4.13 2 7.75v8.5C2 19.87 4.13 22 7.75 22h8.5C19.87 22 22 19.87 22 16.25v-8.5C22 4.13 19.87 2 16.25 2h-8.5zM12 7.2A4.8 4.8 0 1112 16.8 4.8 4.8 0 0112 7.2zm6.2-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 9a3 3 0 110 6 3 3 0 010-6z" />
+    </svg>
+  </Link>
+
+  {/* WhatsApp */}
+  <Link
+    href="https://api.whatsapp.com/send/?phone=61412566906&text&type=phone_number&app_absent=0"
+    target="_blank"
+    className="
+      text-white/60 hover:text-white 
+      transition-all duration-300
+
+      lg:hover:scale-110
+      lg:hover:-translate-y-0.5
+    "
+  >
+    <span className="sr-only">WhatsApp</span>
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.04 2C6.58 2 2.15 6.42 2.15 11.88c0 2.1.55 4.07 1.5 5.8L2 22l4.45-1.6a9.9 9.9 0 005.59 1.7h.01c5.46 0 9.89-4.42 9.89-9.88C21.93 6.42 17.5 2 12.04 2zm0 17.88a7.9 7.9 0 01-4.03-1.1l-.29-.17-2.64.95.87-2.57-.19-.3a7.9 7.9 0 01-1.21-4.24c0-4.4 3.58-7.98 7.99-7.98 4.41 0 7.99 3.58 7.99 7.98 0 4.4-3.58 7.98-7.99 7.98zm4.39-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.44-1.34-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.65.58.25 1.03.4 1.38.51.58.18 1.1.15 1.52.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z" />
+    </svg>
+  </Link>
+
+</div>
 </div>
       </div>
+
+     
     </footer>
   )
 }

@@ -16,17 +16,17 @@ type Feature = {
   borderColor: string
 }
 const features:Feature[] = [
-  {
-   image: "/AI-Powered Route Generation for Budget Optimization (1).png",
-    title: "Route Generating Engine For Travel Budget Optimisation",
-    description:
-      "Smart map-based travel route engine combining global & local public transit to minimize travel costs and maximize profit.",
+  // {
+  //  image: "/AI-Powered Route Generation for Budget Optimization (1).png",
+  //   title: "Route Generating Engine For Travel Budget Optimisation",
+  //   description:
+  //     "Smart map-based travel route engine combining global & local public transit to minimize travel costs and maximize profit.",
 
-    gradient: 'from-sky-500 to-blue-600',
-    glow: 'rgba(14,165,233,0.6)',
-    lineColor: '#38bdf8',
-    borderColor: 'rgba(56,189,248,0.35)',
-  },
+  //   gradient: 'from-sky-500 to-blue-600',
+  //   glow: 'rgba(14,165,233,0.6)',
+  //   lineColor: '#38bdf8',
+  //   borderColor: 'rgba(56,189,248,0.35)',
+  // },
   {
      image: "/Smart Itinerary Planning (1).png",
     title: "Smart Itinerary Planning & Booking",
@@ -38,16 +38,16 @@ const features:Feature[] = [
     lineColor: '#a78bfa',
     borderColor: 'rgba(167,139,250,0.35)',
   },
-  {
-   image: "/Dynamic Commission & Profit Optimization (1).png",
-    title: "Dynamic Commission & Profit Optimization",
-    description:
-      "Automated commission calculations with optimized markup strategies.",
   
-    gradient: 'from-cyan-400 to-teal-600',
-    glow: 'rgba(20,184,166,0.6)',
-    lineColor: '#2dd4bf',
-    borderColor: 'rgba(45,212,191,0.35)',
+  {
+    image: "/Proposal & Quotation Sharing.png",
+    title: "Proposal & Quotation Sharing",
+    description:
+      "Instant generation and sharing of detailed proposals and quotations.",
+   gradient: 'from-pink-500 to-rose-600',
+    glow: 'rgba(244,63,94,0.6)',
+    lineColor: '#fb7185',
+    borderColor: 'rgba(251,113,133,0.35)',
   },
   {
      image: "/AI-Powered Cancellation Policy Handling (1).png",
@@ -60,7 +60,17 @@ const features:Feature[] = [
     lineColor: '#34d399',
     borderColor: 'rgba(52,211,153,0.35)',
   },
-  {
+ {
+       image: "/Real-Time Updates & Notifications.png",
+    title: "Real-Time Updates & Notifications",
+    description:
+      "Instant alerts for bookings, schedule changes, and cancellations.",
+
+    gradient: 'from-fuchsia-500 to-pink-600',
+    glow: 'rgba(217,70,239,0.6)',
+    lineColor: '#e879f9',
+    borderColor: 'rgba(232,121,249,0.35)',
+  },  {
      image: "/Standalone Booking.png",
     title: "Standalone Bookings",
     description:
@@ -72,15 +82,17 @@ const features:Feature[] = [
     borderColor: 'rgba(251,191,36,0.35)',
   },
   {
-    image: "/Proposal & Quotation Sharing.png",
-    title: "Proposal & Quotation Sharing",
+   image: "/Dynamic Commission & Profit Optimization (1).png",
+    title: "Dynamic Commission & Profit Optimization",
     description:
-      "Instant generation and sharing of detailed proposals and quotations.",
-   gradient: 'from-pink-500 to-rose-600',
-    glow: 'rgba(244,63,94,0.6)',
-    lineColor: '#fb7185',
-    borderColor: 'rgba(251,113,133,0.35)',
+      "Automated commission calculations with optimized markup strategies.",
+  
+    gradient: 'from-cyan-400 to-teal-600',
+    glow: 'rgba(20,184,166,0.6)',
+    lineColor: '#2dd4bf',
+    borderColor: 'rgba(45,212,191,0.35)',
   },
+  
   {
    image: "/Integrated Multi-Payment.png",
     title: "Integrated Multi-Payment",
@@ -93,16 +105,16 @@ const features:Feature[] = [
     borderColor: 'rgba(129,140,248,0.35)',
   },
   {
-       image: "/Real-Time Updates & Notifications.png",
-    title: "Real-Time Updates & Notifications",
+   image: "/AI-Powered Route Generation for Budget Optimization (1).png",
+    title: "Multi-city Routing Engine",
     description:
-      "Instant alerts for bookings, schedule changes, and cancellations.",
+      "Smart map-based travel route engine combining global & local public transit to minimize travel costs and maximize profit.",
 
-    gradient: 'from-fuchsia-500 to-pink-600',
-    glow: 'rgba(217,70,239,0.6)',
-    lineColor: '#e879f9',
-    borderColor: 'rgba(232,121,249,0.35)',
-  },
+    gradient: 'from-sky-500 to-blue-600',
+    glow: 'rgba(14,165,233,0.6)',
+    lineColor: '#38bdf8',
+    borderColor: 'rgba(56,189,248,0.35)',
+  }
 ]
 
 // Even index = near (0.28), odd index = far (0.42) — alternating pattern
@@ -262,7 +274,7 @@ function Tooltip({
 
         {/* Image preview */}
         <div
-          className={`w-full h-[72px] rounded-xl bg-gradient-to-br ${feature.gradient} mb-3 overflow-hidden relative`}
+          className={`w-full h-[72px] rounded-xl bg-transparent mb-3 overflow-hidden relative`}
           style={{ boxShadow: `0 4px 16px ${feature.glow}44` }}
         >
           <Image
@@ -275,8 +287,8 @@ function Tooltip({
           />
         </div>
 
-        <p className="text-white text-sm font-semibold mb-1">{feature.title}</p>
-        <p className="text-white/45 text-xs leading-relaxed mb-3">{feature.description}</p>
+        <p className="text-white text-[16px] font-medium lg:font-semibold mb-1">{feature.title}</p>
+        <p className="text-white/60 text-[12.5px] lg:text-[15px] leading-[1.6] mb-3">{feature.description}</p>
 
      
       </div>
@@ -311,8 +323,8 @@ function MobileGrid() {
             />
           </div>
           <div className="p-3">
-            <p className="text-white text-xs font-semibold mb-1">{f.title}</p>
-            <p className="text-white/40 text-xs leading-relaxed">{f.description}</p>
+            <p className="text-white text-sm font-semibold mb-1">{f.title}</p>
+            <p className="text-white/60 text-xs leading-relaxed">{f.description}</p>
           </div>
         </motion.div>
       ))}
@@ -347,7 +359,7 @@ export default function FeatureOrbit() {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-8 px-4"
+      className="relative w-full overflow-hidden py-8 pb-45 px-4"
       style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 50%, rgba(79,46,229,0.07) 0%, #050508 70%)' }}
     >
       {/* Radial glow */}
@@ -360,26 +372,42 @@ export default function FeatureOrbit() {
       {/* Section header */}
       <div className="relative z-10 text-center mb-14">
       
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className=" text-[32px] sm:text-5xl lg:text-5xl xl:text-6xl font-bold text-white tracking-tight mb-4"
-        >
-  AI Powered Trip Planning & Itinerary{' '}
-          <span  className="bg-clip-text text-transparent"
+      <motion.h2
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.1 }}
+  className="
+    text-[26px] 
+    sm:text-[34px]
+
+    lg:text-[40px] 
+    xl:text-[48px]
+
+    font-semibold 
+    text-white 
+    tracking-tight 
+
+    leading-tight 
+    lg:leading-[1.15]
+  "
+>
+  AI Powered Travel{' '}
+         <span
+  className="bg-clip-text text-transparent lg:font-semibold"
   style={{
     backgroundImage: `linear-gradient(
-      160deg,
-      #c94030 0%,
-      #e2572b 22%,
-      #f08070 36%,
-      #fde8e4 50%,
-      #f08070 64%,
-      #e2572b 78%,
-      #c94030 100%
+       135deg,
+                    #c94030 0%,
+                    #e2572b 25%,
+                    #ff7a5c 50%,
+                    #e2572b 75%,
+                    #c94030 100%
+
     )`,
-  }}>
-            Management System
+    filter: "drop-shadow(0 4px 18px rgba(255,120,80,0.22))",
+  }}
+>
+            Packaging & Booking Platform
           </span>
         </motion.h2>
 
@@ -391,7 +419,11 @@ export default function FeatureOrbit() {
         <div
           ref={containerRef}
           className="relative"
-          style={{ width: '100%', maxWidth: 720, aspectRatio: '1' }}
+          style={{ 
+  width: '100%', 
+  maxWidth: 620, 
+  aspectRatio: '1' 
+}}
         >
           <OrbitLines nodes={nodePositions} center={{ x: cx, y: cy }} hoveredIndex={hovered} />
 
@@ -402,11 +434,11 @@ export default function FeatureOrbit() {
   transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1] }}
   className="absolute flex  items-center justify-center"
   style={{
-    width: 140,
-    height: 140,
-    left: cx - 50,
-    top: cy - 50,
-  }}
+  width: 120,
+  height: 120,
+  left: cx - 55,
+  top: cy - 55,
+}}
 >
 
   <div>
@@ -462,7 +494,9 @@ export default function FeatureOrbit() {
                   onHoverEnd={() => setHovered(null)}
                 >
                   {/* Gradient fallback */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient}`} />
+              {!isHovered && (
+  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient}`} />
+)}
 
                   {/* Image */}
                   <Image
@@ -496,14 +530,14 @@ export default function FeatureOrbit() {
                     <motion.p
                       initial={{ opacity: 0 }} animate={{ opacity: 0.45 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute text-center text-white font-medium leading-tight"
+                      className="absolute text-center text-white font-semibold leading-tight"
                       style={{
-                        fontSize: 13,
+                        fontSize: 16,
                         top: nodeSize + 6,
                         left: '50%',
                         transform: 'translateX(-50%)',
                         whiteSpace: 'nowrap',
-                        letterSpacing: '0.03em',
+                        letterSpacing: '0.02em',
                       }}
                     >
                       {feature.title}

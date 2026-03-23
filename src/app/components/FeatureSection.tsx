@@ -52,7 +52,20 @@ const descriptionWords = descriptionText.split(" ")
         <div className="mb-8 text-center lg:mb-16">
 
   <motion.h2
-  className="mb-4 text-balance text-[22px] leading-snug font-bold text-[#b9b9bf] lg:text-4xl lg:mb-6"
+  className="
+    mb-4 
+    text-balance 
+    text-[22px] 
+    leading-snug 
+    font-bold 
+    text-[#b9b9bf] 
+
+    lg:text-[42px] 
+    lg:mb-6 
+    lg:leading-[1.2] 
+    lg:tracking-tight 
+    lg:font-semibold
+  "
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.5 }}
@@ -76,14 +89,13 @@ const descriptionWords = descriptionText.split(" ")
     isHighlight
       ? {
           backgroundImage: `linear-gradient(
-            160deg,
-            #c94030 0%,
-            #e2572b 22%,
-            #f08070 36%,
-            #fde8e4 50%,
-            #f08070 64%,
-            #e2572b 78%,
-            #c94030 100%
+            135deg,
+                    #c94030 0%,
+                    #e2572b 25%,
+                    #ff7a5c 50%,
+                    #e2572b 75%,
+                    #c94030 100%
+
           )`,
           filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
         }
@@ -96,9 +108,19 @@ const descriptionWords = descriptionText.split(" ")
   })}
 </motion.h2>
 
-
 <motion.p
-  className="mx-auto max-w-[90%] text-[14px] leading-relaxed text-slate-400 lg:max-w-4xl lg:text-[18px]"
+  className="
+    mx-auto 
+    max-w-[90%] 
+    text-[14px] 
+    leading-relaxed 
+    text-slate-400 
+
+    lg:max-w-4xl 
+    lg:text-[18px] 
+    lg:leading-[1.8] 
+    lg:text-slate-300
+  "
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.4 }}

@@ -12,36 +12,81 @@ export default function FaqSection() {
               {/* Left Column */}
               <div className="flex flex-col justify-center space-y-5">
                 <div className="space-y-3">
-                  
-                  <h1 className="text-[26px] lg:text-4xl font-bold text-slate-200 leading-tight tracking-tight">
+                  <h1
+  className="
+    text-[26px] 
+    lg:text-[44px] 
+    font-bold 
+    text-slate-200 
+    leading-tight 
+    tracking-tight
+
+    lg:leading-[1.2] 
+    lg:font-semibold
+  "
+>
                     Frequently Asked
-                    <span
-                      className="relative bg-clip-text text-transparent ml-2"
-                      style={{
-                        backgroundImage: `linear-gradient(
-                          160deg,
-                          #c94030 0%,
-                          #e2572b 22%,
-                          #f08070 36%,
-                          #fde8e4 50%,
-                          #f08070 64%,
-                          #e2572b 78%,
-                          #c94030 100%
-                        )`,
-                        filter: "drop-shadow(0 0 28px rgba(226,71,43,0.18))",
-                      }}
-                    >
-                      Questions
-                    </span>
+                 <span
+  className="
+    relative bg-clip-text text-transparent ml-2
+    lg:font-semibold
+  "
+  style={{
+    backgroundImage: `linear-gradient(
+       135deg,
+                    #c94030 0%,
+                    #e2572b 25%,
+                    #ff7a5c 50%,
+                    #e2572b 75%,
+                    #c94030 100%
+
+    )`,
+    filter: "drop-shadow(0 6px 24px rgba(255,120,80,0.25))",
+  }}
+>
+  Questions
+</span>
                   </h1>
 
-                  <p className="text-[15px] lg:text-[18px] text-slate-400 leading-relaxed max-w-md">
+                 <p
+  className="
+    text-[15px] 
+    text-slate-400 
+    leading-relaxed 
+    max-w-md
+
+    lg:text-[18px] 
+    lg:leading-[1.8] 
+    lg:text-slate-300
+  "
+>
                     We're looking for people who share our vision! Most of our time used to be taken up by most of who created new websites for their businesses.
                   </p>
                 </div>
 
                 <div>
-                  <button className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-white/[0.03] border border-[#ff7043] hover:bg-[#ff7043] hover:cursor-pointer text-white font-semibold text-[14px] lg:text-[15px] shadow-sm shadow-black/30 transition-all duration-300 hover:gap-3">
+                  <button className="
+  group inline-flex items-center gap-2.5 
+  px-5 py-2.5 
+  rounded-xl 
+
+  bg-white/[0.03] 
+  border border-[#ff7043] 
+
+  text-white 
+  font-medium 
+  text-[14px] 
+  lg:text-[15px] 
+  lg:tracking-[0.3px]
+
+  shadow-sm shadow-black/30 
+
+  transition-all duration-300 
+  hover:bg-gradient-to-r 
+  hover:from-[#e2472b] 
+  hover:to-[#ff6a3d] 
+  hover:gap-3
+">
                     Still have a question?
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>

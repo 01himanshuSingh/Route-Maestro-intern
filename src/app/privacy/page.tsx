@@ -86,9 +86,7 @@ export default function PrivacyPolicyPage() {
       <h1 className="mb-4 text-center text-3xl font-semibold tracking-tight text-white md:text-4xl">
         Privacy Policy
       </h1>
-      <p className="mb-10 text-center text-sm text-neutral-500">
-        Last updated: <span className="text-neutral-400">June 1, 2025</span>
-      </p>
+    
 
       <PolicyCard>
         {/* 1. Introduction */}
@@ -371,10 +369,10 @@ export default function PrivacyPolicyPage() {
             <p className="text-sm text-neutral-400">
               Email:{" "}
               <a
-                href="mailto:privacy@routemaestro.com"
+                href="mailto:anmol@ascentialabs.com"
                 className="text-indigo-400 transition-colors duration-200 hover:text-indigo-300"
               >
-                privacy@routemaestro.com
+                anmol@ascentialabs.com
               </a>
             </p>
             <p className="mt-1 text-sm text-neutral-400">
