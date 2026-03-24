@@ -13,10 +13,10 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL("https://routemaestro.com/"),
 
-  title: "AI Travel Agency Software & Itinerary Builder | RouteMaestro",
+  title: "AI Travel Package Builder for Agents | RouteMaestro",
 
   description:
-    "RouteMaestro is an AI-powered travel agency software that helps tour operators build multi-city itineraries, create travel packages, manage bookings, and launch OTA travel platforms faster.",
+    "Build and sell personalized travel packages in minutes with AI. Designed for travel agents to automate itineraries, reduce effort, and close more deals.",
 
   keywords: [
     "Travel Agency Software",
