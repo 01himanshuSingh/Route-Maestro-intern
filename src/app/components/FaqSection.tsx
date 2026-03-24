@@ -1,3 +1,4 @@
+'use client'
 import { ArrowRight } from 'lucide-react';
 import { FAQAccordion } from './FaqAccordion';
 
@@ -65,31 +66,36 @@ export default function FaqSection() {
                 </div>
 
                 <div>
-                  <button className="
-  group inline-flex items-center gap-2.5 
-  px-5 py-2.5 
-  rounded-xl 
+             <button
+  onClick={() => {
+    window.location.href = "mailto:anmol@ascentialabs.com"
+  }}
+  className="
+    group inline-flex items-center gap-2.5 
+    px-5 py-2.5 
+    rounded-xl 
 
-  bg-white/[0.03] 
-  border border-[#ff7043] 
+    bg-white/[0.03] 
+    border border-[#ff7043] 
 
-  text-white 
-  font-medium 
-  text-[14px] 
-  lg:text-[15px] 
-  lg:tracking-[0.3px]
+    text-white 
+    font-medium 
+    text-[14px] 
+    lg:text-[15px] 
+    lg:tracking-[0.3px]
 
-  shadow-sm shadow-black/30 
+    shadow-sm shadow-black/30 
 
-  transition-all duration-300 
-  hover:bg-gradient-to-r 
-  hover:from-[#e2472b] 
-  hover:to-[#ff6a3d] 
-  hover:gap-3
-">
-                    Still have a question?
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+    transition-all duration-300 
+    hover:bg-gradient-to-r 
+    hover:from-[#e2472b] 
+    hover:to-[#ff6a3d] 
+    hover:gap-3
+  "
+>
+  Still have a question?
+  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+</button>
                 </div>
               </div>
 

@@ -3,9 +3,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function Footer() {
   const router  = useRouter()
+  
+  const [openContact, setOpenContact] = useState(false)
   return (
     <footer className="relative z-10 bg-black border-t border-white/10 py-12">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +89,7 @@ Save time. Close faster. Scale smarter.
              
               <li>
                <button
-  onClick={() => router.push('/schedule-demo')}
+               onClick={() => setOpenContact(true)}
   className="
     text-sm 
     lg:text-[15px] 
@@ -227,7 +230,74 @@ Save time. Close faster. Scale smarter.
 </div>
 </div>
       </div>
+{openContact && (
+  <>
+    {/* Overlay */}
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
+      onClick={() => setOpenContact(false)}
+    />
 
+    {/* ================= DESKTOP MODAL ================= */}
+    <div className="hidden md:flex fixed inset-0 z-50 items-center justify-center">
+      <div className="
+        bg-[#0b0b0f]
+        border border-white/10
+        rounded-2xl
+        p-6
+        w-[380px]
+        shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+      ">
+        <h3 className="text-white text-[18px] lg:text-[20px] font-semibold mb-4">
+          Our Contacts
+        </h3>
+
+        <div className="space-y-3 text-slate-300 text-[15px] lg:text-[16px]">
+          <p>+91 935638574</p>
+          <p>+61 4125669</p>
+        </div>
+
+        <button
+          onClick={() => setOpenContact(false)}
+          className="mt-6 w-full py-2 rounded-lg bg-white text-black font-medium"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    {/* ================= MOBILE BOTTOM SHEET ================= */}
+    <div className="
+      md:hidden
+      fixed bottom-0 left-0 right-0 z-50
+      bg-[#0b0b0f]
+      border-t border-white/10
+      rounded-t-2xl
+      p-5
+      animate-slideUp
+    ">
+      <div className="w-10 h-1 bg-white/20 rounded-full mx-auto mb-4" />
+
+      <h3 className="text-white text-[16px] font-semibold mb-3 text-center">
+        Our Contacts
+      </h3>
+
+      <div className="space-y-3 text-center text-slate-300 text-[15px]">
+        <p>+91 9356385744
+</p>
+        <p>
++61 412566906</p>
+      </div>
+
+      <button
+        onClick={() => setOpenContact(false)}
+        className="mt-5 w-full py-2 rounded-lg bg-white text-black font-medium"
+      >
+        Close
+      </button>
+    </div>
+  </>
+)}
      
     </footer>
   )

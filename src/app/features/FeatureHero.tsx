@@ -43,7 +43,7 @@ const item = {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="
           text-[32px] sm:text-5xl lg:text-5xl xl:text-6xl
-          font-bold text-white
+          font-bold text-white pt-12 lg:pt-1
           mb-3 lg:mb-5
           leading-[1.15] lg:leading-[1.1]
           tracking-tight
@@ -99,6 +99,7 @@ const item = {
         </button>
 
         <button
+         onClick={() => router.push('/schedule-demo')}
           className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:text-white"
           style={{
             background: 'rgba(255,255,255,0.04)',

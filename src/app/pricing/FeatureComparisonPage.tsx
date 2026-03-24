@@ -215,7 +215,7 @@ const plans = [
   {
     key: "pro" as const,
     label: "Pro",
-    sublabel: "₹60,000/yr",
+    sublabel: "",
     accent: "text-amber-400",
     badge: "bg-amber-500/10 text-amber-400 border border-amber-500/20",
     valuePlanKey: "pro",
@@ -475,14 +475,7 @@ function TableColumnHeader({ mobilePlanIndex }: { mobilePlanIndex: number }) {
           >
             {plan.label}
           </span>
-          <span
-            className={cn(
-              "text-[11px] sm:text-[12px] lg:text-[13px] font-medium px-2 py-0.5 rounded-full",
-              plan.badge,
-            )}
-          >
-            {plan.sublabel}
-          </span>
+         
         </div>
       ))}
     </div>

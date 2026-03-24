@@ -299,32 +299,48 @@ function Tooltip({
 // ─── Mobile Grid ──────────────────────────────────────────────────────────────
 
 function MobileGrid() {
-  const [hovered, setHovered] = useState<number | null>(null)
   return (
-    <div className="grid grid-cols-2 gap-3 w-full max-w-sm mx-auto">
+    <div className="grid grid-cols-1 gap-3 w-full max-w-sm mx-auto">
       {features.map((f, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.07, duration: 0.5, ease: 'easeOut' }}
-          onHoverStart={() => setHovered(i)}
-          onHoverEnd={() => setHovered(null)}
-          className="relative rounded-2xl overflow-hidden cursor-pointer"
-          style={{
-            background: hovered === i ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.03)',
-            border: `1px solid ${hovered === i ? f.borderColor : 'rgba(255,255,255,0.07)'}`,
-            transition: 'all 0.3s',
-          }}
         >
-          <div className={`w-full h-24 bg-gradient-to-br ${f.gradient} relative`}>
-            <Image src={f.image} alt={f.title} fill className="object-cover opacity-85"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-            />
-          </div>
-          <div className="p-3">
-            <p className="text-white text-sm font-semibold mb-1">{f.title}</p>
-            <p className="text-white/60 text-xs leading-relaxed">{f.description}</p>
+          {/* SAME AS FEATURE CARD MOBILE */}
+          <div
+            className="
+              relative
+              h-full w-full
+              rounded-xl
+              border border-white/[0.08]
+              bg-gradient-to-br
+              from-[#111318] via-[#16181d] to-[#1b1e24]
+              shadow-sm shadow-black/30
+              p-3
+              flex flex-col items-center text-center gap-2
+            "
+          >
+            {/* Image */}
+            <div className="relative h-12 w-12">
+              <Image
+                src={f.image}
+                alt={f.title}
+                fill
+                className="object-contain brightness-110 contrast-110"
+              />
+            </div>
+
+            {/* Title */}
+            <h3 className="text-[15px] font-semibold text-white leading-tight">
+              {f.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-[13px] text-slate-400 leading-relaxed">
+              {f.description}
+            </p>
           </div>
         </motion.div>
       ))}
@@ -359,7 +375,7 @@ export default function FeatureOrbit() {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-8 pb-45 px-4"
+      className="relative w-full overflow-hidden py-8 lg:pb-45 pb-2 px-4"
       style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 50%, rgba(79,46,229,0.07) 0%, #050508 70%)' }}
     >
       {/* Radial glow */}
@@ -391,7 +407,7 @@ export default function FeatureOrbit() {
     lg:leading-[1.15]
   "
 >
-  AI Powered Travel{' '}
+Build Multicity Trips in Minutes with AI{' '}
          <span
   className="bg-clip-text text-transparent lg:font-semibold"
   style={{
@@ -407,7 +423,7 @@ export default function FeatureOrbit() {
     filter: "drop-shadow(0 4px 18px rgba(255,120,80,0.22))",
   }}
 >
-            Packaging & Booking Platform
+            & Real-time Inventory
           </span>
         </motion.h2>
 

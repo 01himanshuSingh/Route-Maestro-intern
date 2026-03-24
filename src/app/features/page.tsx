@@ -147,7 +147,9 @@ export default function Home() {
   </span>
 </Link>
 
-            <button
+            <Link
+            
+  href="/schedule-demo"
               className="group w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white/90 hover:text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 background: 'rgba(255,255,255,0.04)',
@@ -162,7 +164,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-            </button>
+            </Link>
 
           </div>
 

@@ -39,10 +39,10 @@ export const PLANS: PlanDetails[] = [
         ],
         features: [
             {
-                name: "Includes 6 user"
+                name: "Upto 6 users"
             },
             {
-                name: "2% Per Booking"
+                name: "Host Country + 3 Outbound Regions( 25 Activated Cities )"
             },
             {
                 name: "Up to 65 Package Bookings / Month"
@@ -53,7 +53,7 @@ export const PLANS: PlanDetails[] = [
         id: 2,
         name: " Agency",
         category:"agency",
-                featureLine:"Everything in Free, plus:",
+                featureLine:"Key features",
   description: "",
         prices: [
             {
@@ -71,9 +71,10 @@ export const PLANS: PlanDetails[] = [
             {
                 name: "upto 20 users"
             },
-            {
-                name: "2% Per Booking"
-            },
+           // pricing.ts
+{
+  name: "Host Country + Global Countries\n- (Global Cities)"
+},
             {
                 name: "Unlimited Package Bookings"
             },
@@ -86,7 +87,7 @@ export const PLANS: PlanDetails[] = [
         featureLine:"Everything in agency, plus:",
         features:[
             {
-                name: "Custom Requirements"
+                name: "Customized"
             },
         ],
         prices: [
