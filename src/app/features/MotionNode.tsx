@@ -83,9 +83,9 @@ const features:Feature[] = [
   },
   {
    image: "/Dynamic Commission & Profit Optimization (1).png",
-    title: "Dynamic Commission & Profit Optimization",
+    title: "Commercial policy Management",
     description:
-      "Automated commission calculations with optimized markup strategies.",
+      "Allows Markup setup, cancellation policies, and category or service specific pricing.",
   
     gradient: 'from-cyan-400 to-teal-600',
     glow: 'rgba(20,184,166,0.6)',
@@ -388,16 +388,21 @@ export default function FeatureOrbit() {
       {/* Section header */}
       <div className="relative z-10 text-center mb-14">
       
-      <motion.h2
+     <motion.h2
   initial={{ opacity: 0, y: 18 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.7, delay: 0.1 }}
   className="
-    text-[26px] 
-    sm:text-[34px]
+    text-[22px]
+    sm:text-[26px]
+    md:text-[30px]
+    lg:text-[36px]
+    xl:text-[42px]
+    2xl:text-[48px]
 
-    lg:text-[40px] 
-    xl:text-[48px]
+    3xl:text-[56px]
+    4xl:text-[64px]
+    5xl:text-[72px]
 
     font-semibold 
     text-white 
@@ -407,25 +412,24 @@ export default function FeatureOrbit() {
     lg:leading-[1.15]
   "
 >
-Build Multicity Trips in Minutes with AI{' '}
-         <span
-  className="bg-clip-text text-transparent lg:font-semibold"
-  style={{
-    backgroundImage: `linear-gradient(
-       135deg,
-                    #c94030 0%,
-                    #e2572b 25%,
-                    #ff7a5c 50%,
-                    #e2572b 75%,
-                    #c94030 100%
-
-    )`,
-    filter: "drop-shadow(0 4px 18px rgba(255,120,80,0.22))",
-  }}
->
-            & Real-time Inventory
-          </span>
-        </motion.h2>
+  Build Multicity Trips in Minutes with AI{' '}
+  <span
+    className="bg-clip-text text-transparent lg:font-semibold"
+    style={{
+      backgroundImage: `linear-gradient(
+         135deg,
+          #c94030 0%,
+          #e2572b 25%,
+          #ff7a5c 50%,
+          #e2572b 75%,
+          #c94030 100%
+      )`,
+      filter: "drop-shadow(0 4px 18px rgba(255,120,80,0.22))",
+    }}
+  >
+    & Real-time Inventory
+  </span>
+</motion.h2>
 
      
       </div>

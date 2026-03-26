@@ -126,72 +126,83 @@ export function TestimonialsSection() {
 ">
       <div className="text-center max-w-xl mx-auto px-2">
 
-        <motion.h2
-         className="
-  text-[26px] 
-  leading-tight 
-  tracking-tight 
-  font-bold 
-  text-slate-100 
-  text-balance
+        <motion.h1
+  className="
+    text-[22px] 
+    lg:text-[44px] 
 
-  lg:text-[44px] 
-  lg:leading-[1.2] 
-  lg:font-semibold 
-  lg:tracking-tight
-"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ staggerChildren: 0.08 }}
-        >
-          {headingWords.map((word, index) => (
-            <motion.span
-              key={index}
-              variants={{
-                hidden: { opacity: 0, x: -25 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="inline-block mr-1.5"
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.h2>
+    3xl:text-[clamp(44px,2.5vw,64px)]
+    4xl:text-[clamp(52px,2.2vw,72px)]
+    5xl:text-[clamp(60px,2vw,84px)]
 
-        <motion.p
-         className="
-  mt-3 
-  text-gray-400 
-  text-[15px] 
-  leading-relaxed 
-  max-w-xl 
-  mx-auto
+    leading-tight 
+    tracking-tight 
+    font-bold 
+    text-slate-100 
+    text-balance
 
-  lg:text-[18px] 
-  lg:leading-[1.8] 
-  lg:text-slate-300
-"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ staggerChildren: 0.04 }}
-        >
-          {subtitleWords.map((word, index) => (
-            <motion.span
-              key={index}
-              variants={{
-                hidden: { opacity: 0, x: -15 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="inline-block mr-1"
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.p>
+    lg:leading-[1.2] 
+    lg:font-semibold 
+    lg:tracking-tight
+  "
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+  transition={{ staggerChildren: 0.08 }}
+>
+  {headingWords.map((word, index) => (
+    <motion.span
+      key={index}
+      variants={{
+        hidden: { opacity: 0, x: -25 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="inline-block mr-1.5"
+    >
+      {word}
+    </motion.span>
+  ))}
+</motion.h1>
+     <motion.p
+  className="
+    mt-3 
+    text-gray-400 
+
+    text-[15px] 
+    sm:text-base 
+    lg:text-[20px] 
+    xl:text-[22px]
+
+    3xl:text-[24px]
+    4xl:text-[26px]
+
+    leading-relaxed 
+    max-w-xl 
+    mx-auto
+
+    lg:leading-[1.8] 
+    lg:text-slate-300
+  "
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.4 }}
+  transition={{ staggerChildren: 0.04 }}
+>
+  {subtitleWords.map((word, index) => (
+    <motion.span
+      key={index}
+      variants={{
+        hidden: { opacity: 0, x: -15 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="inline-block mr-1"
+    >
+      {word}
+    </motion.span>
+  ))}
+</motion.p>
       </div>
 
       <div className="w-full flex flex-col gap-4 lg:gap-6">

@@ -8,12 +8,13 @@ import { FeaturesSection } from './components/FeatureSection'
 import SemiCircleCards from './components/LandingPagesemicircularcards/SemicircleCards'
 import FaqSection from './components/FaqSection'
 import { Metadata } from 'next'
+import LandinpageBusinesspage from './components/LandinpageBusinesspage'
 
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://routemaestro.com/"),
 
-  title: "AI Travel Package Builder for Agents | RouteMaestro",
+  title: "AI Dynamic Travel  Package Builder  | RouteMaestro",
 
   description:
     "Build and sell personalized travel packages in minutes with AI. Designed for travel agents to automate itineraries, reduce effort, and close more deals.",
@@ -82,6 +83,7 @@ export default function Page() {
       {/* <Header /> */}
      
       <Hero />
+      <LandinpageBusinesspage/>
       <LandingUiCard/>
       <TrustedClients/>
 <FeaturesSection/>

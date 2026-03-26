@@ -75,14 +75,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
           {/* Left Side - Hero Text (buttons hidden inside on mobile) */}
-          <div className="w-full lg:w-[40%]">
+          <div className="w-full lg:w-[50%]">
             <FeatureHero />
           </div>
 
           {/* Right Side - Image */}
          {/* Right Side - Image */}
 <div className="
-  w-full lg:w-[60%]
+  w-full lg:w-[50%]
   rounded-2xl pt-12
   flex justify-center lg:justify-end
   

@@ -36,7 +36,10 @@ export function FeatureCard({
           ${className}
         `}
       >
-        <div className="relative h-16 w-16">
+        <div className="relative h-16 w-16 h-16 w-16 
+
+3xl:h-18 3xl:w-18
+4xl:h-20 4xl:w-20">
           <Image
             src={imageSrc}
             alt={title}
@@ -45,28 +48,50 @@ export function FeatureCard({
           />
         </div>
 
-       <h3
+      <h3
   className="
     text-center 
     text-xl 
     lg:text-[22px] 
+
+    3xl:text-[24px]
+    4xl:text-[26px]
+    5xl:text-[28px]
+
     font-semibold 
     text-white
+
     lg:tracking-tight
+    3xl:tracking-[-0.015em]
+
     lg:leading-[1.25]
+    3xl:leading-[1.2]
   "
 >
   {title}
 </h3>
-      <p
+     <p
   className="
     text-sm 
     lg:text-[15.5px] 
+
+    3xl:text-[16.5px]
+    4xl:text-[17.5px]
+
     text-slate-300 
     leading-relaxed 
     text-center
+
     lg:leading-[1.7]
+    3xl:leading-[1.8]
+
     lg:text-slate-200
+
+    max-w-[95%]
+    3xl:max-w-[260px]
+    4xl:max-w-[300px]
+
+    text-balance
   "
 >
   {description}
@@ -107,7 +132,23 @@ export function FeatureCard({
             />
           </div>
 
-          <h3 className="text-center text-xl lg:text-[20px] font-bold text-white">
+        <h3
+  className="
+    text-center 
+    text-xl 
+    lg:text-[20px]
+
+    3xl:text-[22px]
+    4xl:text-[24px]
+    5xl:text-[26px]
+
+    font-bold 
+    text-white
+
+    3xl:tracking-[-0.015em]
+    4xl:tracking-[-0.02em]
+  "
+>
             {title}
           </h3>
         </div>
@@ -127,8 +168,29 @@ export function FeatureCard({
             backfaceVisibility: 'hidden',
           }}
         >
-          <p className="text-sm lg:text-[16px] text-slate-300 leading-relaxed text-center">
-            {description}
+         <p
+  className="
+    text-sm 
+    lg:text-[16px]
+
+    3xl:text-[17px]
+    4xl:text-[18px]
+
+    text-slate-300 
+    leading-relaxed 
+    text-center
+
+    3xl:leading-[1.8]
+    4xl:leading-[1.9]
+
+    max-w-[90%]
+    3xl:max-w-[260px]
+    4xl:max-w-[300px]
+
+    text-balance
+  "
+>
+             {description}
           </p>
         </div>
       </motion.div>

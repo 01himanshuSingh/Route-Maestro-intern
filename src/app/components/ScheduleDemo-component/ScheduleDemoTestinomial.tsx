@@ -70,7 +70,21 @@ export function TestimonialCard({ className }: TestimonialCardProps) {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight mb-4"
+            className="
+  text-2xl 
+  sm:text-3xl 
+  lg:text-4xl 
+
+  xl:text-[42px]
+  3xl:text-[48px]
+  4xl:text-[54px]
+
+  font-bold 
+  text-white 
+  leading-tight 
+  tracking-tight 
+  mb-4
+"
             >
               A Smarter Way to Run{' '}
               <span className="bg-gradient-to-r from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
@@ -83,7 +97,23 @@ export function TestimonialCard({ className }: TestimonialCardProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-xs sm:max-w-sm lg:max-w-md mx-auto lg:mx-0"
+              className="
+  text-sm 
+  sm:text-base 
+  lg:text-[16px]
+
+  xl:text-[17px]
+  3xl:text-[18px]
+  4xl:text-[19px]
+
+  text-slate-400 
+  leading-relaxed 
+  max-w-xs 
+  sm:max-w-sm 
+  lg:max-w-md 
+  mx-auto 
+  lg:mx-0
+"
             >
               RouteMaestro helps travel agencies automate itineraries, manage bookings,
               and scale operations effortlessly.

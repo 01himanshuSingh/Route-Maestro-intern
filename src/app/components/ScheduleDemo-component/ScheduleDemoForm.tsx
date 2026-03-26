@@ -260,7 +260,7 @@ console.log("Calendly URL:", calendlyUrl)
             <span className="text-[13.5px] lg:text-sm">Scheduling...</span>
           </span>
         ) : (
-          'Schedule  demo'
+          'Schedule  Demo'
         )}
       </Button>
 

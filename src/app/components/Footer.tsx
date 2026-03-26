@@ -25,7 +25,18 @@ export default function Footer() {
     priority
   />
 </div>
-            <p className="text-[15px] text-white/60 max-w-[132px]  ">
+         <p className="
+  text-[15px] 
+  sm:text-base
+  lg:text-[16px]
+  xl:text-[17px]
+
+  3xl:text-[18px]
+  4xl:text-[19px]
+
+  text-slate-300 
+  max-w-[132px]
+">
             AI-powered platform to build and sell personalized travel packages in minutes.
             <span className='flex  text-[15px]'>
               
@@ -39,14 +50,32 @@ Save time. Close faster. Scale smarter.
 
           {/* Product */}
           <div>
-            <h3 className="font-semibold text-white mb-4 lg:text-[16px] lg:tracking-tight">Product</h3>
+           <h3 className="
+  font-semibold 
+  text-white 
+  mb-4 
+
+  text-[16px]
+  lg:text-[17px]
+  xl:text-[18px]
+
+  3xl:text-[19px]
+  4xl:text-[20px]
+
+  lg:tracking-tight
+">Product</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/features" className="
-  text-sm lg:text-[15px]
+  text-sm 
+  lg:text-[15px]
+  xl:text-[16px]
+
+  3xl:text-[17px]
+  4xl:text-[18px]
+
   text-white/60 hover:text-white 
   transition-colors
-
   lg:tracking-[0.2px]
 ">
                   Features
@@ -54,10 +83,15 @@ Save time. Close faster. Scale smarter.
               </li>
               <li>
                 <Link href="#" className="
-  text-sm lg:text-[15px]
+  text-sm 
+  lg:text-[15px]
+  xl:text-[16px]
+
+  3xl:text-[17px]
+  4xl:text-[18px]
+
   text-white/60 hover:text-white 
   transition-colors
-
   lg:tracking-[0.2px]
 ">
                   Pricing
@@ -77,10 +111,15 @@ Save time. Close faster. Scale smarter.
             <ul className="space-y-2">
               <li>
                 <Link href="https://ascentialabs.com/about-us" className="
-  text-sm lg:text-[15px]
+  text-sm 
+  lg:text-[15px]
+  xl:text-[16px]
+
+  3xl:text-[17px]
+  4xl:text-[18px]
+
   text-white/60 hover:text-white 
   transition-colors
-
   lg:tracking-[0.2px]
 ">
                   About
@@ -90,16 +129,18 @@ Save time. Close faster. Scale smarter.
               <li>
                <button
                onClick={() => setOpenContact(true)}
-  className="
-    text-sm 
-    lg:text-[15px] 
-    text-white/60 hover:text-white 
-    transition-colors
+ className="
+  text-sm 
+  lg:text-[15px]
+  xl:text-[16px]
 
-    lg:tracking-tight 
-    lg:font-medium
-  "
->
+  3xl:text-[17px]
+  4xl:text-[18px]
+
+  text-white/60 hover:text-white 
+  transition-colors
+  lg:tracking-[0.2px]
+">
   Contact
 </button>
               </li>
@@ -147,12 +188,32 @@ Save time. Close faster. Scale smarter.
 
   {/* LEFT SIDE */}
   <div className="flex flex-col items-center sm:items-start gap-1">
-    <p className="text-sm text-white/60 text-center sm:text-left">
+    <p className="
+  text-sm 
+  lg:text-[15px]
+  xl:text-[16px]
+
+  3xl:text-[17px]
+  4xl:text-[18px]
+
+  text-white/60 
+  text-center sm:text-left
+">
       © 2026 Route Maestro. All rights reserved.
     </p>
 
     {/* NEW LINE */}
-    <p className="text-xs text-white/40 text-center sm:text-left">
+   <p className="
+  text-xs 
+  lg:text-sm
+  xl:text-[15px]
+
+  3xl:text-[16px]
+  4xl:text-[17px]
+
+  text-white/40 
+  text-center sm:text-left
+">
       Developed by{" "}
       <Link
         href="https://ascentialabs.com/"
@@ -248,7 +309,18 @@ Save time. Close faster. Scale smarter.
         w-[380px]
         shadow-[0_20px_60px_rgba(0,0,0,0.6)]
       ">
-        <h3 className="text-white text-[18px] lg:text-[20px] font-semibold mb-4">
+     <h3 className="
+  text-white 
+  text-[18px] 
+  lg:text-[20px]
+  xl:text-[22px]
+
+  3xl:text-[24px]
+  4xl:text-[26px]
+
+  font-semibold 
+  mb-4
+">
           Our Contacts
         </h3>
 

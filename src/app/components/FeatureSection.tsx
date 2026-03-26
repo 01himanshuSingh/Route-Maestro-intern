@@ -47,7 +47,10 @@ const descriptionWords = descriptionText.split(" ")
 
   return (
     <section className="relative w-full bg-black py-8 px-5 sm:px-6 lg:px-8">
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto max-w-6xl 
+3xl:max-w-7xl 
+4xl:max-w-[1400px] 
+5xl:max-w-[1600px]">
         {/* Header */}
         <div className="mb-8 text-center lg:mb-16">
 
@@ -65,6 +68,17 @@ const descriptionWords = descriptionText.split(" ")
     lg:leading-[1.2] 
     lg:tracking-tight 
     lg:font-semibold
+
+
+    3xl:text-[48px]
+4xl:text-[56px]
+5xl:text-[64px]
+
+3xl:leading-[1.15]
+4xl:leading-[1.12]
+
+3xl:tracking-[-0.02em]
+4xl:tracking-[-0.025em]
   "
   initial="hidden"
   whileInView="visible"
@@ -82,7 +96,8 @@ const descriptionWords = descriptionText.split(" ")
     visible: { opacity: 1, x: 0 },
   }}
   transition={{ duration: 0.5, ease: "easeOut" }}
-  className={`inline-block mr-1.5 ${
+  className={`inline-block 3xl:mr-2
+4xl:mr-2.5 mr-1.5 ${
     isHighlight ? "bg-clip-text text-transparent" : "text-white"
   }`}
   style={
@@ -107,19 +122,31 @@ const descriptionWords = descriptionText.split(" ")
     )
   })}
 </motion.h2>
-
 <motion.p
   className="
     mx-auto 
     max-w-[90%] 
-    text-[14px] 
+
+    text-[15px] 
+    sm:text-base 
+    lg:text-[20px] 
+    xl:text-[22px]
+
+    3xl:text-[24px]
+    4xl:text-[26px]
+
     leading-relaxed 
     text-slate-400 
 
     lg:max-w-4xl 
-    lg:text-[18px] 
     lg:leading-[1.8] 
     lg:text-slate-300
+
+    3xl:leading-[1.9]
+
+    3xl:max-w-5xl
+    4xl:max-w-6xl
+    5xl:max-w-[1400px]
   "
   initial="hidden"
   whileInView="visible"
@@ -134,7 +161,7 @@ const descriptionWords = descriptionText.split(" ")
         visible: { opacity: 1, x: 0 },
       }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="inline-block mr-1"
+      className="inline-block mr-1 3xl:mr-1.5"
     >
       {word}
     </motion.span>
@@ -144,7 +171,8 @@ const descriptionWords = descriptionText.split(" ")
 </div>
 
         {/* Features Grid */}
-<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 3xl:gap-8
+4xl:gap-10">
   {features.map((feature) => (
     <FeatureCard
       key={feature.id}

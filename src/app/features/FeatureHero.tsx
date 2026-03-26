@@ -37,51 +37,67 @@ const item = {
       text-center lg:text-left
     ">
       {/* Heading */}
-  <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="
-          text-[32px] sm:text-5xl lg:text-5xl xl:text-6xl
-          font-bold text-white pt-12 lg:pt-1
-          mb-3 lg:mb-5
-          leading-[1.15] lg:leading-[1.1]
-          tracking-tight
-        "
-      >
-        AI Powered{' '}
-        <span className="bg-gradient-to-r mr-2.5 from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
-          Dynamic
-        </span>
-        Packaging
-      </motion.h1>
+ <motion.h1
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  className="
+    text-[22px]
+    sm:text-[26px]
+    md:text-[30px]
+    lg:text-[36px]
+    xl:text-[42px]
+    2xl:text-[48px]
 
+    3xl:text-[56px]
+    4xl:text-[64px]
+    5xl:text-[72px]
+
+    font-bold text-white pt-10 lg:pt-1
+    mb-3 lg:mb-5
+    leading-[1.15] lg:leading-[1.1]
+    tracking-tight
+  "
+>
+  AI-Powered Dynamic{' '}
+  <span className="bg-gradient-to-r mr-2.5 from-[#e2472f] via-[#fe6652] to-[#ff9a8b] bg-clip-text text-transparent">
+    Travel Packaging
+    & Booking Platform
+  </span>
+</motion.h1>
       {/* Description */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-        className="
-          text-[14px] sm:text-lg
-          text-slate-400
-          mb-7 lg:mb-10
-          leading-relaxed
-          max-w-[88%] sm:max-w-md lg:max-w-lg
-          mx-auto lg:mx-0
-        "
-      >
-        <span className="font-semibold text-white">RouteMaestro</span> enables quick
-        map-based travel planning, and facilitates booking{' '}
-        <span className="font-semibold text-white">Personalized & Profitable</span>{' '}
-        travel itineraries within minutes.
-      </motion.p>
+    <motion.p
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+  className="
+    text-[15px]
+    sm:text-base
+    md:text-[17px]
+    lg:text-[20px]
+    xl:text-[22px]
+    2xl:text-[24px]
 
+    3xl:text-[26px]
+    4xl:text-[28px]
+    5xl:text-[30px]
+
+    text-slate-300
+    mb-7 lg:mb-10
+    leading-relaxed
+    max-w-[88%] sm:max-w-md lg:max-w-lg
+    mx-auto lg:mx-0
+  "
+>
+    RouteMaestro enables quick map-based travel planning, and facilitates booking AI Personalized & Profitable travel packages within 2 minutes!
+  
+</motion.p>
       {/* Buttons — HIDDEN on mobile, visible on desktop */}
       <div className="hidden lg:flex flex-col sm:flex-row gap-3 w-full sm:w-auto items-center lg:items-start">
 
         <button
           onClick={() => router.push('/schedule-demo')}
-          className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+          className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm lg:text-[16px] 3xl:text-[20px] hover:cursor-pointer text-white overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
           style={{
             background: 'linear-gradient(135deg, #e2472f, #fe6652)',
             boxShadow: '0 0 0 1px rgba(226,71,47,0.5), 0 8px 32px rgba(226,71,47,0.35)',
@@ -100,7 +116,7 @@ const item = {
 
         <button
          onClick={() => router.push('/schedule-demo')}
-          className="group relative w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:text-white"
+          className="group relative w-full sm:w-auto hover:cursor-pointer px-7 py-3.5 rounded-xl font-semibold text-sm lg:text-[16px] 3xl:text-[20px] text-white/90 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:text-white"
           style={{
             background: 'rgba(255,255,255,0.04)',
             border: '1px solid rgba(255,255,255,0.12)',

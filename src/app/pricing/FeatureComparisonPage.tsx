@@ -15,7 +15,7 @@ type PlanValue = boolean | string | null;
 interface Feature {
   name: string;
   trust: PlanValue;
-  pro: PlanValue;
+  Agency: PlanValue;
   enterprise: PlanValue;
   tooltip?: string;
 }
@@ -31,19 +31,19 @@ const sections: Section[] = [
   {
     title: "Inventory",
     features: [
-      { name: "Global Flights", trust: true, pro: true, enterprise: true },
-      { name: "Global Hotels", trust: false, pro: true, enterprise: true },
-      { name: "Global Sightseeing", trust: false, pro: true, enterprise: true },
+      { name: "Global Flights", trust: true, Agency: true, enterprise: true },
+      { name: "Global Hotels", trust: false, Agency: true, enterprise: true },
+      { name: "Global Sightseeing", trust: false, Agency: true, enterprise: true },
       {
         name: "Add Custom APIs",
         trust: "Your API Key (Additional Charge)",
-        pro: "Your API Key (Additional Charge)",
+        Agency: "Your API Key (Additional Charge)",
         enterprise: "Custom APIs",
       },
       {
         name: "Offline Contracting & Management Of Suppliers",
         trust: false,
-        pro: false,
+        Agency: false,
         enterprise: "Customized As Per Requirements",
       },
     ],
@@ -51,74 +51,74 @@ const sections: Section[] = [
   {
     title: "Engine Flows",
     features: [
-      { name: "Flight Booking Engine", trust: true, pro: true, enterprise: true },
-      { name: "Hotel Booking Engine", trust: false, pro: true, enterprise: true },
+      { name: "Flight Booking Engine", trust: true, Agency: true, enterprise: true },
+      { name: "Hotel Booking Engine", trust: false, Agency: true, enterprise: true },
       {
         name: "Sightseeing Booking Engine",
         trust: false,
-        pro: true,
+        Agency: true,
         enterprise: "Customized As Per Requirements",
       },
-      { name: "Dynamic Package Booking Engine", trust: false, pro: true, enterprise: true },
+      { name: "Dynamic Package Booking Engine", trust: false, Agency: true, enterprise: true },
     ],
   },
   {
     title: "AI Powered Dynamic Packaging & Recommendation Engine",
     features: [
-      { name: "AI Assist Flight Recommendation Engine", trust: true, pro: true, enterprise: true },
-      { name: "AI Assist Hotel Recommendation Engine", trust: true, pro: true, enterprise: true },
-      { name: "AI Curated Sightseeing Recommendation Engine", trust: true, pro: true, enterprise: true },
-      { name: "Dynamic Package Scheduler", trust: false, pro: true, enterprise: true },
+      { name: "AI Assist Flight Recommendation Engine", trust: true, Agency: true, enterprise: true },
+      { name: "AI Assist Hotel Recommendation Engine", trust: true, Agency: true, enterprise: true },
+      { name: "AI Curated Sightseeing Recommendation Engine", trust: true, Agency: true, enterprise: true },
+      { name: "Dynamic Package Scheduler", trust: false, Agency: true, enterprise: true },
     ],
   },
   {
     title: "Dashboard & Back Office",
     features: [
-      { name: "General Dashboard KPIs", trust: true, pro: true, enterprise: true },
-      { name: "B2C / B2C User Management", trust: true, pro: true, enterprise: true },
-      { name: "Working Ledger", trust: true, pro: true, enterprise: true },
+      { name: "General Dashboard KPIs", trust: true, Agency: true, enterprise: true },
+      { name: "B2C / B2C User Management", trust: true, Agency: true, enterprise: true },
+      { name: "Working Ledger", trust: true, Agency: true, enterprise: true },
       {
         name: "Sales Ledger",
         trust: true,
-        pro: true,
+        Agency: true,
         enterprise: "Customized As Per Requirements",
       },
-      { name: "Staff Management", trust: false, pro: true, enterprise: true },
-      { name: "Task Management", trust: false, pro: true, enterprise: true },
-      { name: "Add & Manage Other Services", trust: false, pro: true, enterprise: true },
-      { name: "Custom Text With Vouchers", trust: false, pro: true, enterprise: true },
+      { name: "Staff Management", trust: false, Agency: true, enterprise: true },
+      { name: "Task Management", trust: false, Agency: true, enterprise: true },
+      { name: "Add & Manage Other Services", trust: false, Agency: true, enterprise: true },
+      { name: "Custom Text With Vouchers", trust: false, Agency: true, enterprise: true },
     ],
   },
   {
     title: "Communication With User",
     features: [
-      { name: "Traveler Mobile App", trust: false, pro: false, enterprise: true },
-      { name: "Email, WhatsApp Quotation Sharing", trust: true, pro: true, enterprise: true },
+      { name: "Traveler Mobile App", trust: false, Agency: false, enterprise: true },
+      { name: "Email, WhatsApp Quotation Sharing", trust: true, Agency: true, enterprise: true },
       {
         name: "Flight Dynamic Quotations",
         trust: true,
-        pro: true,
+        Agency: true,
         enterprise: "Customized As Per Requirements",
       },
-      { name: "Hotel Dynamic Quotations", trust: true, pro: true, enterprise: true },
-      { name: "Sightseeing Dynamic Quotations", trust: true, pro: true, enterprise: true },
-      { name: "Packages Dynamic Quotations", trust: true, pro: true, enterprise: true },
+      { name: "Hotel Dynamic Quotations", trust: true, Agency: true, enterprise: true },
+      { name: "Sightseeing Dynamic Quotations", trust: true, Agency: true, enterprise: true },
+      { name: "Packages Dynamic Quotations", trust: true, Agency: true, enterprise: true },
     ],
   },
   {
     title: "Whitelabel Management",
     features: [
-      { name: "B2B / B2C Whitelabel Website", trust: false, pro: true, enterprise: true },
-      { name: "1 B2B / B2C Whitelabel Back Office", trust: false, pro: true, enterprise: true },
+      { name: "B2B / B2C Whitelabel Website", trust: false, Agency: true, enterprise: true },
+      { name: "1 B2B / B2C Whitelabel Back Office", trust: false, Agency: true, enterprise: true },
       {
         name: "B2C to B2B Whitelabel User Booking Queue",
         trust: false,
-        pro: false,
+        Agency: false,
         enterprise: "Customized As Per Requirements",
       },
-      { name: "Whitelabel User Transaction Queue", trust: false, pro: false, enterprise: true },
-      { name: "Whitelabel Voucher Generator", trust: false, pro: false, enterprise: true },
-      { name: "Discount Code Management", trust: false, pro: false, enterprise: true },
+      { name: "Whitelabel User Transaction Queue", trust: false, Agency: false, enterprise: true },
+      { name: "Whitelabel Voucher Generator", trust: false, Agency: false, enterprise: true },
+      { name: "Discount Code Management", trust: false, Agency: false, enterprise: true },
     ],
   },
   {
@@ -127,11 +127,11 @@ const sections: Section[] = [
       {
         name: "Micro Level Management Of Service Fee",
         trust: true,
-        pro: true,
+        Agency: true,
         enterprise: true,
       },
-      { name: "Invoice Ledger", trust: true, pro: true, enterprise: true },
-      { name: "Custom Text With Invoice", trust: true, pro: true, enterprise: true },
+      { name: "Invoice Ledger", trust: true, Agency: true, enterprise: true },
+      { name: "Custom Text With Invoice", trust: true, Agency: true, enterprise: true },
     ],
   },
   {
@@ -140,7 +140,7 @@ const sections: Section[] = [
       {
         name: "Payment Gateway Integration",
         trust: "Default Payment Gateway",
-        pro: "Default Payment Gateway",
+        Agency: "Default Payment Gateway",
         enterprise: "Custom Payment Gateway Of Your Choice",
       },
     ],
@@ -148,19 +148,19 @@ const sections: Section[] = [
   {
     title: "Customer Support",
     features: [
-      { name: "Support Ticket Management", trust: true, pro: true, enterprise: true },
-      { name: "AI Chatbot Support", trust: false, pro: false, enterprise: true },
-      { name: "Account Manager Support", trust: false, pro: false, enterprise: true },
+      { name: "Support Ticket Management", trust: true, Agency: true, enterprise: true },
+      { name: "AI Chatbot Support", trust: false, Agency: false, enterprise: true },
+      { name: "Account Manager Support", trust: false, Agency: false, enterprise: true },
     ],
   },
   {
     title: "Technological Support",
     features: [
-      { name: "Secure Server", trust: true, pro: true, enterprise: true },
-      { name: "Unlimited Cloud Capacity For Each Client", trust: true, pro: true, enterprise: true },
-      { name: "24 Hours Maintenance", trust: true, pro: true, enterprise: true },
-      { name: "System Status Updates", trust: false, pro: true, enterprise: true },
-      { name: "New Version Updates", trust: false, pro: true, enterprise: true },
+      { name: "Secure Server", trust: true, Agency: true, enterprise: true },
+      { name: "Unlimited Cloud Capacity For Each Client", trust: true, Agency: true, enterprise: true },
+      { name: "24 Hours Maintenance", trust: true, Agency: true, enterprise: true },
+      { name: "System Status Updates", trust: false, Agency: true, enterprise: true },
+      { name: "New Version Updates", trust: false, Agency: true, enterprise: true },
     ],
   },
 
@@ -168,40 +168,40 @@ const sections: Section[] = [
   {
     title: "Add-On Features",
     features: [
-      { name: "Smart Personalization Pro",        trust: "₹3,000",           pro: "₹3,000",           enterprise: "Included in Plan" },
-      { name: "Smart Personalization Specialist",  trust: "₹5,000",           pro: "₹5,000",           enterprise: "Included in Plan" },
-      { name: "Global Transfers API",              trust: "₹20,000",          pro: "₹20,000",          enterprise: "Included in Plan" },
-      { name: "Global Public Transit API",         trust: "₹20,000",          pro: "₹20,000",          enterprise: "Included in Plan" },
-      { name: "Replace Flight API Keys",           trust: "₹20,000",          pro: "₹20,000",          enterprise: "Included in Plan" },
-      { name: "Replace Hotel API Keys",            trust: "₹20,000",          pro: "₹20,000",          enterprise: "Included in Plan" },
-      { name: "Replacing Sightseeing API Keys",    trust: "₹20,000",          pro: "₹20,000",          enterprise: "Included in Plan" },
-      { name: "Whitelabel Quotation Template",     trust: "Included in Plan", pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Whitelabel Voucher Template",       trust: "Included in Plan", pro: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Smart Personalization Agency",        trust: "₹3,000",           Agency: "₹3,000",           enterprise: "Included in Plan" },
+      { name: "Smart Personalization Specialist",  trust: "₹5,000",           Agency: "₹5,000",           enterprise: "Included in Plan" },
+      { name: "Global Transfers API",              trust: "₹20,000",          Agency: "₹20,000",          enterprise: "Included in Plan" },
+      { name: "Global Public Transit API",         trust: "₹20,000",          Agency: "₹20,000",          enterprise: "Included in Plan" },
+      { name: "Replace Flight API Keys",           trust: "₹20,000",          Agency: "₹20,000",          enterprise: "Included in Plan" },
+      { name: "Replace Hotel API Keys",            trust: "₹20,000",          Agency: "₹20,000",          enterprise: "Included in Plan" },
+      { name: "Replacing Sightseeing API Keys",    trust: "₹20,000",          Agency: "₹20,000",          enterprise: "Included in Plan" },
+      { name: "Whitelabel Quotation Template",     trust: "Included in Plan", Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Whitelabel Voucher Template",       trust: "Included in Plan", Agency: "Included in Plan", enterprise: "Included in Plan" },
     ],
   },
   {
     title: "Add-On Regions",
     features: [
-      { name: "India",                          trust: "Included in Plan", pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Middle East",                    trust: "₹1,500",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Southeast Asia",                 trust: "₹2,000",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Europe Core (Schengen)",         trust: "₹2,500",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "UK + Ireland",                   trust: "₹2,000",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Australia + New Zealand",        trust: "₹2,500",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "East Asia",                      trust: "₹3,500",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "America (North America)",        trust: "₹3,500",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Africa",                         trust: "₹1,500",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "South America",                  trust: "₹4,000",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Eastern Europe (Non-Schengen)",  trust: "₹4,000",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Indian Sub Continent",           trust: "₹3,000",           pro: "Included in Plan", enterprise: "Included in Plan" },
-      { name: "Central Asia",                   trust: "₹3,000",           pro: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "India",                          trust: "Included in Plan", Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Middle East",                    trust: "₹1,500",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Southeast Asia",                 trust: "₹2,000",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Europe Core (Schengen)",         trust: "₹2,500",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "UK + Ireland",                   trust: "₹2,000",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Australia + New Zealand",        trust: "₹2,500",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "East Asia",                      trust: "₹3,500",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "America (North America)",        trust: "₹3,500",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Africa",                         trust: "₹1,500",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "South America",                  trust: "₹4,000",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Eastern Europe (Non-Schengen)",  trust: "₹4,000",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Indian Sub Continent",           trust: "₹3,000",           Agency: "Included in Plan", enterprise: "Included in Plan" },
+      { name: "Central Asia",                   trust: "₹3,000",           Agency: "Included in Plan", enterprise: "Included in Plan" },
     ],
   },
 ];
 
 // ─── Plan config ──────────────────────────────────────────────────────────────
 // Index order MUST match the PLAN_KEYS order in the parent:
-//   0 → trust (default)  |  1 → pro (agency)  |  2 → enterprise
+//   0 → trust (default)  |  1 → Agency (agency)  |  2 → enterprise
 
 const plans = [
   {
@@ -213,12 +213,12 @@ const plans = [
     valuePlanKey: "trust",
   },
   {
-    key: "pro" as const,
-    label: "Pro",
+    key: "Agency" as const,
+    label: "Agency",
     sublabel: "",
     accent: "text-amber-400",
     badge: "bg-amber-500/10 text-amber-400 border border-amber-500/20",
-    valuePlanKey: "pro",
+    valuePlanKey: "Agency",
   },
   {
     key: "enterprise" as const,
@@ -281,13 +281,13 @@ function CellValue({ value, planKey }: { value: PlanValue; planKey: string }) {
   if (typeof value === "string" && value.startsWith("₹")) {
     const accentMap: Record<string, string> = {
       trust: "text-zinc-100",
-      pro: "text-amber-100",
+      Agency: "text-amber-100",
       enterprise: "text-sky-100",
     };
     return (
       <span
         className={cn(
-          "text-[12px] sm:text-[13px] lg:text-[14px] font-semibold tabular-nums tracking-tight",
+          "text-[12px] sm:text-[13px]  lg:text-[14px] xl:text-[15px] 3xl:text-[16px] 4xl:text-[17px] font-semibold tabular-nums tracking-tight",
           accentMap[planKey] ?? "text-zinc-100",
         )}
       >
@@ -299,13 +299,13 @@ function CellValue({ value, planKey }: { value: PlanValue; planKey: string }) {
   // Generic string
   const colorMap: Record<string, string> = {
     trust: "text-zinc-400",
-    pro: "text-amber-400/80",
+    Agency: "text-amber-400/80",
     enterprise: "text-sky-400/80",
   };
   return (
     <span
       className={cn(
-        "text-[11px] sm:text-[12px] lg:text-[14px] leading-snug font-medium text-center",
+        "text-[11px] sm:text-[12px]  lg:text-[13px] xl:text-[14px] 3xl:text-[15px] 4xl:text-[16px] leading-snug font-medium text-center",
         colorMap[planKey] ?? "text-zinc-400",
       )}
     >
@@ -337,7 +337,20 @@ function FeatureRow({
     >
       {/* Feature name — always visible */}
       <div role="cell" className="flex items-center gap-2 pr-2">
-        <span className="text-[12px] sm:text-[13px] lg:text-[15px] xl:text-[16px] text-zinc-200 font-medium leading-snug tracking-[-0.005em]">
+       <span className="
+  text-[12px] 
+  sm:text-[13px] 
+  lg:text-[15px] 
+  xl:text-[16px]
+
+  3xl:text-[17px]
+  4xl:text-[18px]
+
+  text-zinc-200 
+  font-medium 
+  leading-snug 
+  tracking-[-0.005em]
+">
           {feature.name}
         </span>
       </div>
@@ -353,7 +366,7 @@ function FeatureRow({
         <CellValue value={feature.trust} planKey="trust" />
       </div>
 
-      {/* Pro — visible only when mobilePlanIndex === 1 (on mobile) */}
+      {/* Agency — visible only when mobilePlanIndex === 1 (on mobile) */}
       <div
         role="cell"
         className={cn(
@@ -361,7 +374,7 @@ function FeatureRow({
           mobilePlanIndex !== 1 && "hidden lg:flex",
         )}
       >
-        <CellValue value={feature.pro} planKey="pro" />
+        <CellValue value={feature.Agency} planKey="Agency" />
       </div>
 
       {/* Enterprise — visible only when mobilePlanIndex === 2 (on mobile) */}
@@ -404,7 +417,19 @@ function FeatureSection({
       >
         {/* Title — spans full width on mobile via col-span */}
         <div className="col-span-2 lg:col-span-1 flex items-center gap-2 text-left">
-          <span className="text-[12px] sm:text-[13px] lg:text-[15px] font-semibold text-zinc-100 tracking-[0.01em]">
+          <span className="
+  text-[12px] 
+  sm:text-[13px] 
+  lg:text-[15px] 
+  xl:text-[16px]
+
+  3xl:text-[17px]
+  4xl:text-[18px]
+
+  font-semibold 
+  text-zinc-100 
+  tracking-[0.01em]
+">
             {section.title}
           </span>
           <span className="text-zinc-500 group-hover:text-zinc-400 transition-colors">
@@ -452,7 +477,20 @@ function TableColumnHeader({ mobilePlanIndex }: { mobilePlanIndex: number }) {
       {/* "Feature" label — always visible */}
       <div
         role="columnheader"
-        className="text-[10px] sm:text-xs lg:text-[13px] font-semibold uppercase tracking-[0.18em] text-zinc-500"
+       className="
+  text-[10px] 
+  sm:text-xs 
+  lg:text-[13px] 
+  xl:text-[14px]
+
+  3xl:text-[15px]
+  4xl:text-[16px]
+
+  font-semibold 
+  uppercase 
+  tracking-[0.18em] 
+  text-zinc-500
+"
       >
         Feature
       </div>
@@ -469,7 +507,7 @@ function TableColumnHeader({ mobilePlanIndex }: { mobilePlanIndex: number }) {
         >
           <span
             className={cn(
-              "text-[13px] sm:text-[14px] lg:text-[15px] font-bold tracking-wide",
+              "text-[13px] sm:text-[14px] lg:text-[15px] xl:text-[16px] 3xl:text-[17px]4xl:text-[18px] font-bold tracking-wide",
               plan.accent,
             )}
           >
@@ -530,38 +568,6 @@ function FeatureTable({ mobilePlanIndex }: { mobilePlanIndex: number }) {
           </div>
 
           {/* CTA bar — mobile shows only active plan's button */}
-          <div
-            className={cn(
-              GRID_COLS,
-              "items-center px-4 lg:px-5 py-4 lg:py-5 bg-zinc-950/80 border-t border-zinc-800",
-            )}
-          >
-            <div className="text-[11px] sm:text-[12px] lg:text-[13px] text-zinc-500 tracking-[-0.01em] col-span-1">
-              All plans include core platform access
-            </div>
-            {plans.map((plan, i) => (
-              <div
-                key={plan.key}
-                className={cn(
-                  "flex justify-center",
-                  mobilePlanIndex !== i && "hidden lg:flex",
-                )}
-              >
-                <button
-                  className={cn(
-                    "text-[12px] sm:text-[13px] font-semibold px-4 py-2 rounded-lg transition-all duration-150 w-full sm:w-auto",
-                    plan.key === "pro"
-                      ? "bg-amber-500 hover:bg-amber-400 text-zinc-950"
-                      : plan.key === "enterprise"
-                        ? "bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 ring-1 ring-sky-500/30"
-                        : "bg-zinc-800 hover:bg-zinc-700 text-zinc-300",
-                  )}
-                >
-                  {plan.key === "enterprise" ? "Contact Us" : "Get Started"}
-                </button>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 

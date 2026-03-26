@@ -76,28 +76,26 @@ function FeatureCard({
 
       {/* Content */}
       <div className="px-4 pb-4 pt-2 lg:px-6 lg:pb-6 flex-1">
-       <h3
-  className={`
-    font-medium text-white tracking-tight
-    ${isLarge 
-      ? "text-lg lg:text-[26px]" 
-      : "text-base lg:text-[20px]"
-    }
-  `}
->
+    <h3 className={`
+  font-semibold text-white tracking-tight
+
+  ${isLarge 
+    ? "text-lg lg:text-[26px] xl:text-[28px] 3xl:text-[32px] 4xl:text-[36px]" 
+    : "text-base lg:text-[20px] xl:text-[22px] 3xl:text-[24px] 4xl:text-[26px]"
+  }
+`}>
           {title}
         </h3>
 
-      <p
-  className={`
-    text-slate-400 mt-1.5 lg:mt-2
-    leading-relaxed lg:leading-[1.7]
-    ${isLarge 
-      ? "text-[13px] lg:text-[16px]" 
-      : "text-[13px] lg:text-[14px]"
-    }
-  `}
->
+ <p className={`
+  text-slate-400 mt-1.5 lg:mt-2
+  leading-relaxed lg:leading-[1.7]
+
+  ${isLarge 
+    ? "text-[13px] lg:text-[16px] xl:text-[17px] 3xl:text-[18px] 4xl:text-[19px]" 
+    : "text-[13px] lg:text-[14px] xl:text-[15px] 3xl:text-[16px] 4xl:text-[17px]"
+  }
+`}>
           {description}
         </p>
       </div>
@@ -146,15 +144,26 @@ export function LandingUiCard() {
     <section className="min-h-screen px-4 lg:px-6 lg:py-12 py-5">
 
       {/* ================= HEADER ================= */}
-      <div className="max-w-6xl mx-auto text-center mb-8 lg:mb-16">
+      <div className="max-w-6xl 
+3xl:max-w-7xl 
+4xl:max-w-[1400px] 
+5xl:max-w-[1600px] mx-auto text-center mb-8 lg:mb-16">
       <h1 className="
   text-[22px] 
   lg:text-[44px] 
+
+  3xl:text-[clamp(44px,2.5vw,64px)]
+  4xl:text-[clamp(52px,2.2vw,72px)]
+  5xl:text-[clamp(60px,2vw,84px)]
+
   font-semibold 
   text-white 
   leading-snug 
   lg:leading-[1.2] 
+  3xl:leading-[1.15]
+
   tracking-tight
+  3xl:tracking-[-0.02em]
 ">
           <motion.span
             initial="hidden"
@@ -199,16 +208,26 @@ export function LandingUiCard() {
 </span>
         </h1>
 
-       <p className="
+   <p className="
   text-slate-400 
-  text-[14px] 
-  lg:text-[18px] 
-  max-w-4xl 
+
+  text-[15px] sm:text-base lg:text-[20px] xl:text-[22px]
+  3xl:text-[24px] 4xl:text-[26px]
+
+  max-w-5xl 
+  3xl:max-w-5xl
+  4xl:max-w-6xl
+  5xl:max-w-7xl
+
   mx-auto 
   mt-3 
   lg:mt-6 
+  3xl:mt-8
+
   leading-relaxed 
   lg:leading-[1.8]
+  3xl:leading-[1.9]
+
   lg:text-slate-300
 ">
   A powerful platform to manage bookings, billing, and operations with modern tools built for travel agencies.
@@ -216,7 +235,10 @@ export function LandingUiCard() {
       </div>
 
       {/* ================= GRID ================= */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl 
+3xl:max-w-7xl 
+4xl:max-w-[1400px] 
+5xl:max-w-[1600px] mx-auto">
         <div className="grid gap-4 lg:gap-6 grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT COLUMN */}

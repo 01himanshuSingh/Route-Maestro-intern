@@ -31,7 +31,7 @@ const router = useRouter()
       <div className="max-w-7xl mx-auto md:px-4">
 
    {/* sticky header */}
-        <div className="sticky top-20 z-10">
+        <div className=" top-20 z-10">
           <div className="overflow-x-hidden rounded-b-xl @container">
             <div
               className={cn(

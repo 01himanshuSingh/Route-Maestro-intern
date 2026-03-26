@@ -17,10 +17,13 @@ const words = text.split(" ")
       {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent pointer-events-none" />
       
-      <div className="relative max-w-5xl mx-auto px-5 lg:px-8">
+      <div className="relative max-w-5xl 
+3xl:max-w-6xl 
+4xl:max-w-7xl 
+5xl:max-w-[1500px] mx-auto px-5 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-7 lg:mb-12">
-       <motion.h2
+    <motion.h2
   className="
     text-[22px] 
     leading-snug 
@@ -30,6 +33,16 @@ const words = text.split(" ")
     text-balance
     lg:leading-[1.2]
     lg:tracking-tight
+
+    3xl:text-[48px]
+    4xl:text-[56px]
+    5xl:text-[64px]
+
+    3xl:leading-[1.15]
+    4xl:leading-[1.12]
+
+    3xl:tracking-[-0.02em]
+    4xl:tracking-[-0.025em]
   "
   initial="hidden"
   whileInView="visible"
@@ -47,6 +60,8 @@ const words = text.split(" ")
       className="
         inline-block mr-[6px]
         lg:mr-2
+        3xl:mr-3
+4xl:mr-3.5
       "
     >
       {word}
@@ -69,6 +84,10 @@ const words = text.split(" ")
     height={60}
    className="
   w-auto h-7 sm:h-10 lg:h-12
+
+  3xl:h-14
+  4xl:h-16
+
   object-contain
   brightness-110 contrast-110
   opacity-100 lg:opacity-50

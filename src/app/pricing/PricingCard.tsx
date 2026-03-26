@@ -22,10 +22,31 @@ export default function PricingSection({ currency }: PricingSectionProps) {
 
           {/* Heading */}
           <div className="text-center my-6 px-2">
-            <h2 className="text-[28px] sm:text-[36px] font-semibold font-bricolage text-white/95">
+            <h1 className="
+  text-[22px]
+  sm:text-[26px]
+  md:text-[30px]
+  lg:text-[36px]
+  xl:text-[42px]
+  2xl:text-[48px]
+
+  3xl:text-[56px]
+  4xl:text-[64px]
+  5xl:text-[72px]
+
+  font-semibold 
+  font-bricolage 
+  text-white/95
+">
               Simple, Transparent Pricing
-            </h2>
-            <p className="text-neutral-300/80 font-bricolage font-medium text-[14px] sm:text-[16px] mt-2 max-w-xl mx-auto">
+            </h1>
+            <p className="text-neutral-300/80 font-bricolage font-medium  text-[15px]
+  sm:text-base
+  md:text-[17px]
+  lg:text-[20px]
+  xl:text-[22px]
+  2xl:text-[24px]
+ mt-2 max-w-xl mx-auto">
               Choose the plan that&apos;s right for your team and start growing with us. No hidden fees, no surprises.
             </p>
           </div>

@@ -79,7 +79,7 @@ export default function FaqSection() {
     border border-[#ff7043] 
 
     text-white 
-    font-medium 
+    font-semibold 
     text-[14px] 
     lg:text-[15px] 
     lg:tracking-[0.3px]

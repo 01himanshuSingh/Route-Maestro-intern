@@ -46,7 +46,7 @@ export default function SemiCircleCards() {
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-         className="
+      className="
   text-center 
   text-2xl 
   lg:text-[42px] 
@@ -55,9 +55,19 @@ export default function SemiCircleCards() {
   text-white 
   leading-tight
   lg:leading-[1.2]
+
+  3xl:text-[48px]
+  4xl:text-[56px]
+  5xl:text-[64px]
+
+  3xl:leading-[1.15]
+  4xl:leading-[1.12]
+
+  3xl:tracking-[-0.02em]
+  4xl:tracking-[-0.025em]
 "
         >
-          Freedom to Choose,{" "}
+  Customize Freely,{" "}
      <span
   className="relative bg-clip-text text-transparent lg:font-semibold"
   style={{
@@ -73,7 +83,7 @@ export default function SemiCircleCards() {
     filter: "drop-shadow(0 6px 24px rgba(255,120,80,0.25))",
   }}
 >
-  Flexibility to Book
+We'll Package It Seamlessly
 </span>
         </motion.h2>
       </div>
@@ -134,10 +144,17 @@ export default function SemiCircleCards() {
             <button
               key={card.id}
               onClick={() => setActiveIndex(i)}
-          className={`
+      className={`
   px-5 py-2 rounded-full 
-  text-sm lg:text-[15px] hover:cursor-pointer
-  font-medium 
+  text-sm lg:text-[15px] 
+  3xl:text-[16px] 
+  4xl:text-[17px]
+
+  3xl:px-6 
+  4xl:px-7
+
+  hover:cursor-pointer
+  font-semibold 
   tracking-[0.2px]
   transition-all duration-300
 
@@ -228,22 +245,32 @@ export default function SemiCircleCards() {
 
                   {/* Text area */}
                   <div className="flex flex-col flex-1 px-3.5 pt-3 pb-4">
-                   <h3
+       <h3
   className="
     font-semibold 
     mb-1.5 
     leading-tight
     lg:tracking-tight
+
+    xl:text-[22px]
+    3xl:text-[24px]
+    4xl:text-[26px]
   "
   style={{
     fontSize: 20,
     color: isActive ? "#fff" : "rgba(255,255,255,0.85)",
-  }}
+  }} 
 >
   {card.title}
 </h3>
-                 <p
-  className="leading-relaxed lg:leading-[1.7]"
+              <p
+  className="
+    leading-relaxed lg:leading-[1.7]
+
+    xl:text-[17px]
+    3xl:text-[18.5px]
+    4xl:text-[20px]
+  "
   style={{
     fontSize: 15.5,
     color: isActive

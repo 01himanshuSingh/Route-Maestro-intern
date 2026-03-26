@@ -169,13 +169,13 @@ export default function Header() {
             })}
 
             <button
-              className="px-6 py-3 text-left bg-gradient-to-r from-[#e2472b] to-[#ff6a3d] text-white rounded-b-2xl font-medium"
+              className="px-6 py-3 text-left bg-gradient-to-r from-[#e2472b] to-[#ff6a3d] text-white rounded-b-2xl text-sm lg:text-[17px]   font-bold"
               onClick={() => {
                 router.push('/schedule-demo')
                 setIsOpen(false)
               }}
             >
-              Schedule A Demo
+              Schedule A Demos
             </button>
           </nav>
         </div>
