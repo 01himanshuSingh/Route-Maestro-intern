@@ -28,27 +28,17 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata = {
-  title: "RouteMaestro | AI Travel Planning & Booking Platform for Travel Agencies",
-  description:
-    "RouteMaestro is an AI-powered travel planning and booking platform for travel agencies and tour operators. Build multi-city travel packages, manage bookings, and digitize travel operations.",
-  keywords: [
-    "AI travel planning",
-    "travel booking platform",
-    "travel agency software",
-    "tour operator software",
-    "AI itinerary builder",
-    "travel package builder",
-  ],
-  openGraph: {
-    title: "RouteMaestro | AI Travel Planning Platform",
-    description:
-      "AI-powered travel planning and booking platform for travel agencies.",
-    type: "website",
-  },
-  icons:{
-     icon: "/rmMetalogo.png"
-  }
-}
+  robots:
+    process.env.NEXT_PUBLIC_ENV === "production"
+      ? {
+          index: true,
+          follow: true,
+        }
+      : {
+          index: false,
+          follow: false,
+        },
+};
 
 export default function RootLayout({
   children,

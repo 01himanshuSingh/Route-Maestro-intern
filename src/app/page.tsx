@@ -11,71 +11,14 @@ import { Metadata } from 'next'
 import LandinpageBusinesspage from './components/LandinpageBusinesspage'
 
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://routemaestro.com/"),
 
-  title: "AI Dynamic Travel  Package Builder  | RouteMaestro",
+export const getRobots = () => {
+  const isProduction = process.env.NEXT_PUBLIC_ENV === "production";
 
-  description:
-    "Build and sell personalized travel packages in minutes with AI. Designed for travel agents to automate itineraries, reduce effort, and close more deals.",
-
-  keywords: [
-    "Travel Agency Software",
-    "Travel Itinerary Builder",
-    "Travel Booking Software",
-    "Tour Operator Software",
-    "AI Travel Planning Software",
-    "AI itinerary builder",
-    "travel package builder",
-    "OTA travel platform",
-  ],
-
-  alternates: {
-    canonical: "https://routemaestro.com/",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  openGraph: {
-    title: "RouteMaestro – AI Travel Agency Software",
-    description:
-      "AI-powered travel agency software to build itineraries, manage bookings, and launch travel platforms faster.",
-    url: "https://routemaestro.com/",
-    siteName: "RouteMaestro",
-    type: "website",
-    images: [
-      {
-        url: "/rmMetalogo.png",
-        width: 1200,
-        height: 630,
-        alt: "RouteMaestro AI Travel Planning Platform",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "RouteMaestro – AI Travel Agency Software",
-    description:
-      "AI travel agency software for itinerary building, booking automation, and OTA platform management.",
-    images: ["/rmMetalogo.png"],
-  },
-
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
-}
+  return isProduction
+    ? { index: true, follow: true }
+    : { index: false, follow: false };
+};
 
 export default function Page() {
   return (
